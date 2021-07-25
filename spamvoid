@@ -169,3 +169,4 @@ end
     cmdlp.Character:Remove()
     cmdlp.CharacterAdded:Wait()
 end
+end
