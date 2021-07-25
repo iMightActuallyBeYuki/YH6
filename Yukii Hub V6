@@ -340,7 +340,7 @@ fuhub.TextScaled = true
 fuhub.TextSize = 14.000
 fuhub.TextWrapped = true
 fuhub.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/iiUniqu3x/FuhForYH6Obfuscated/main/fuh"))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/ImNotYukiiSoDontAsk/YH6/main/fuh"))()
 end)
 
 kill.Name = "kill"
@@ -622,6 +622,8 @@ getkey.TextSize = 14.000
 getkey.TextWrapped = true
 getkey.MouseButton1Down:connect(function()
 	getkey.Text = "Suck Yukii's Dick For A Key"
+	wait(2)
+	getkey.Text = "How To Get Key ?"
 end)
 
 enterkey.Name = "enterkey"
@@ -638,7 +640,7 @@ enterkey.TextScaled = true
 enterkey.TextSize = 14.000
 enterkey.TextWrapped = true
 enterkey.MouseButton1Down:connect(function()
-	if typekey.Text == "yuki420" then
+	if typekey.Text == "Yuki420" then
 		keyframe.Visible = false
 		openbutton.Visible = false
 		menuframe.Visible = true
