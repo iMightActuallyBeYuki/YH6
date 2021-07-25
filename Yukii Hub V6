@@ -1,5 +1,18 @@
 -- Made By Yukii --
 
+local function authenticated()
+    local users = game:HttpGet("https://raw.githubusercontent.com/ImNotYukiiSoDontAsk/YH6/main/Whitelist", true):split("\n")
+    for _, user in pairs(users) do
+        if user == game.Players.LocalPlayer.Name then
+            return true
+        end
+    end
+end
+
+if not authenticated() then
+    return game.Players.LocalPlayer:Kick("You Are Not Whitelisted")
+end
+
 local ScreenGui = Instance.new("ScreenGui")
 local menuframe = Instance.new("Frame")
 local dgui = Instance.new("TextButton")
