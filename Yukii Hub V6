@@ -224,7 +224,7 @@ wow.TextScaled = true
 wow.TextSize = 14.000
 wow.TextWrapped = true
 wow.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://pastebin.com/raw/dzRgvYs4", true))()
+	loadstring(https://raw.githubusercontent.com/ImNotYukiiSoDontAsk/YH6/main/wow"))()
 	end)
 
 spychat.Name = "spychat"
