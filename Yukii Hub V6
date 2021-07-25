@@ -8,7 +8,7 @@ local function authenticated()
 end
 
 if not authenticated() then
-    return game.Players.LocalPlayer:Kick("You Are Not Whitelisted, get on your hands and knees and beg Yukii to whitelist you !")
+    return game.Players.LocalPlayer:Kick("You Are Not Whitelisted !")
 end
 
 local ScreenGui = Instance.new("ScreenGui")
