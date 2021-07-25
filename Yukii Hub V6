@@ -164,11 +164,14 @@ fogui.BorderSizePixel = 5
 fogui.Position = UDim2.new(0.37796393, 0, 0.552743375, 0)
 fogui.Size = UDim2.new(0, 78, 0, 25)
 fogui.Font = Enum.Font.DenkOne
-fogui.Text = "Not Working.."
+fogui.Text = "Insane Graphics"
 fogui.TextColor3 = Color3.fromRGB(255, 255, 255)
 fogui.TextScaled = true
 fogui.TextSize = 14.000
 fogui.TextWrapped = true
+fogui.MouseButton1Down:connect(function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ImNotYukiiSoDontAsk/YH6/main/graphics"))()
+end)
 
 cmdx.Name = "cmdx"
 cmdx.Parent = menuframe
