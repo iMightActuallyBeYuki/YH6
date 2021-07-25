@@ -44,11 +44,6 @@ local YukiiHubV6 = Instance.new("TextLabel")
 local x = Instance.new("TextButton")
 local openbutton = Instance.new("Frame")
 local open = Instance.new("TextButton")
-local keyframe = Instance.new("Frame")
-local keytitle = Instance.new("TextLabel")
-local typekey = Instance.new("TextBox")
-local getkey = Instance.new("TextButton")
-local enterkey = Instance.new("TextButton")
 
 ScreenGui.Parent = game.CoreGui
 
@@ -61,7 +56,7 @@ menuframe.Position = UDim2.new(0.00493522547, 0, 0.312276512, 0)
 menuframe.Size = UDim2.new(0, 337, 0, 568)
 menuframe.Active = true
 menuframe.Draggable = true
-menuframe.Visible = false
+menuframe.Visible = true
 
 dgui.Name = "dgui"
 dgui.Parent = menuframe
@@ -79,7 +74,6 @@ dgui.TextWrapped = true
 dgui.MouseButton1Down:connect(function()
 	menuframe.Visible =false
 	openbutton.Visible = false
-	keyframe.Visible = false
 end)
 
 ppon.Name = "ppon"
@@ -581,82 +575,4 @@ open.TextWrapped = true
 open.MouseButton1Down:connect(function()
 	menuframe.Visible = true
 	openbutton.Visible = false
-end)
-
-keyframe.Name = "keyframe"
-keyframe.Parent = ScreenGui
-keyframe.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
-keyframe.BorderColor3 = Color3.fromRGB(55, 55, 55)
-keyframe.BorderSizePixel = 5
-keyframe.Position = UDim2.new(0.413325131, 0, 0.303933263, 0)
-keyframe.Size = UDim2.new(0, 400, 0, 384)
-keyframe.Draggable = false
-keyframe.Visible = true
-
-keytitle.Name = "keytitle"
-keytitle.Parent = keyframe
-keytitle.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
-keytitle.BorderColor3 = Color3.fromRGB(55, 55, 55)
-keytitle.BorderSizePixel = 0
-keytitle.Position = UDim2.new(0.0008251369, 0, -0.000754237175, 0)
-keytitle.Size = UDim2.new(0, 400, 0, 55)
-keytitle.Font = Enum.Font.IndieFlower
-keytitle.Text = "Yukii Hub V6 Key System"
-keytitle.TextColor3 = Color3.fromRGB(255, 255, 255)
-keytitle.TextScaled = true
-keytitle.TextSize = 14.000
-keytitle.TextWrapped = true
-
-typekey.Name = "typekey"
-typekey.Parent = keyframe
-typekey.BackgroundColor3 = Color3.fromRGB(85, 85, 85)
-typekey.BorderColor3 = Color3.fromRGB(55, 55, 55)
-typekey.BorderSizePixel = 5
-typekey.Position = UDim2.new(-0.00105795497, 0, 0.362035036, 0)
-typekey.Size = UDim2.new(0, 399, 0, 50)
-typekey.Font = Enum.Font.DenkOne
-typekey.Text = "Type Key Here.."
-typekey.TextColor3 = Color3.fromRGB(255, 255, 255)
-typekey.TextScaled = true
-typekey.TextSize = 14.000
-typekey.TextWrapped = true
-
-getkey.Name = "getkey"
-getkey.Parent = keyframe
-getkey.BackgroundColor3 = Color3.fromRGB(0, 185, 0)
-getkey.BorderColor3 = Color3.fromRGB(55, 55, 55)
-getkey.BorderSizePixel = 5
-getkey.Position = UDim2.new(-0.00249999994, 0, 0.674479187, 0)
-getkey.Size = UDim2.new(0, 171, 0, 50)
-getkey.Font = Enum.Font.DenkOne
-getkey.Text = "How To Get Key ?"
-getkey.TextColor3 = Color3.fromRGB(0, 0, 0)
-getkey.TextScaled = true
-getkey.TextSize = 14.000
-getkey.TextWrapped = true
-getkey.MouseButton1Down:connect(function()
-	getkey.Text = "Suck Yukii's Dick For A Key"
-	wait(2)
-	getkey.Text = "How To Get Key ?"
-end)
-
-enterkey.Name = "enterkey"
-enterkey.Parent = keyframe
-enterkey.BackgroundColor3 = Color3.fromRGB(0, 185, 0)
-enterkey.BorderColor3 = Color3.fromRGB(55, 55, 55)
-enterkey.BorderSizePixel = 5
-enterkey.Position = UDim2.new(0.57249999, 0, 0.674479187, 0)
-enterkey.Size = UDim2.new(0, 171, 0, 50)
-enterkey.Font = Enum.Font.DenkOne
-enterkey.Text = "Enter"
-enterkey.TextColor3 = Color3.fromRGB(0, 0, 0)
-enterkey.TextScaled = true
-enterkey.TextSize = 14.000
-enterkey.TextWrapped = true
-enterkey.MouseButton1Down:connect(function()
-	if typekey.Text == "Yuki420" then
-		keyframe.Visible = false
-		openbutton.Visible = false
-		menuframe.Visible = true
-	end
 end)
