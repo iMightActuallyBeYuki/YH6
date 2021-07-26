@@ -179,8 +179,7 @@ dgui.TextScaled = true
 dgui.TextSize = 60.000
 dgui.TextWrapped = true
 dgui.MouseButton1Down:connect(function()
-	menuframe.Visible = false
-	openbuttonframe.Visible = false
+	local Part = game.CoreGui.ScreenGui:Destroy()
 end)
 
 god.Name = "god"
