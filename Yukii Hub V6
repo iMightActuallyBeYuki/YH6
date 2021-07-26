@@ -661,6 +661,7 @@ X2.TextSize = 14.000
 X2.TextWrapped = true
 X2.MouseButton1Down:connect(function()
 	aboutframe.Visible = false
+	X.Visible = true
 	X2.Visible = false
 	
 end)
