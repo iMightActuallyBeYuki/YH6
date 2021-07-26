@@ -11,39 +11,65 @@ if not authenticated() then
     return game.Players.LocalPlayer:Kick("You Are Not Whitelisted !")
 end
 
+-- Made By Yukii --
+
 local ScreenGui = Instance.new("ScreenGui")
 local menuframe = Instance.new("Frame")
+local YHV620 = Instance.new("TextLabel")
+local Trans0 = Instance.new("TextButton")
+local Trans100 = Instance.new("TextButton")
+local X = Instance.new("TextButton")
+local about = Instance.new("TextButton")
 local dgui = Instance.new("TextButton")
-local ppon = Instance.new("TextButton")
+local god = Instance.new("TextButton")
 local ppoff = Instance.new("TextButton")
-local godmode = Instance.new("TextButton")
 local bh = Instance.new("TextButton")
-local earrape = Instance.new("TextButton")
-local fogui = Instance.new("TextButton")
+local ppon = Instance.new("TextButton")
+local fafkf = Instance.new("TextButton")
 local cmdx = Instance.new("TextButton")
-local antilog = Instance.new("TextButton")
-local wow = Instance.new("TextButton")
-local spychat = Instance.new("TextButton")
-local infyield = Instance.new("TextButton")
+local spamrank = Instance.new("TextButton")
+local earrape = Instance.new("TextButton")
+local iy = Instance.new("TextButton")
 local f3r = Instance.new("TextButton")
-local removerank = Instance.new("TextButton")
-local rankspam = Instance.new("TextButton")
+local darkmenu = Instance.new("TextButton")
+local multichecker = Instance.new("TextButton")
 local reapall = Instance.new("TextButton")
-local fuhub = Instance.new("TextButton")
-local kill = Instance.new("TextButton")
-local multi = Instance.new("TextButton")
+local aurafucker = Instance.new("TextButton")
+local chatantilog = Instance.new("TextButton")
 local split = Instance.new("TextButton")
-local fhb = Instance.new("TextButton")
-local dm = Instance.new("TextButton")
+local removename = Instance.new("TextButton")
+local spy = Instance.new("TextButton")
+local rtx = Instance.new("TextButton")
 local rj = Instance.new("TextButton")
 local rep = Instance.new("TextButton")
-local trainpp = Instance.new("TextButton")
-local trainfs = Instance.new("TextButton")
-local nameremove = Instance.new("TextButton")
-local YukiiHubV6 = Instance.new("TextLabel")
-local x = Instance.new("TextButton")
-local openbutton = Instance.new("Frame")
-local open = Instance.new("TextButton")
+local removerank = Instance.new("TextButton")
+local fafkp = Instance.new("TextButton")
+local cbring = Instance.new("TextButton")
+local fixbug = Instance.new("TextButton")
+local wow = Instance.new("TextButton")
+local yuv610 = Instance.new("TextButton")
+local X2 = Instance.new("TextButton")
+local aboutframe = Instance.new("Frame")
+local abouttext = Instance.new("TextBox")
+local iQuinalx = Instance.new("TextLabel")
+local server = Instance.new("TextLabel")
+local auramenu = Instance.new("Frame")
+local Name = Instance.new("TextLabel")
+local closeaura = Instance.new("TextButton")
+local TextLabel = Instance.new("TextLabel")
+local fist1 = Instance.new("TextButton")
+local fist2 = Instance.new("TextButton")
+local fist3 = Instance.new("TextButton")
+local body1 = Instance.new("TextButton")
+local body2 = Instance.new("TextButton")
+local body3 = Instance.new("TextButton")
+local lightning = Instance.new("TextButton")
+local allbody = Instance.new("TextButton")
+local allfist = Instance.new("TextButton")
+local openbuttonframe = Instance.new("Frame")
+local TextButton = Instance.new("TextButton")
+local character = game.Players.LocalPlayer.Character
+
 
 ScreenGui.Parent = game.CoreGui
 
@@ -52,527 +78,874 @@ menuframe.Parent = ScreenGui
 menuframe.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
 menuframe.BorderColor3 = Color3.fromRGB(55, 55, 55)
 menuframe.BorderSizePixel = 5
-menuframe.Position = UDim2.new(0.00493522547, 0, 0.312276512, 0)
-menuframe.Size = UDim2.new(0, 337, 0, 568)
+menuframe.Position = UDim2.new(0, 0, 0.303933263, 0)
+menuframe.Size = UDim2.new(0, 555, 0, 584)
 menuframe.Active = true
 menuframe.Draggable = true
-menuframe.Visible = true
+
+YHV620.Name = "YHV620"
+YHV620.Parent = menuframe
+YHV620.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+YHV620.BorderColor3 = Color3.fromRGB(55, 55, 55)
+YHV620.BorderSizePixel = 5
+YHV620.Position = UDim2.new(0, 0, 0.0856164396, 0)
+YHV620.Size = UDim2.new(0, 555, 0, 51)
+YHV620.Font = Enum.Font.IndieFlower
+YHV620.Text = "Yukii Hub V6 [ 2.0 ]"
+YHV620.TextColor3 = Color3.fromRGB(255, 255, 255)
+YHV620.TextScaled = true
+YHV620.TextSize = 14.000
+YHV620.TextWrapped = true
+
+Trans0.Name = "Trans50"
+Trans0.Parent = menuframe
+Trans0.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+Trans0.BorderColor3 = Color3.fromRGB(55, 55, 55)
+Trans0.BorderSizePixel = 5
+Trans0.Size = UDim2.new(0, 145, 0, 44)
+Trans0.Font = Enum.Font.DenkOne
+Trans0.Text = "Transparency 0%"
+Trans0.TextColor3 = Color3.fromRGB(255, 255, 255)
+Trans0.TextSize = 19.000
+Trans0.TextWrapped = true
+Trans0.MouseButton1Down:connect(function()
+	menuframe.Transparency = 0
+end)
+
+Trans100.Name = "Trans100"
+Trans100.Parent = menuframe
+Trans100.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+Trans100.BorderColor3 = Color3.fromRGB(55, 55, 55)
+Trans100.BorderSizePixel = 5
+Trans100.Position = UDim2.new(0.520916224, 0, 0, 0)
+Trans100.Size = UDim2.new(0, 145, 0, 44)
+Trans100.Font = Enum.Font.DenkOne
+Trans100.Text = "Transparency 100%"
+Trans100.TextColor3 = Color3.fromRGB(255, 255, 255)
+Trans100.TextSize = 19.000
+Trans100.TextWrapped = true
+Trans100.MouseButton1Down:connect(function()
+	menuframe.Transparency = 100
+end)
+
+X.Name = "X"
+X.Parent = menuframe
+X.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+X.BorderColor3 = Color3.fromRGB(55, 55, 55)
+X.BorderSizePixel = 5
+X.Position = UDim2.new(0.794790149, 0, 0, 0)
+X.Size = UDim2.new(0, 113, 0, 44)
+X.Font = Enum.Font.Arcade
+X.Text = "X"
+X.TextColor3 = Color3.fromRGB(0, 0, 0)
+X.TextScaled = true
+X.TextSize = 14.000
+X.TextWrapped = true
+X.MouseButton1Down:connect(function()
+	menuframe.Visible = false
+	openbuttonframe.Visible = true
+end)
+
+about.Name = "about"
+about.Parent = menuframe
+about.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+about.BorderColor3 = Color3.fromRGB(55, 55, 55)
+about.BorderSizePixel = 5
+about.Position = UDim2.new(0, 0, 0.800002396, 0)
+about.Size = UDim2.new(0, 277, 0, 116)
+about.Font = Enum.Font.DenkOne
+about.Text = "About This Script"
+about.TextColor3 = Color3.fromRGB(255, 255, 255)
+about.TextScaled = true
+about.TextSize = 41.000
+about.TextWrapped = true
+about.MouseButton1Down:connect(function()
+    aboutframe.Visible = true
+end)
 
 dgui.Name = "dgui"
 dgui.Parent = menuframe
-dgui.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+dgui.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
 dgui.BorderColor3 = Color3.fromRGB(55, 55, 55)
 dgui.BorderSizePixel = 5
-dgui.Position = UDim2.new(0, 0, 0.896468818, 0)
-dgui.Size = UDim2.new(0, 335, 0, 58)
+dgui.Position = UDim2.new(0.500900924, 0, 0.800002396, 0)
+dgui.Size = UDim2.new(0, 277, 0, 116)
 dgui.Font = Enum.Font.DenkOne
 dgui.Text = "Destroy Gui"
 dgui.TextColor3 = Color3.fromRGB(255, 255, 255)
 dgui.TextScaled = true
-dgui.TextSize = 14.000
+dgui.TextSize = 60.000
 dgui.TextWrapped = true
 dgui.MouseButton1Down:connect(function()
-	menuframe.Visible =false
-	openbutton.Visible = false
+	menuframe.Visible = false
+	openbuttonframe.Visible = false
+end)
+
+god.Name = "god"
+god.Parent = menuframe
+god.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+god.BorderColor3 = Color3.fromRGB(55, 55, 55)
+god.BorderSizePixel = 5
+god.Position = UDim2.new(0.409009069, 0, 0.183564067, 0)
+god.Size = UDim2.new(0, 100, 0, 30)
+god.Font = Enum.Font.DenkOne
+god.Text = "God Mode"
+god.TextColor3 = Color3.fromRGB(255, 255, 255)
+god.TextScaled = true
+god.TextSize = 60.000
+god.TextWrapped = true
+god.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/ciWhcgJV", true))()
+end)
+
+ppoff.Name = "ppoff"
+ppoff.Parent = menuframe
+ppoff.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+ppoff.BorderColor3 = Color3.fromRGB(55, 55, 55)
+ppoff.BorderSizePixel = 5
+ppoff.Position = UDim2.new(0.819819808, 0, 0.183564067, 0)
+ppoff.Size = UDim2.new(0, 100, 0, 30)
+ppoff.Font = Enum.Font.DenkOne
+ppoff.Text = "Psychic All Off"
+ppoff.TextColor3 = Color3.fromRGB(255, 255, 255)
+ppoff.TextScaled = true
+ppoff.TextSize = 60.000
+ppoff.TextWrapped = true
+ppoff.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/ImNotYukiiSoDontAsk/YH6/main/ppoff", true))()
+end)
+
+bh.Name = "bh"
+bh.Parent = menuframe
+bh.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+bh.BorderColor3 = Color3.fromRGB(55, 55, 55)
+bh.BorderSizePixel = 5
+bh.Position = UDim2.new(0.409009069, 0, 0.245207936, 0)
+bh.Size = UDim2.new(0, 100, 0, 30)
+bh.Font = Enum.Font.DenkOne
+bh.Text = "Black Hub"
+bh.TextColor3 = Color3.fromRGB(255, 255, 255)
+bh.TextScaled = true
+bh.TextSize = 60.000
+bh.TextWrapped = true
+bh.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/FastyGame31/black-hub/main/fuck%20you", true))()
 end)
 
 ppon.Name = "ppon"
 ppon.Parent = menuframe
-ppon.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+ppon.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
 ppon.BorderColor3 = Color3.fromRGB(55, 55, 55)
 ppon.BorderSizePixel = 5
-ppon.Position = UDim2.new(0.0598158315, 0, 0.119718313, 0)
-ppon.Size = UDim2.new(0, 78, 0, 25)
+ppon.Position = UDim2.new(0, 0, 0.183564067, 0)
+ppon.Size = UDim2.new(0, 105, 0, 30)
 ppon.Font = Enum.Font.DenkOne
 ppon.Text = "Psychic All On"
 ppon.TextColor3 = Color3.fromRGB(255, 255, 255)
 ppon.TextScaled = true
-ppon.TextSize = 14.000
+ppon.TextSize = 60.000
 ppon.TextWrapped = true
 ppon.MouseButton1Down:connect(function()
 	loadstring(game:HttpGet("https://pastebin.com/raw/JngsjXyE", true))()
 end)
 
-ppoff.Name = "ppoff"
-ppoff.Parent = menuframe
-ppoff.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
-ppoff.BorderColor3 = Color3.fromRGB(55, 55, 55)
-ppoff.BorderSizePixel = 5
-ppoff.Position = UDim2.new(0.707340777, 0, 0.119718313, 0)
-ppoff.Size = UDim2.new(0, 78, 0, 25)
-ppoff.Font = Enum.Font.DenkOne
-ppoff.Text = "Psychic All Off"
-ppoff.TextColor3 = Color3.fromRGB(255, 255, 255)
-ppoff.TextScaled = true
-ppoff.TextSize = 14.000
-ppoff.TextWrapped = true
-ppoff.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/ImNotYukiiSoDontAsk/YH6/main/ppoff"))()
-	end)
-
-godmode.Name = "godmode"
-godmode.Parent = menuframe
-godmode.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
-godmode.BorderColor3 = Color3.fromRGB(55, 55, 55)
-godmode.BorderSizePixel = 5
-godmode.Position = UDim2.new(0.37796393, 0, 0.119718306, 0)
-godmode.Size = UDim2.new(0, 78, 0, 25)
-godmode.Font = Enum.Font.DenkOne
-godmode.Text = "God Mode"
-godmode.TextColor3 = Color3.fromRGB(255, 255, 255)
-godmode.TextScaled = true
-godmode.TextSize = 14.000
-godmode.TextWrapped = true
-godmode.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://pastebin.com/raw/ciWhcgJV", true))()
-	end)
-
-bh.Name = "bh"
-bh.Parent = menuframe
-bh.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
-bh.BorderColor3 = Color3.fromRGB(55, 55, 55)
-bh.BorderSizePixel = 5
-bh.Position = UDim2.new(0.37732324, 0, 0.206441268, 0)
-bh.Size = UDim2.new(0, 78, 0, 25)
-bh.Font = Enum.Font.DenkOne
-bh.Text = "Black Hub"
-bh.TextColor3 = Color3.fromRGB(255, 255, 255)
-bh.TextScaled = true
-bh.TextSize = 14.000
-bh.TextWrapped = true
-bh.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/FastyGame31/black-hub/main/fuck%20you"))()
-end)
-
-earrape.Name = "earrape"
-earrape.Parent = menuframe
-earrape.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
-earrape.BorderColor3 = Color3.fromRGB(55, 55, 55)
-earrape.BorderSizePixel = 5
-earrape.Position = UDim2.new(0.0576868057, 0, 0.466343701, 0)
-earrape.Size = UDim2.new(0, 78, 0, 25)
-earrape.Font = Enum.Font.DenkOne
-earrape.Text = "Ear Rape"
-earrape.TextColor3 = Color3.fromRGB(255, 255, 255)
-earrape.TextScaled = true
-earrape.TextSize = 14.000
-earrape.TextWrapped = true
-earrape.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://pastebin.com/raw/PjwsamTt", true))()
-	end)
-
-fogui.Name = "fogui"
-fogui.Parent = menuframe
-fogui.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
-fogui.BorderColor3 = Color3.fromRGB(55, 55, 55)
-fogui.BorderSizePixel = 5
-fogui.Position = UDim2.new(0.37796393, 0, 0.552743375, 0)
-fogui.Size = UDim2.new(0, 78, 0, 25)
-fogui.Font = Enum.Font.DenkOne
-fogui.Text = "Insane Graphics"
-fogui.TextColor3 = Color3.fromRGB(255, 255, 255)
-fogui.TextScaled = true
-fogui.TextSize = 14.000
-fogui.TextWrapped = true
-fogui.MouseButton1Down:connect(function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/ImNotYukiiSoDontAsk/YH6/main/graphics"))()
+fafkf.Name = "fafkf"
+fafkf.Parent = menuframe
+fafkf.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+fafkf.BorderColor3 = Color3.fromRGB(55, 55, 55)
+fafkf.BorderSizePixel = 5
+fafkf.Position = UDim2.new(0, 0, 0.245207906, 0)
+fafkf.Size = UDim2.new(0, 105, 0, 30)
+fafkf.Font = Enum.Font.DenkOne
+fafkf.Text = "Fast Afk Fist"
+fafkf.TextColor3 = Color3.fromRGB(255, 255, 255)
+fafkf.TextScaled = true
+fafkf.TextSize = 60.000
+fafkf.TextWrapped = true
+fafkf.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/Dg4qsr0F", true))()
 end)
 
 cmdx.Name = "cmdx"
 cmdx.Parent = menuframe
-cmdx.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+cmdx.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
 cmdx.BorderColor3 = Color3.fromRGB(55, 55, 55)
 cmdx.BorderSizePixel = 5
-cmdx.Position = UDim2.new(0.0598157644, 0, 0.29420501, 0)
-cmdx.Size = UDim2.new(0, 78, 0, 25)
+cmdx.Position = UDim2.new(0, 0, 0.306851745, 0)
+cmdx.Size = UDim2.new(0, 105, 0, 30)
 cmdx.Font = Enum.Font.DenkOne
 cmdx.Text = "CMD-X"
 cmdx.TextColor3 = Color3.fromRGB(255, 255, 255)
 cmdx.TextScaled = true
-cmdx.TextSize = 14.000
+cmdx.TextSize = 60.000
 cmdx.TextWrapped = true
 cmdx.MouseButton1Down:connect(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
 end)
 
-antilog.Name = "antilog"
-antilog.Parent = menuframe
-antilog.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
-antilog.BorderColor3 = Color3.fromRGB(55, 55, 55)
-antilog.BorderSizePixel = 5
-antilog.Position = UDim2.new(0.704397202, 0, 0.818588495, 0)
-antilog.Size = UDim2.new(0, 78, 0, 25)
-antilog.Font = Enum.Font.DenkOne
-antilog.Text = "Chat Antilog"
-antilog.TextColor3 = Color3.fromRGB(255, 255, 255)
-antilog.TextScaled = true
-antilog.TextSize = 14.000
-antilog.TextWrapped = true
-antilog.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://pastebin.com/raw/2BjA3Nwt", true))()
-	end)
-antilog.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://pastebin.com/raw/jtinedfs", true))()
-	end)
+spamrank.Name = "spamrank"
+spamrank.Parent = menuframe
+spamrank.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+spamrank.BorderColor3 = Color3.fromRGB(55, 55, 55)
+spamrank.BorderSizePixel = 5
+spamrank.Position = UDim2.new(0, 0, 0.368495584, 0)
+spamrank.Size = UDim2.new(0, 105, 0, 30)
+spamrank.Font = Enum.Font.DenkOne
+spamrank.Text = "Spam Rank"
+spamrank.TextColor3 = Color3.fromRGB(255, 255, 255)
+spamrank.TextScaled = true
+spamrank.TextSize = 60.000
+spamrank.TextWrapped = true
+spamrank.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/ukrGyXx9", true))()
+end)
 
-wow.Name = "wow"
-wow.Parent = menuframe
-wow.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
-wow.BorderColor3 = Color3.fromRGB(55, 55, 55)
-wow.BorderSizePixel = 5
-wow.Position = UDim2.new(0.70437336, 0, 0.467707574, 0)
-wow.Size = UDim2.new(0, 78, 0, 25)
-wow.Font = Enum.Font.DenkOne
-wow.Text = "Walk On Walls"
-wow.TextColor3 = Color3.fromRGB(255, 255, 255)
-wow.TextScaled = true
-wow.TextSize = 14.000
-wow.TextWrapped = true
-wow.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/ImNotYukiiSoDontAsk/YH6/main/wow"))()
-	end)
+earrape.Name = "earrape"
+earrape.Parent = menuframe
+earrape.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+earrape.BorderColor3 = Color3.fromRGB(55, 55, 55)
+earrape.BorderSizePixel = 5
+earrape.Position = UDim2.new(0, 0, 0.430139422, 0)
+earrape.Size = UDim2.new(0, 105, 0, 30)
+earrape.Font = Enum.Font.DenkOne
+earrape.Text = "Ear Rape"
+earrape.TextColor3 = Color3.fromRGB(255, 255, 255)
+earrape.TextScaled = true
+earrape.TextSize = 60.000
+earrape.TextWrapped = true
+earrape.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/PjwsamTt",true))()
+end)
 
-spychat.Name = "spychat"
-spychat.Parent = menuframe
-spychat.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
-spychat.BorderColor3 = Color3.fromRGB(55, 55, 55)
-spychat.BorderSizePixel = 5
-spychat.Position = UDim2.new(0.374996573, 0, 0.467707574, 0)
-spychat.Size = UDim2.new(0, 78, 0, 25)
-spychat.Font = Enum.Font.DenkOne
-spychat.Text = "SpyChat"
-spychat.TextColor3 = Color3.fromRGB(255, 255, 255)
-spychat.TextScaled = true
-spychat.TextSize = 14.000
-spychat.TextWrapped = true
-spychat.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://pastebin.com/raw/ZzG3iN8Q", true))()
-	end)
-
-infyield.Name = "infyield"
-infyield.Parent = menuframe
-infyield.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
-infyield.BorderColor3 = Color3.fromRGB(55, 55, 55)
-infyield.BorderSizePixel = 5
-infyield.Position = UDim2.new(0.0522189103, 0, 0.636721671, 0)
-infyield.Size = UDim2.new(0, 78, 0, 25)
-infyield.Font = Enum.Font.DenkOne
-infyield.Text = "Infinite Yield"
-infyield.TextColor3 = Color3.fromRGB(255, 255, 255)
-infyield.TextScaled = true
-infyield.TextSize = 14.000
-infyield.TextWrapped = true
-infyield.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet(('https://pastebin.com/raw/MjBzRjmT'),true))()
-	end)
+iy.Name = "iy"
+iy.Parent = menuframe
+iy.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+iy.BorderColor3 = Color3.fromRGB(55, 55, 55)
+iy.BorderSizePixel = 5
+iy.Position = UDim2.new(0, 0, 0.5534271, 0)
+iy.Size = UDim2.new(0, 105, 0, 30)
+iy.Font = Enum.Font.DenkOne
+iy.Text = "Infinite Yield"
+iy.TextColor3 = Color3.fromRGB(255, 255, 255)
+iy.TextScaled = true
+iy.TextSize = 60.000
+iy.TextWrapped = true
+iy.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source", true))()
+end)
 
 f3r.Name = "f3r"
 f3r.Parent = menuframe
-f3r.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+f3r.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
 f3r.BorderColor3 = Color3.fromRGB(55, 55, 55)
 f3r.BorderSizePixel = 5
-f3r.Position = UDim2.new(0.0568486452, 0, 0.728535354, 0)
-f3r.Size = UDim2.new(0, 78, 0, 25)
+f3r.Position = UDim2.new(0, 0, 0.738358617, 0)
+f3r.Size = UDim2.new(0, 105, 0, 30)
 f3r.Font = Enum.Font.DenkOne
 f3r.Text = "Respawn [ F3 ]"
 f3r.TextColor3 = Color3.fromRGB(255, 255, 255)
 f3r.TextScaled = true
-f3r.TextSize = 14.000
+f3r.TextSize = 60.000
 f3r.TextWrapped = true
 f3r.MouseButton1Down:connect(function()
 	loadstring(game:HttpGet("https://pastebin.com/raw/Nx914pRe", true))()
-	end)
-
-removerank.Name = "removerank"
-removerank.Parent = menuframe
-removerank.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
-removerank.BorderColor3 = Color3.fromRGB(55, 55, 55)
-removerank.BorderSizePixel = 5
-removerank.Position = UDim2.new(0.704373479, 0, 0.381175637, 0)
-removerank.Size = UDim2.new(0, 78, 0, 25)
-removerank.Font = Enum.Font.DenkOne
-removerank.Text = "Remove Rank"
-removerank.TextColor3 = Color3.fromRGB(255, 255, 255)
-removerank.TextScaled = true
-removerank.TextSize = 14.000
-removerank.TextWrapped = true
-removerank.MouseButton1Down:connect(function()
-	game.Players.LocalPlayer.Character.Head.RankBbGui: Destroy()
 end)
 
-rankspam.Name = "rankspam"
-rankspam.Parent = menuframe
-rankspam.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
-rankspam.BorderColor3 = Color3.fromRGB(55, 55, 55)
-rankspam.BorderSizePixel = 5
-rankspam.Position = UDim2.new(0.0575128794, 0, 0.381175637, 0)
-rankspam.Size = UDim2.new(0, 78, 0, 25)
-rankspam.Font = Enum.Font.DenkOne
-rankspam.Text = "Spam Rank"
-rankspam.TextColor3 = Color3.fromRGB(255, 255, 255)
-rankspam.TextScaled = true
-rankspam.TextSize = 14.000
-rankspam.TextWrapped = true
-rankspam.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://pastebin.com/raw/ukrGyXx9", true))()
-	end)
+darkmenu.Name = "darkmenu"
+darkmenu.Parent = menuframe
+darkmenu.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+darkmenu.BorderColor3 = Color3.fromRGB(55, 55, 55)
+darkmenu.BorderSizePixel = 5
+darkmenu.Position = UDim2.new(0, 0, 0.676714778, 0)
+darkmenu.Size = UDim2.new(0, 105, 0, 30)
+darkmenu.Font = Enum.Font.DenkOne
+darkmenu.Text = "Dark Menu"
+darkmenu.TextColor3 = Color3.fromRGB(255, 255, 255)
+darkmenu.TextScaled = true
+darkmenu.TextSize = 60.000
+darkmenu.TextWrapped = true
+darkmenu.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/2L34s2ZG", true))()
+end)
+
+multichecker.Name = "multichecker"
+multichecker.Parent = menuframe
+multichecker.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+multichecker.BorderColor3 = Color3.fromRGB(55, 55, 55)
+multichecker.BorderSizePixel = 5
+multichecker.Position = UDim2.new(0, 0, 0.491783261, 0)
+multichecker.Size = UDim2.new(0, 105, 0, 30)
+multichecker.Font = Enum.Font.DenkOne
+multichecker.Text = "Multi Checker"
+multichecker.TextColor3 = Color3.fromRGB(255, 255, 255)
+multichecker.TextScaled = true
+multichecker.TextSize = 60.000
+multichecker.TextWrapped = true
+multichecker.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/FastyGame31/multichecker/main/fasty%20script", true))()
+end)
 
 reapall.Name = "reapall"
 reapall.Parent = menuframe
-reapall.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+reapall.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
 reapall.BorderColor3 = Color3.fromRGB(55, 55, 55)
 reapall.BorderSizePixel = 5
-reapall.Position = UDim2.new(0.704373717, 0, 0.635225534, 0)
-reapall.Size = UDim2.new(0, 78, 0, 25)
+reapall.Position = UDim2.new(0, 0, 0.615070939, 0)
+reapall.Size = UDim2.new(0, 105, 0, 30)
 reapall.Font = Enum.Font.DenkOne
-reapall.Text = "?reap all"
+reapall.Text = "Reap All"
 reapall.TextColor3 = Color3.fromRGB(255, 255, 255)
 reapall.TextScaled = true
-reapall.TextSize = 14.000
+reapall.TextSize = 60.000
 reapall.TextWrapped = true
 reapall.MouseButton1Down:connect(function()
 	loadstring(game:HttpGet("https://pastebin.com/raw/9ANwnZAW", true))()
 end)
 
-fuhub.Name = "fuhub"
-fuhub.Parent = menuframe
-fuhub.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
-fuhub.BorderColor3 = Color3.fromRGB(55, 55, 55)
-fuhub.BorderSizePixel = 5
-fuhub.Position = UDim2.new(0.375661075, 0, 0.293940634, 0)
-fuhub.Size = UDim2.new(0, 78, 0, 25)
-fuhub.Font = Enum.Font.DenkOne
-fuhub.Text = "Fuck You Hub"
-fuhub.TextColor3 = Color3.fromRGB(255, 255, 255)
-fuhub.TextScaled = true
-fuhub.TextSize = 14.000
-fuhub.TextWrapped = true
-fuhub.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/ImNotYukiiSoDontAsk/YH6/main/fuh"))()
+aurafucker.Name = "aurafucker"
+aurafucker.Parent = menuframe
+aurafucker.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+aurafucker.BorderColor3 = Color3.fromRGB(55, 55, 55)
+aurafucker.BorderSizePixel = 5
+aurafucker.Position = UDim2.new(0.409009069, 0, 0.306851774, 0)
+aurafucker.Size = UDim2.new(0, 100, 0, 30)
+aurafucker.Font = Enum.Font.DenkOne
+aurafucker.Text = "Aura Fucker"
+aurafucker.TextColor3 = Color3.fromRGB(255, 255, 255)
+aurafucker.TextScaled = true
+aurafucker.TextSize = 60.000
+aurafucker.TextWrapped = true
+aurafucker.MouseButton1Down:connect(function()
+    auramenu.Visible = true
 end)
 
-kill.Name = "kill"
-kill.Parent = menuframe
-kill.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
-kill.BorderColor3 = Color3.fromRGB(55, 55, 55)
-kill.BorderSizePixel = 5
-kill.Position = UDim2.new(0.704397202, 0, 0.293676227, 0)
-kill.Size = UDim2.new(0, 78, 0, 25)
-kill.Font = Enum.Font.DenkOne
-kill.Text = "Cbring Menu"
-kill.TextColor3 = Color3.fromRGB(255, 255, 255)
-kill.TextScaled = true
-kill.TextSize = 14.000
-kill.TextWrapped = true
-kill.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://pastebin.com/raw/A9LrrDJh", true))()
-end)
-
-multi.Name = "multi"
-multi.Parent = menuframe
-multi.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
-multi.BorderColor3 = Color3.fromRGB(55, 55, 55)
-multi.BorderSizePixel = 5
-multi.Position = UDim2.new(0.052218914, 0, 0.552479029, 0)
-multi.Size = UDim2.new(0, 78, 0, 25)
-multi.Font = Enum.Font.DenkOne
-multi.Text = "Multi Checker"
-multi.TextColor3 = Color3.fromRGB(255, 255, 255)
-multi.TextScaled = true
-multi.TextSize = 14.000
-multi.TextWrapped = true
-multi.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/FastyGame31/multichecker/main/fasty%20script"))()
+chatantilog.Name = "chatantilog"
+chatantilog.Parent = menuframe
+chatantilog.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+chatantilog.BorderColor3 = Color3.fromRGB(55, 55, 55)
+chatantilog.BorderSizePixel = 5
+chatantilog.Position = UDim2.new(0.819819868, 0, 0.738358617, 0)
+chatantilog.Size = UDim2.new(0, 100, 0, 30)
+chatantilog.Font = Enum.Font.DenkOne
+chatantilog.Text = "No Chat Bans"
+chatantilog.TextColor3 = Color3.fromRGB(255, 255, 255)
+chatantilog.TextScaled = true
+chatantilog.TextSize = 60.000
+chatantilog.TextWrapped = true
+chatantilog.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/2BjA3Nwt", true))()
 	end)
+chatantilog.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/jtinedfs", true))()
+end)
 
 split.Name = "split"
 split.Parent = menuframe
-split.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+split.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
 split.BorderColor3 = Color3.fromRGB(55, 55, 55)
 split.BorderSizePixel = 5
-split.Position = UDim2.new(0.374996543, 0, 0.729064226, 0)
-split.Size = UDim2.new(0, 78, 0, 25)
+split.Position = UDim2.new(0.819819868, 0, 0.5534271, 0)
+split.Size = UDim2.new(0, 100, 0, 30)
 split.Font = Enum.Font.DenkOne
 split.Text = "Split"
 split.TextColor3 = Color3.fromRGB(255, 255, 255)
 split.TextScaled = true
-split.TextSize = 14.000
+split.TextSize = 60.000
 split.TextWrapped = true
 split.MouseButton1Down:connect(function()
 	game.Players.LocalPlayer.Character.UpperTorso.Waist:remove()
 end)
 
-fhb.Name = "fhb"
-fhb.Parent = menuframe
-fhb.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
-fhb.BorderColor3 = Color3.fromRGB(55, 55, 55)
-fhb.BorderSizePixel = 5
-fhb.Position = UDim2.new(0.702070236, 0, 0.553007841, 0)
-fhb.Size = UDim2.new(0, 78, 0, 25)
-fhb.Font = Enum.Font.DenkOne
-fhb.Text = "Fix Hit Bug"
-fhb.TextColor3 = Color3.fromRGB(255, 255, 255)
-fhb.TextScaled = true
-fhb.TextSize = 14.000
-fhb.TextWrapped = true
-fhb.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://pastebin.com/raw/JgxmsEV7", true))()
+removename.Name = "removename"
+removename.Parent = menuframe
+removename.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+removename.BorderColor3 = Color3.fromRGB(55, 55, 55)
+removename.BorderSizePixel = 5
+removename.Position = UDim2.new(0.818018079, 0, 0.615070939, 0)
+removename.Size = UDim2.new(0, 100, 0, 30)
+removename.Font = Enum.Font.DenkOne
+removename.Text = "Remove Name"
+removename.TextColor3 = Color3.fromRGB(255, 255, 255)
+removename.TextScaled = true
+removename.TextSize = 60.000
+removename.TextWrapped = true
+removename.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/W2kZWHzD", true))()
 end)
 
-dm.Name = "dm"
-dm.Parent = menuframe
-dm.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
-dm.BorderColor3 = Color3.fromRGB(55, 55, 55)
-dm.BorderSizePixel = 5
-dm.Position = UDim2.new(0.0545456409, 0, 0.817092359, 0)
-dm.Size = UDim2.new(0, 78, 0, 25)
-dm.Font = Enum.Font.DenkOne
-dm.Text = "Dark Menu"
-dm.TextColor3 = Color3.fromRGB(255, 255, 255)
-dm.TextScaled = true
-dm.TextSize = 14.000
-dm.TextWrapped = true
-dm.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://pastebin.com/raw/2L34s2ZG", true))()
+spy.Name = "spy"
+spy.Parent = menuframe
+spy.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+spy.BorderColor3 = Color3.fromRGB(55, 55, 55)
+spy.BorderSizePixel = 5
+spy.Position = UDim2.new(0.409009069, 0, 0.615070939, 0)
+spy.Size = UDim2.new(0, 100, 0, 30)
+spy.Font = Enum.Font.DenkOne
+spy.Text = "Spy Chat"
+spy.TextColor3 = Color3.fromRGB(255, 255, 255)
+spy.TextScaled = true
+spy.TextSize = 60.000
+spy.TextWrapped = true
+spy.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/ZzG3iN8Q", true))()
+end)
+
+rtx.Name = "rtx"
+rtx.Parent = menuframe
+rtx.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+rtx.BorderColor3 = Color3.fromRGB(55, 55, 55)
+rtx.BorderSizePixel = 5
+rtx.Position = UDim2.new(0.818018079, 0, 0.676714778, 0)
+rtx.Size = UDim2.new(0, 100, 0, 30)
+rtx.Font = Enum.Font.DenkOne
+rtx.Text = "RTX"
+rtx.TextColor3 = Color3.fromRGB(255, 255, 255)
+rtx.TextScaled = true
+rtx.TextSize = 60.000
+rtx.TextWrapped = true
+rtx.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/ImNotYukiiSoDontAsk/YH6/main/graphics", true))()
 end)
 
 rj.Name = "rj"
 rj.Parent = menuframe
-rj.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+rj.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
 rj.BorderColor3 = Color3.fromRGB(55, 55, 55)
 rj.BorderSizePixel = 5
-rj.Position = UDim2.new(0.372029305, 0, 0.815596223, 0)
-rj.Size = UDim2.new(0, 78, 0, 25)
+rj.Position = UDim2.new(0.409009069, 0, 0.738358617, 0)
+rj.Size = UDim2.new(0, 100, 0, 30)
 rj.Font = Enum.Font.DenkOne
 rj.Text = "Rejoin Game"
 rj.TextColor3 = Color3.fromRGB(255, 255, 255)
 rj.TextScaled = true
-rj.TextSize = 14.000
+rj.TextSize = 60.000
 rj.TextWrapped = true
 rj.MouseButton1Down:connect(function()
 	loadstring(game:HttpGet("https://pastebin.com/raw/wnyqYWFh", true))()
-	end)
+end)
 
 rep.Name = "rep"
 rep.Parent = menuframe
-rep.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+rep.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
 rep.BorderColor3 = Color3.fromRGB(55, 55, 55)
 rep.BorderSizePixel = 5
-rep.Position = UDim2.new(0.705038071, 0, 0.72756809, 0)
-rep.Size = UDim2.new(0, 78, 0, 25)
+rep.Position = UDim2.new(0.409009069, 0, 0.676714778, 0)
+rep.Size = UDim2.new(0, 100, 0, 30)
 rep.Font = Enum.Font.DenkOne
 rep.Text = "Rep Script"
 rep.TextColor3 = Color3.fromRGB(255, 255, 255)
 rep.TextScaled = true
-rep.TextSize = 14.000
+rep.TextSize = 60.000
 rep.TextWrapped = true
 rep.MouseButton1Down:connect(function()
-	game.Players.LocalPlayer.Character.Head.NameBbGui.NameTxt: Destroy()
+    game.Players.LocalPlayer.Character.Head.NameBbGui.NameTxt: Destroy()
 end)
 
-trainpp.Name = "trainpp"
-trainpp.Parent = menuframe
-trainpp.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
-trainpp.BorderColor3 = Color3.fromRGB(55, 55, 55)
-trainpp.BorderSizePixel = 5
-trainpp.Position = UDim2.new(0.70501411, 0, 0.20670566, 0)
-trainpp.Size = UDim2.new(0, 78, 0, 25)
-trainpp.Font = Enum.Font.DenkOne
-trainpp.Text = "Fast AFK Psychic"
-trainpp.TextColor3 = Color3.fromRGB(255, 255, 255)
-trainpp.TextScaled = true
-trainpp.TextSize = 14.000
-trainpp.TextWrapped = true
-trainpp.MouseButton1Down:connect(function()
+removerank.Name = "removerank"
+removerank.Parent = menuframe
+removerank.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+removerank.BorderColor3 = Color3.fromRGB(55, 55, 55)
+removerank.BorderSizePixel = 5
+removerank.Position = UDim2.new(0.819819868, 0, 0.368495584, 0)
+removerank.Size = UDim2.new(0, 100, 0, 30)
+removerank.Font = Enum.Font.DenkOne
+removerank.Text = "Remove Rank"
+removerank.TextColor3 = Color3.fromRGB(255, 255, 255)
+removerank.TextScaled = true
+removerank.TextSize = 60.000
+removerank.TextWrapped = true
+removerank.MouseButton1Down:connect(function()
+    game.Players.LocalPlayer.Character.Head.RankBbGui: Destroy()
+end)
+
+fafkp.Name = "fafkp"
+fafkp.Parent = menuframe
+fafkp.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+fafkp.BorderColor3 = Color3.fromRGB(55, 55, 55)
+fafkp.BorderSizePixel = 5
+fafkp.Position = UDim2.new(0.819819868, 0, 0.245207936, 0)
+fafkp.Size = UDim2.new(0, 100, 0, 30)
+fafkp.Font = Enum.Font.DenkOne
+fafkp.Text = "Fast Afk Psychic"
+fafkp.TextColor3 = Color3.fromRGB(255, 255, 255)
+fafkp.TextScaled = true
+fafkp.TextSize = 60.000
+fafkp.TextWrapped = true
+fafkp.MouseButton1Down:connect(function()
 	loadstring(game:HttpGet("https://pastebin.com/raw/euPhseek", true))()
 end)
 
-trainfs.Name = "trainfs"
-trainfs.Parent = menuframe
-trainfs.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
-trainfs.BorderColor3 = Color3.fromRGB(55, 55, 55)
-trainfs.BorderSizePixel = 5
-trainfs.Position = UDim2.new(0.0587705374, 0, 0.206705689, 0)
-trainfs.Size = UDim2.new(0, 78, 0, 25)
-trainfs.Font = Enum.Font.DenkOne
-trainfs.Text = "Fast AFK Fist"
-trainfs.TextColor3 = Color3.fromRGB(255, 255, 255)
-trainfs.TextScaled = true
-trainfs.TextSize = 14.000
-trainfs.TextWrapped = true
-trainfs.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://pastebin.com/raw/Dg4qsr0F", true))()
-	end)
-
-nameremove.Name = "nameremove"
-nameremove.Parent = menuframe
-nameremove.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
-nameremove.BorderColor3 = Color3.fromRGB(55, 55, 55)
-nameremove.BorderSizePixel = 5
-nameremove.Position = UDim2.new(0.375020504, 0, 0.379679441, 0)
-nameremove.Size = UDim2.new(0, 78, 0, 25)
-nameremove.Font = Enum.Font.DenkOne
-nameremove.Text = "Remove Name"
-nameremove.TextColor3 = Color3.fromRGB(255, 255, 255)
-nameremove.TextScaled = true
-nameremove.TextSize = 14.000
-nameremove.TextWrapped = true
-nameremove.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://pastebin.com/raw/W2kZWHzD", true))()
+cbring.Name = "cbring"
+cbring.Parent = menuframe
+cbring.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+cbring.BorderColor3 = Color3.fromRGB(55, 55, 55)
+cbring.BorderSizePixel = 5
+cbring.Position = UDim2.new(0.819819868, 0, 0.306851774, 0)
+cbring.Size = UDim2.new(0, 100, 0, 30)
+cbring.Font = Enum.Font.DenkOne
+cbring.Text = "Cbring Menu"
+cbring.TextColor3 = Color3.fromRGB(255, 255, 255)
+cbring.TextScaled = true
+cbring.TextSize = 60.000
+cbring.TextWrapped = true
+cbring.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/A9LrrDJh", true))()
 end)
 
-YukiiHubV6.Name = "Yukii Hub V6"
-YukiiHubV6.Parent = menuframe
-YukiiHubV6.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
-YukiiHubV6.BorderColor3 = Color3.fromRGB(55, 55, 55)
-YukiiHubV6.BorderSizePixel = 5
-YukiiHubV6.Size = UDim2.new(0, 336, 0, 55)
-YukiiHubV6.Font = Enum.Font.IndieFlower
-YukiiHubV6.Text = "-- Yukii Hub V6 --"
-YukiiHubV6.TextColor3 = Color3.fromRGB(255, 255, 255)
-YukiiHubV6.TextScaled = true
-YukiiHubV6.TextSize = 50.000
-YukiiHubV6.TextWrapped = true
-
-x.Name = "x"
-x.Parent = menuframe
-x.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-x.BorderColor3 = Color3.fromRGB(55, 55, 55)
-x.BorderSizePixel = 5
-x.Position = UDim2.new(0.933524191, 0, 0, 0)
-x.Size = UDim2.new(0, 20, 0, 20)
-x.Font = Enum.Font.IndieFlower
-x.Text = "X"
-x.TextColor3 = Color3.fromRGB(0, 0, 0)
-x.TextScaled = true
-x.TextSize = 14.000
-x.TextWrapped = true
-x.MouseButton1Down:connect(function()
-	menuframe.Visible = false
-	openbutton.Visible = true
+fixbug.Name = "fixbug"
+fixbug.Parent = menuframe
+fixbug.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+fixbug.BorderColor3 = Color3.fromRGB(55, 55, 55)
+fixbug.BorderSizePixel = 5
+fixbug.Position = UDim2.new(0.819819868, 0, 0.491783261, 0)
+fixbug.Size = UDim2.new(0, 100, 0, 30)
+fixbug.Font = Enum.Font.DenkOne
+fixbug.Text = "Fix Hit Bug"
+fixbug.TextColor3 = Color3.fromRGB(255, 255, 255)
+fixbug.TextScaled = true
+fixbug.TextSize = 60.000
+fixbug.TextWrapped = true
+fixbug.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/JgxmsEV7", true))()
 end)
 
-openbutton.Name = "openbutton"
-openbutton.Parent = ScreenGui
-openbutton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-openbutton.Position = UDim2.new(0.506477475, 0, 0.958283663, 0)
-openbutton.Size = UDim2.new(0, 100, 0, 35)
-openbutton.Visible = false
+wow.Name = "wow"
+wow.Parent = menuframe
+wow.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+wow.BorderColor3 = Color3.fromRGB(55, 55, 55)
+wow.BorderSizePixel = 5
+wow.Position = UDim2.new(0.819819868, 0, 0.430139422, 0)
+wow.Size = UDim2.new(0, 100, 0, 30)
+wow.Font = Enum.Font.DenkOne
+wow.Text = "Walk On Walls"
+wow.TextColor3 = Color3.fromRGB(255, 255, 255)
+wow.TextScaled = true
+wow.TextSize = 60.000
+wow.TextWrapped = true
+wow.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ImNotYukiiSoDontAsk/YH6/main/wow", true))
+end)
 
-open.Name = "open"
-open.Parent = openbutton
-open.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
-open.BorderColor3 = Color3.fromRGB(55, 55, 55)
-open.BorderSizePixel = 5
-open.Position = UDim2.new(-0.00741517544, 0, -0.00497192144, 0)
-open.Size = UDim2.new(0, 100, 0, 35)
-open.Font = Enum.Font.IndieFlower
-open.Text = "Open"
-open.TextColor3 = Color3.fromRGB(255, 255, 255)
-open.TextScaled = true
-open.TextSize = 14.000
-open.TextWrapped = true
-open.MouseButton1Down:connect(function()
+yuv610.Name = "yuv610"
+yuv610.Parent = menuframe
+yuv610.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+yuv610.BorderColor3 = Color3.fromRGB(55, 55, 55)
+yuv610.BorderSizePixel = 5
+yuv610.Position = UDim2.new(0.409009069, 0, 0.419865429, 0)
+yuv610.Size = UDim2.new(0, 100, 0, 78)
+yuv610.Font = Enum.Font.DenkOne
+yuv610.Text = "Yukii Hub V6 [ 1.0 ]"
+yuv610.TextColor3 = Color3.fromRGB(255, 255, 255)
+yuv610.TextScaled = true
+yuv610.TextSize = 60.000
+yuv610.TextWrapped = true
+yuv610.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/ImNotYukiiSoDontAsk/YH6/main/yhv61.0", true))()
+end)
+
+X2.Name = "X2"
+X2.Parent = menuframe
+X2.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+X2.BorderColor3 = Color3.fromRGB(55, 55, 55)
+X2.BorderSizePixel = 5
+X2.Position = UDim2.new(0.79298836, 0, 0, 0)
+X2.Size = UDim2.new(0, 113, 0, 44)
+X2.Visible = false
+X2.Font = Enum.Font.Arcade
+X2.Text = "X"
+X2.TextColor3 = Color3.fromRGB(0, 0, 0)
+X2.TextScaled = true
+X2.TextSize = 14.000
+X2.TextWrapped = true
+X2.MouseButton1Down:connect(function()
+	aboutframe.Visible = false
+	X2.Visible = false
+	
+end)
+
+aboutframe.Name = "aboutframe"
+aboutframe.Parent = menuframe
+aboutframe.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+aboutframe.BorderColor3 = Color3.fromRGB(55, 55, 55)
+aboutframe.BorderSizePixel = 5
+aboutframe.Position = UDim2.new(0, 0, 0.184890702, 0)
+aboutframe.Size = UDim2.new(0, 554, 0, 476)
+aboutframe.Visible = false
+aboutframe.Draggable = false
+
+abouttext.Name = "abouttext"
+abouttext.Parent = aboutframe
+abouttext.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+abouttext.BorderColor3 = Color3.fromRGB(55, 55, 55)
+abouttext.BorderSizePixel = 5
+abouttext.Size = UDim2.new(0, 554, 0, 475)
+abouttext.Font = Enum.Font.IndieFlower
+abouttext.Text = "Special Thanks To :"
+abouttext.TextColor3 = Color3.fromRGB(255, 255, 255)
+abouttext.TextSize = 95.000
+abouttext.TextYAlignment = Enum.TextYAlignment.Top
+
+iQuinalx.Name = "iQuin / alx"
+iQuinalx.Parent = aboutframe
+iQuinalx.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+iQuinalx.BorderSizePixel = 0
+iQuinalx.Position = UDim2.new(0, 0, 0.258403361, 0)
+iQuinalx.Size = UDim2.new(0, 554, 0, 352)
+iQuinalx.Font = Enum.Font.DenkOne
+iQuinalx.Text = "iQuin#0321 and alx#6729"
+iQuinalx.TextColor3 = Color3.fromRGB(255, 255, 255)
+iQuinalx.TextSize = 50.000
+iQuinalx.TextWrapped = true
+iQuinalx.TextYAlignment = Enum.TextYAlignment.Top
+
+server.Name = "server"
+server.Parent = aboutframe
+server.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+server.BorderSizePixel = 0
+server.Position = UDim2.new(0, 0, 0.43954879, 0)
+server.Size = UDim2.new(0, 554, 0, 265)
+server.Font = Enum.Font.DenkOne
+server.Text = "I Now Have A Server !! Join In The Fun At https://www.discord.gg/RSzzwncgJy/"
+server.TextColor3 = Color3.fromRGB(155, 155, 155)
+server.TextSize = 36.000
+server.TextWrapped = true
+
+auramenu.Name = "auramenu"
+auramenu.Parent = menuframe
+auramenu.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+auramenu.BorderColor3 = Color3.fromRGB(55, 55, 55)
+auramenu.BorderSizePixel = 5
+auramenu.Position = UDim2.new(1.01094759, 0, 0, 0)
+auramenu.Size = UDim2.new(0, 333, 0, 582)
+auramenu.Visible = false
+
+Name.Name = "Name"
+Name.Parent = auramenu
+Name.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+Name.BorderColor3 = Color3.fromRGB(55, 55, 55)
+Name.BorderSizePixel = 5
+Name.Position = UDim2.new(0, 0, 0.00171526591, 0)
+Name.Size = UDim2.new(0, 333, 0, 44)
+Name.Font = Enum.Font.IndieFlower
+Name.Text = "Aura Fucker"
+Name.TextColor3 = Color3.fromRGB(255, 255, 255)
+Name.TextScaled = true
+Name.TextSize = 14.000
+Name.TextWrapped = true
+
+closeaura.Name = "closeaura"
+closeaura.Parent = auramenu
+closeaura.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+closeaura.BorderColor3 = Color3.fromRGB(55, 55, 55)
+closeaura.BorderSizePixel = 5
+closeaura.Position = UDim2.new(0, 0, 0.914236724, 0)
+closeaura.Size = UDim2.new(0, 333, 0, 50)
+closeaura.Font = Enum.Font.IndieFlower
+closeaura.Text = "Close Aura Fucker"
+closeaura.TextColor3 = Color3.fromRGB(255, 255, 255)
+closeaura.TextScaled = true
+closeaura.TextSize = 14.000
+closeaura.TextWrapped = true
+closeaura.MouseButton1Down:connect(function()
+    auramenu.Visible = false
+end)
+
+TextLabel.Parent = auramenu
+TextLabel.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(-0.00226569176, 0, 0.0868468285, 0)
+TextLabel.Size = UDim2.new(0, 333, 0, 50)
+TextLabel.Font = Enum.Font.IndieFlower
+TextLabel.Text = "Fist / Body / Lightning"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 46.000
+TextLabel.TextWrapped = true
+
+fist1.Name = "fist1"
+fist1.Parent = auramenu
+fist1.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+fist1.BorderColor3 = Color3.fromRGB(55, 55, 55)
+fist1.BorderSizePixel = 5
+fist1.Position = UDim2.new(0, 0, 0.184194878, 0)
+fist1.Size = UDim2.new(0, 76, 0, 49)
+fist1.Font = Enum.Font.DenkOne
+fist1.Text = "Background Colour"
+fist1.TextColor3 = Color3.fromRGB(255, 255, 255)
+fist1.TextScaled = true
+fist1.TextSize = 14.000
+fist1.TextWrapped = true
+fist1.MouseButton1Down:connect(function()
+	character.LeftHand.Aura1:Destroy()
+	character.RightHand.Aura1:Destroy()
+end)
+
+fist2.Name = "fist2"
+fist2.Parent = auramenu
+fist2.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+fist2.BorderColor3 = Color3.fromRGB(55, 55, 55)
+fist2.BorderSizePixel = 5
+fist2.Position = UDim2.new(0, 0, 0.272727281, 0)
+fist2.Size = UDim2.new(0, 76, 0, 50)
+fist2.Font = Enum.Font.DenkOne
+fist2.Text = "Main Aura"
+fist2.TextColor3 = Color3.fromRGB(255, 255, 255)
+fist2.TextScaled = true
+fist2.TextSize = 14.000
+fist2.TextWrapped = true
+fist2.MouseButton1Down:connect(function()
+	character.LeftHand.Aura2:Destroy()
+	character.RightHand.Aura2:Destroy()
+end)
+
+fist3.Name = "fist3"
+fist3.Parent = auramenu
+fist3.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+fist3.BorderColor3 = Color3.fromRGB(55, 55, 55)
+fist3.BorderSizePixel = 5
+fist3.Position = UDim2.new(0, 0, 0.358490586, 0)
+fist3.Size = UDim2.new(0, 76, 0, 50)
+fist3.Font = Enum.Font.DenkOne
+fist3.Text = "Small Sparkles"
+fist3.TextColor3 = Color3.fromRGB(255, 255, 255)
+fist3.TextScaled = true
+fist3.TextSize = 14.000
+fist3.TextWrapped = true
+fist3.MouseButton1Down:connect(function()
+	character.LeftHand.Aura3:Destroy()
+	character.RightHand.Aura3:Destroy()
+end)
+
+body1.Name = "body1"
+body1.Parent = auramenu
+body1.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+body1.BorderColor3 = Color3.fromRGB(55, 55, 55)
+body1.BorderSizePixel = 5
+body1.Position = UDim2.new(0.381381392, 0, 0.184194878, 0)
+body1.Size = UDim2.new(0, 76, 0, 49)
+body1.Font = Enum.Font.DenkOne
+body1.Text = "Main"
+body1.TextColor3 = Color3.fromRGB(255, 255, 255)
+body1.TextScaled = true
+body1.TextSize = 14.000
+body1.TextWrapped = true
+body1.MouseButton1Down:connect(function()
+	character.UpperTorso.Aura1:Destroy()
+end)
+
+body2.Name = "body2"
+body2.Parent = auramenu
+body2.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+body2.BorderColor3 = Color3.fromRGB(55, 55, 55)
+body2.BorderSizePixel = 5
+body2.Position = UDim2.new(0.381381392, 0, 0.268387288, 0)
+body2.Size = UDim2.new(0, 76, 0, 49)
+body2.Font = Enum.Font.DenkOne
+body2.Text = "Bottom Left"
+body2.TextColor3 = Color3.fromRGB(255, 255, 255)
+body2.TextScaled = true
+body2.TextSize = 14.000
+body2.TextWrapped = true
+body2.MouseButton1Down:connect(function()
+	character.LeftUpperLeg.Aura1:Destroy()
+end)
+
+body3.Name = "body3"
+body3.Parent = auramenu
+body3.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+body3.BorderColor3 = Color3.fromRGB(55, 55, 55)
+body3.BorderSizePixel = 5
+body3.Position = UDim2.new(0.381381363, 0, 0.359452605, 0)
+body3.Size = UDim2.new(0, 76, 0, 49)
+body3.Font = Enum.Font.DenkOne
+body3.Text = "Bottom Right"
+body3.TextColor3 = Color3.fromRGB(255, 255, 255)
+body3.TextScaled = true
+body3.TextSize = 14.000
+body3.TextWrapped = true
+body3.MouseButton1Down:connect(function()
+	character.RightUpperLeg.Aura1:Destroy()
+end)
+
+lightning.Name = "lightning"
+lightning.Parent = auramenu
+lightning.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+lightning.BorderColor3 = Color3.fromRGB(55, 55, 55)
+lightning.BorderSizePixel = 5
+lightning.Position = UDim2.new(0.768768787, 0, 0.184194893, 0)
+lightning.Size = UDim2.new(0, 76, 0, 49)
+lightning.Font = Enum.Font.DenkOne
+lightning.Text = "Lightning"
+lightning.TextColor3 = Color3.fromRGB(255, 255, 255)
+lightning.TextScaled = true
+lightning.TextSize = 14.000
+lightning.TextWrapped = true
+lightning.MouseButton1Down:connect(function()
+    character.UpperTorso.Aura2:Destroy()
+end)
+
+allbody.Name = "allbody"
+allbody.Parent = auramenu
+allbody.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+allbody.BorderColor3 = Color3.fromRGB(55, 55, 55)
+allbody.BorderSizePixel = 5
+allbody.Position = UDim2.new(0.381381392, 0, 0.554366827, 0)
+allbody.Size = UDim2.new(0, 76, 0, 50)
+allbody.Font = Enum.Font.DenkOne
+allbody.Text = "Remove Body Aura"
+allbody.TextColor3 = Color3.fromRGB(255, 255, 255)
+allbody.TextScaled = true
+allbody.TextSize = 14.000
+allbody.TextWrapped = true
+allbody.MouseButton1Down:connect(function()
+	character.LeftUpperLeg.Aura1:Destroy()
+	character.RightUpperLeg.Aura1:Destroy()
+	character.UpperTorso.Aura1:Destroy()
+end)
+
+allfist.Name = "allfist"
+allfist.Parent = auramenu
+allfist.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+allfist.BorderColor3 = Color3.fromRGB(55, 55, 55)
+allfist.BorderSizePixel = 5
+allfist.Position = UDim2.new(0, 0, 0.554366827, 0)
+allfist.Size = UDim2.new(0, 76, 0, 50)
+allfist.Font = Enum.Font.DenkOne
+allfist.Text = "Remove Fist Aura"
+allfist.TextColor3 = Color3.fromRGB(255, 255, 255)
+allfist.TextScaled = true
+allfist.TextSize = 14.000
+allfist.TextWrapped = true
+allfist.MouseButton1Down:connect(function()
+	character.LeftHand.Aura1:Destroy()
+	character.RightHand.Aura1:Destroy()
+	character.LeftHand.Aura2:Destroy()
+	character.RightHand.Aura2:Destroy()
+	character.LeftHand.Aura3:Destroy()
+	character.RightHand.Aura3:Destroy()
+end)
+
+openbuttonframe.Name = "openbuttonframe"
+openbuttonframe.Parent = ScreenGui
+openbuttonframe.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+openbuttonframe.BorderColor3 = Color3.fromRGB(55, 55, 55)
+openbuttonframe.Position = UDim2.new(-0.000616903126, 0, 0.303933263, 0)
+openbuttonframe.Size = UDim2.new(0, 100, 0, 45)
+openbuttonframe.Visible = false
+openbuttonframe.Draggable = false
+
+TextButton.Parent = openbuttonframe
+TextButton.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+TextButton.BorderColor3 = Color3.fromRGB(55, 55, 55)
+TextButton.BorderSizePixel = 5
+TextButton.Position = UDim2.new(0.00999999978, 0, 0, 0)
+TextButton.Size = UDim2.new(0, 99, 0, 44)
+TextButton.Font = Enum.Font.IndieFlower
+TextButton.Text = "Open"
+TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.TextScaled = true
+TextButton.TextSize = 14.000
+TextButton.TextWrapped = true
+TextButton.MouseButton1Down:connect(function()
 	menuframe.Visible = true
-	openbutton.Visible = false
+	openbuttonframe.Visible = false
 end)
