@@ -1,3 +1,5 @@
+--Made By Yukii --
+
 local function authenticated()
     local users = game:HttpGet("https://raw.githubusercontent.com/ImNotYukiiSoDontAsk/YH6/main/Whitelist", true):split("\n")
     for _, user in pairs(users) do
@@ -10,8 +12,6 @@ end
 if not authenticated() then
     return game.Players.LocalPlayer:Kick("You Are Not Whitelisted !")
 end
-
--- Made By Yukii --
 
 local ScreenGui = Instance.new("ScreenGui")
 local menuframe = Instance.new("Frame")
@@ -68,7 +68,6 @@ local allbody = Instance.new("TextButton")
 local allfist = Instance.new("TextButton")
 local openbuttonframe = Instance.new("Frame")
 local TextButton = Instance.new("TextButton")
-local character = game.Players.LocalPlayer.Character
 
 
 ScreenGui.Parent = game.CoreGui
@@ -777,8 +776,8 @@ fist1.TextScaled = true
 fist1.TextSize = 14.000
 fist1.TextWrapped = true
 fist1.MouseButton1Down:connect(function()
-	character.LeftHand.Aura1:Destroy()
-	character.RightHand.Aura1:Destroy()
+	local Part = Workspace.UnderstatedHell.LeftHand.Aura1:Destroy()
+	local Part = Workspace.UnderstatedHell.RightHand.Aura1:Destroy()
 end)
 
 fist2.Name = "fist2"
@@ -795,8 +794,8 @@ fist2.TextScaled = true
 fist2.TextSize = 14.000
 fist2.TextWrapped = true
 fist2.MouseButton1Down:connect(function()
-	character.LeftHand.Aura2:Destroy()
-	character.RightHand.Aura2:Destroy()
+	local Part = Workspace.UnderstatedHell.LeftHand.Aura2:Destroy()
+	local Part = Workspace.UnderstatedHell.RightHand.Aura2:Destroy()
 end)
 
 fist3.Name = "fist3"
@@ -813,8 +812,8 @@ fist3.TextScaled = true
 fist3.TextSize = 14.000
 fist3.TextWrapped = true
 fist3.MouseButton1Down:connect(function()
-	character.LeftHand.Aura3:Destroy()
-	character.RightHand.Aura3:Destroy()
+	local Part = Workspace.UnderstatedHell.LeftHand.Aura3:Destroy()
+	local Part = Workspace.UnderstatedHell.RightHand.Aura3:Destroy()
 end)
 
 body1.Name = "body1"
@@ -831,7 +830,7 @@ body1.TextScaled = true
 body1.TextSize = 14.000
 body1.TextWrapped = true
 body1.MouseButton1Down:connect(function()
-	character.UpperTorso.Aura1:Destroy()
+	local Part = Workspace.UnderstatedHell.UpperTorso.Aura1:Destroy()
 end)
 
 body2.Name = "body2"
@@ -848,7 +847,7 @@ body2.TextScaled = true
 body2.TextSize = 14.000
 body2.TextWrapped = true
 body2.MouseButton1Down:connect(function()
-	character.LeftUpperLeg.Aura1:Destroy()
+	local Part = Workspace.UnderstatedHell.LeftUpperLeg.Aura1:Destroy()
 end)
 
 body3.Name = "body3"
@@ -865,7 +864,7 @@ body3.TextScaled = true
 body3.TextSize = 14.000
 body3.TextWrapped = true
 body3.MouseButton1Down:connect(function()
-	character.RightUpperLeg.Aura1:Destroy()
+	local Part = Workspace.UnderstatedHell.RightUpperLeg.Aura1:Destroy()
 end)
 
 lightning.Name = "lightning"
@@ -882,7 +881,7 @@ lightning.TextScaled = true
 lightning.TextSize = 14.000
 lightning.TextWrapped = true
 lightning.MouseButton1Down:connect(function()
-    character.UpperTorso.Aura2:Destroy()
+    local Part = Workspace.UnderstatedHell.UpperTorso.Aura2:Destroy()
 end)
 
 allbody.Name = "allbody"
@@ -899,9 +898,9 @@ allbody.TextScaled = true
 allbody.TextSize = 14.000
 allbody.TextWrapped = true
 allbody.MouseButton1Down:connect(function()
-	character.LeftUpperLeg.Aura1:Destroy()
-	character.RightUpperLeg.Aura1:Destroy()
-	character.UpperTorso.Aura1:Destroy()
+	local Part = Workspace.UnderstatedHell.LeftUpperLeg.Aura1:Destroy()
+	local Part = Workspace.UnderstatedHell.RightUpperLeg.Aura1:Destroy()
+	local Part = Workspace.UnderstatedHell.UpperTorso.Aura1:Destroy()
 end)
 
 allfist.Name = "allfist"
@@ -918,12 +917,12 @@ allfist.TextScaled = true
 allfist.TextSize = 14.000
 allfist.TextWrapped = true
 allfist.MouseButton1Down:connect(function()
-	character.LeftHand.Aura1:Destroy()
-	character.RightHand.Aura1:Destroy()
-	character.LeftHand.Aura2:Destroy()
-	character.RightHand.Aura2:Destroy()
-	character.LeftHand.Aura3:Destroy()
-	character.RightHand.Aura3:Destroy()
+	local Part = Workspace.UnderstatedHell.LeftHand.Aura1:Destroy()
+	local Part = Workspace.UnderstatedHell.LeftHand.Aura2:Destroy()
+	local Part = Workspace.UnderstatedHell.LeftHand.Aura3:Destroy()
+	local Part = Workspace.UnderstatedHell.RightHand.Aura1:Destroy()
+	local Part = Workspace.UnderstatedHell.RightHand.Aura2:Destroy()
+	local Part = Workspace.UnderstatedHell.RightHand.Aura3:Destroy()
 end)
 
 openbuttonframe.Name = "openbuttonframe"
