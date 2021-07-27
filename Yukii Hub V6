@@ -831,8 +831,8 @@ fist1.TextScaled = true
 fist1.TextSize = 14.000
 fist1.TextWrapped = true
 fist1.MouseButton1Down:connect(function()
-	local Part = Workspace.UnderstatedHell.LeftHand.Aura1:Destroy()
-	local Part = Workspace.UnderstatedHell.RightHand.Aura1:Destroy()
+	local Part = game.Players.LocalPlayer.Character.LeftHand.Aura1:Destroy()
+        local Part = game.Players.LocalPlayer.Character.RightHand.Aura1:Destroy()
 end)
 
 fist2.Name = "fist2"
@@ -849,8 +849,8 @@ fist2.TextScaled = true
 fist2.TextSize = 14.000
 fist2.TextWrapped = true
 fist2.MouseButton1Down:connect(function()
-	local Part = Workspace.UnderstatedHell.LeftHand.Aura2:Destroy()
-	local Part = Workspace.UnderstatedHell.RightHand.Aura2:Destroy()
+	local Part = game.Players.LocalPlayer.Character.LeftHand.Aura2:Destroy()
+	local Part = game.Players.LocalPlayer.Character.RightHand.Aura2:Destroy()
 end)
 
 fist3.Name = "fist3"
@@ -867,8 +867,8 @@ fist3.TextScaled = true
 fist3.TextSize = 14.000
 fist3.TextWrapped = true
 fist3.MouseButton1Down:connect(function()
-	local Part = Workspace.UnderstatedHell.LeftHand.Aura3:Destroy()
-	local Part = Workspace.UnderstatedHell.RightHand.Aura3:Destroy()
+	local Part = game.Players.LocalPlayer.Character.LeftHand.Aura3:Destroy()
+	local Part = game.Players.LocalPlayer.Character.RightHand.Aura3:Destroy()
 end)
 
 body1.Name = "body1"
@@ -885,7 +885,7 @@ body1.TextScaled = true
 body1.TextSize = 14.000
 body1.TextWrapped = true
 body1.MouseButton1Down:connect(function()
-	local Part = Workspace.UnderstatedHell.UpperTorso.Aura1:Destroy()
+	local Part = game.Players.LocalPlayer.Character.UpperTorso.Aura1:Destroy()
 end)
 
 body2.Name = "body2"
@@ -902,7 +902,7 @@ body2.TextScaled = true
 body2.TextSize = 14.000
 body2.TextWrapped = true
 body2.MouseButton1Down:connect(function()
-	local Part = Workspace.UnderstatedHell.LeftUpperLeg.Aura1:Destroy()
+	local Part = game.Players.LocalPlayer.Character.LeftUpperLeg.Aura1:Destroy()
 end)
 
 body3.Name = "body3"
@@ -919,7 +919,7 @@ body3.TextScaled = true
 body3.TextSize = 14.000
 body3.TextWrapped = true
 body3.MouseButton1Down:connect(function()
-	local Part = Workspace.UnderstatedHell.RightUpperLeg.Aura1:Destroy()
+	local Part = game.Players.LocalPlayer.Character.RightUpperLeg.Aura1:Destroy()
 end)
 
 lightning.Name = "lightning"
@@ -936,7 +936,7 @@ lightning.TextScaled = true
 lightning.TextSize = 14.000
 lightning.TextWrapped = true
 lightning.MouseButton1Down:connect(function()
-    local Part = Workspace.UnderstatedHell.UpperTorso.Aura2:Destroy()
+    local Part = game.Players.LocalPlayer.Character.UpperTorso.Aura2:Destroy()
 end)
 
 allbody.Name = "allbody"
@@ -953,9 +953,9 @@ allbody.TextScaled = true
 allbody.TextSize = 14.000
 allbody.TextWrapped = true
 allbody.MouseButton1Down:connect(function()
-	local Part = Workspace.UnderstatedHell.LeftUpperLeg.Aura1:Destroy()
-	local Part = Workspace.UnderstatedHell.RightUpperLeg.Aura1:Destroy()
-	local Part = Workspace.UnderstatedHell.UpperTorso.Aura1:Destroy()
+	local Part = game.Players.LocalPlayer.Character.LeftUpperLeg.Aura1:Destroy()
+	local Part = game.Players.LocalPlayer.Character.RightUpperLeg.Aura1:Destroy()
+	local Part = game.Players.LocalPlayer.Character.UpperTorso.Aura1:Destroy()
 end)
 
 allfist.Name = "allfist"
@@ -972,12 +972,12 @@ allfist.TextScaled = true
 allfist.TextSize = 14.000
 allfist.TextWrapped = true
 allfist.MouseButton1Down:connect(function()
-	local Part = Workspace.UnderstatedHell.LeftHand.Aura1:Destroy()
-	local Part = Workspace.UnderstatedHell.LeftHand.Aura2:Destroy()
-	local Part = Workspace.UnderstatedHell.LeftHand.Aura3:Destroy()
-	local Part = Workspace.UnderstatedHell.RightHand.Aura1:Destroy()
-	local Part = Workspace.UnderstatedHell.RightHand.Aura2:Destroy()
-	local Part = Workspace.UnderstatedHell.RightHand.Aura3:Destroy()
+	local Part = game.Players.LocalPlayer.Character.LeftHand.Aura1:Destroy()
+	local Part = game.Players.LocalPlayer.Character.LeftHand.Aura2:Destroy()
+	local Part = game.Players.LocalPlayer.Character.LeftHand.Aura3:Destroy()
+	local Part = game.Players.LocalPlayer.Character.RightHand.Aura1:Destroy()
+	local Part = game.Players.LocalPlayer.Character.RightHand.Aura2:Destroy()
+	local Part = game.Players.LocalPlayer.Character.RightHand.Aura3:Destroy()
 end)
 
 openbuttonframe.Name = "openbuttonframe"
