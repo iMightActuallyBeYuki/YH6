@@ -160,8 +160,36 @@ about.TextSize = 41.000
 about.TextWrapped = true
 about.MouseButton1Down:connect(function()
     aboutframe.Visible = true
-    X2.Visible = true
-    X.Visible = false
+    dgui.Visible = false
+	god.Visible = false
+	ppoff.Visible = false
+	bh.Visible = false
+	ppon.Visible = false
+	fafkf.Visible = false
+	cmdx.Visible = false
+	spamrank.Visible = false
+	earrape.Visible = false
+	iy.Visible = false
+	f3r.Visible = false
+	darkmenu.Visible = false
+	multichecker.Visible = false
+	reapall.Visible = false
+	aurafucker.Visible = false
+	chatantilog.Visible = false
+	split.Visible = false
+	removename.Visible = false
+	spy.Visible = false
+	rtx.Visible = false
+	rj.Visible = false
+	rep.Visible = false
+	removerank.Visible = false
+	fafkp.Visible = false
+	cbring.Visible = false
+	fixbug.Visible = false
+	wow.Visible = false
+	yuv610.Visible = false
+	X2.Visible = true
+	X.Visible = false
 end)
 
 dgui.Name = "dgui"
@@ -659,9 +687,36 @@ X2.TextSize = 14.000
 X2.TextWrapped = true
 X2.MouseButton1Down:connect(function()
 	aboutframe.Visible = false
+	dgui.Visible = true
+	god.Visible = true
+	ppoff.Visible = true
+	bh.Visible = true
+	ppon.Visible = true
+	fafkf.Visible = true
+	cmdx.Visible = true
+	spamrank.Visible = true
+	earrape.Visible = true
+	iy.Visible = true
+	f3r.Visible = true
+	darkmenu.Visible = true
+	multichecker.Visible = true
+	reapall.Visible = true
+	aurafucker.Visible = true
+	chatantilog.Visible = true
+	split.Visible = true
+	removename.Visible = true
+	spy.Visible = true
+	rtx.Visible = true
+	rj.Visible = true
+	rep.Visible = true
+	removerank.Visible = true
+	fafkp.Visible = true
+	cbring.Visible = true
+	fixbug.Visible = true
+	wow.Visible = true
+	yuv610.Visible = true
 	X.Visible = true
 	X2.Visible = false
-	
 end)
 
 aboutframe.Name = "aboutframe"
