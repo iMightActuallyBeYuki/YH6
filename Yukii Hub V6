@@ -651,8 +651,8 @@ wow.TextScaled = true
 wow.TextSize = 60.000
 wow.TextWrapped = true
 wow.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/ImNotYukiiSoDontAsk/YH6/main/wow", true))
-end)
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/ImNotYukiiSoDontAsk/YH6/main/wow"))()
+	end)
 
 yuv610.Name = "yuv610"
 yuv610.Parent = menuframe
