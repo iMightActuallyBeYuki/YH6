@@ -721,6 +721,9 @@ X2.MouseButton1Down:connect(function()
 	fixbug.Visible = true
 	wow.Visible = true
 	yuv610.Visible = true
+	rainbow.Visible - true
+	nccam.Visible - true
+	scrollmenu.Visible = true
 	X.Visible = true
 	X2.Visible = false
 end)
@@ -754,7 +757,7 @@ iQuinalx.BorderSizePixel = 0
 iQuinalx.Position = UDim2.new(0, 0, 0.258403361, 0)
 iQuinalx.Size = UDim2.new(0, 554, 0, 352)
 iQuinalx.Font = Enum.Font.DenkOne
-iQuinalx.Text = "iQuin#0321 and alx#6729"
+iQuinalx.Text = "iQuin#0321, alx#6729 and Micro#8956"
 iQuinalx.TextColor3 = Color3.fromRGB(255, 255, 255)
 iQuinalx.TextSize = 50.000
 iQuinalx.TextWrapped = true
