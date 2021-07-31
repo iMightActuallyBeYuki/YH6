@@ -68,6 +68,9 @@ local allbody = Instance.new("TextButton")
 local allfist = Instance.new("TextButton")
 local openbuttonframe = Instance.new("Frame")
 local TextButton = Instance.new("TextButton")
+local rainbow = Instance.new("TextButton")
+local nccam = Instance.new("TextButton")
+local scrollmenu = Instance.new("TextButton")
 
 
 ScreenGui.Parent = game.CoreGui
@@ -772,7 +775,7 @@ auramenu.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
 auramenu.BorderColor3 = Color3.fromRGB(55, 55, 55)
 auramenu.BorderSizePixel = 5
 auramenu.Position = UDim2.new(1.01094759, 0, 0, 0)
-auramenu.Size = UDim2.new(0, 333, 0, 582)
+auramenu.Size = UDim2.new(0, 333, 0, 584)
 auramenu.Visible = false
 
 Name.Name = "Name"
@@ -1005,3 +1008,57 @@ TextButton.MouseButton1Down:connect(function()
 	menuframe.Visible = true
 	openbuttonframe.Visible = false
 end)
+
+rainbow.Name = "rainbow"
+rainbow.Parent = menuframe
+rainbow.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+rainbow.BorderColor3 = Color3.fromRGB(55, 55, 55)
+rainbow.BorderSizePixel = 5
+rainbow.Position = UDim2.new(0.409009039, 0, 0.368495584, 0)
+rainbow.Size = UDim2.new(0, 100, 0, 30)
+rainbow.Font = Enum.Font.DenkOne
+rainbow.Text = "Rainbow Weights"
+rainbow.TextColor3 = Color3.fromRGB(255, 255, 255)
+rainbow.TextScaled = true
+rainbow.TextSize = 60.000
+rainbow.TextWrapped = true
+rainbow.MouseButton1Down:connect(function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MicroFox-HD/Exploits/main/SPTS_Weight_Rainbow", true))()
+end)
+
+nccam.Name = "nccam"
+nccam.Parent = menuframe
+nccam.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+nccam.BorderColor3 = Color3.fromRGB(55, 55, 55)
+nccam.BorderSizePixel = 5
+nccam.Position = UDim2.new(0.409009039, 0, 0.5534271, 0)
+nccam.Size = UDim2.new(0, 100, 0, 30)
+nccam.Font = Enum.Font.DenkOne
+nccam.Text = "No-Clip Camera"
+nccam.TextColor3 = Color3.fromRGB(255, 255, 255)
+nccam.TextScaled = true
+nccam.TextSize = 60.000
+nccam.TextWrapped = true
+nccam.MouseButton1Down:connect(function()
+--// "Zoom" For Classic
+--// "Invisicam" For Looking Through Parts
+
+--// Enter What You Need Here:
+local type =                  "Invisicam"
+
+game:GetService("Players").LocalPlayer.DevCameraOcclusionMode = type
+end)
+
+scrollmenu.Name = "scrollmenu"
+scrollmenu.Parent = menuframe
+scrollmenu.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+scrollmenu.BorderColor3 = Color3.fromRGB(55, 55, 55)
+scrollmenu.BorderSizePixel = 5
+scrollmenu.Position = UDim2.new(0.614414454, 0, 0.460961342, 0)
+scrollmenu.Size = UDim2.new(0, 100, 0, 30)
+scrollmenu.Font = Enum.Font.DenkOne
+scrollmenu.Text = "Under Development"
+scrollmenu.TextColor3 = Color3.fromRGB(255, 255, 255)
+scrollmenu.TextScaled = true
+scrollmenu.TextSize = 60.000
+scrollmenu.TextWrapped = true
