@@ -1065,5 +1065,5 @@ scrollmenu.TextScaled = true
 scrollmenu.TextSize = 60.000
 scrollmenu.TextWrapped = true
 scrollmenu.MouseButton1Down:connect(function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/MicroFox-HD/Exploits/main/SPTS_Yukii_V3"), true)()
-end)
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/MicroFox-HD/Exploits/main/SPTS_Yukii_V3"), true)()
+    end)
