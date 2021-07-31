@@ -193,8 +193,8 @@ about.MouseButton1Down:connect(function()
 	yuv610.Visible = false
 	X2.Visible = true
 	X.Visible = false
-	rainbow.Visible - false
-	nccam.Visible - false
+	rainbow.Visible = false
+	nccam.Visible = false
 	scrollmenu.Visible = false
 end)
 
@@ -721,8 +721,8 @@ X2.MouseButton1Down:connect(function()
 	fixbug.Visible = true
 	wow.Visible = true
 	yuv610.Visible = true
-	rainbow.Visible - true
-	nccam.Visible - true
+	rainbow.Visible = true
+	nccam.Visible = true
 	scrollmenu.Visible = true
 	X.Visible = true
 	X2.Visible = false
@@ -767,8 +767,8 @@ server.Name = "server"
 server.Parent = aboutframe
 server.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
 server.BorderSizePixel = 0
-server.Position = UDim2.new(0, 0, 0.43954879, 0)
-server.Size = UDim2.new(0, 554, 0, 265)
+server.Position = UDim2.new(0, 0, 0.624422729, 0)
+server.Size = UDim2.new(0, 554, 0, 82)
 server.Font = Enum.Font.DenkOne
 server.Text = "I Now Have A Server !! Join In The Fun At https://www.discord.gg/RSzzwncgJy/"
 server.TextColor3 = Color3.fromRGB(155, 155, 155)
@@ -1046,10 +1046,6 @@ nccam.TextScaled = true
 nccam.TextSize = 60.000
 nccam.TextWrapped = true
 nccam.MouseButton1Down:connect(function()
---// "Zoom" For Classic
---// "Invisicam" For Looking Through Parts
-
---// Enter What You Need Here:
 local type =                  "Invisicam"
 
 game:GetService("Players").LocalPlayer.DevCameraOcclusionMode = type
