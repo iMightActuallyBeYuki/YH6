@@ -193,6 +193,9 @@ about.MouseButton1Down:connect(function()
 	yuv610.Visible = false
 	X2.Visible = true
 	X.Visible = false
+	rainbow.Visible - false
+	nccam.Visible - false
+	scrollmenu.Visible = false
 end)
 
 dgui.Name = "dgui"
