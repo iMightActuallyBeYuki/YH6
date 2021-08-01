@@ -71,6 +71,7 @@ local TextButton = Instance.new("TextButton")
 local rainbow = Instance.new("TextButton")
 local nccam = Instance.new("TextButton")
 local scrollmenu = Instance.new("TextButton")
+local spamvoid = Instance.new("TextButton")
 
 
 ScreenGui.Parent = game.CoreGui
@@ -196,6 +197,7 @@ about.MouseButton1Down:connect(function()
 	rainbow.Visible = false
 	nccam.Visible = false
 	scrollmenu.Visible = false
+	spamvoid.Visible - false
 end)
 
 dgui.Name = "dgui"
@@ -726,6 +728,7 @@ X2.MouseButton1Down:connect(function()
 	scrollmenu.Visible = true
 	X.Visible = true
 	X2.Visible = false
+	spamvoid.Visible = true
 end)
 
 aboutframe.Name = "aboutframe"
