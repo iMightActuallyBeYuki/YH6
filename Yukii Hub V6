@@ -66,13 +66,13 @@ local body3 = Instance.new("TextButton")
 local lightning = Instance.new("TextButton")
 local allbody = Instance.new("TextButton")
 local allfist = Instance.new("TextButton")
-local openbuttonframe = Instance.new("Frame")
-local TextButton = Instance.new("TextButton")
 local rainbow = Instance.new("TextButton")
 local nccam = Instance.new("TextButton")
 local scrollmenu = Instance.new("TextButton")
 local spamvoid = Instance.new("TextButton")
-
+local iintent = Instance.new("TextButton")
+local openbuttonframe = Instance.new("Frame")
+local TextButton = Instance.new("TextButton")
 
 ScreenGui.Parent = game.CoreGui
 
@@ -200,6 +200,7 @@ about.MouseButton1Down:connect(function()
 	nccam.Visible = false
 	scrollmenu.Visible = false
 	spamvoid.Visible = false
+	iintent.Visible = false
 end)
 
 dgui.Name = "dgui"
@@ -670,12 +671,11 @@ yuv610.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
 yuv610.BorderColor3 = Color3.fromRGB(55, 55, 55)
 yuv610.BorderSizePixel = 5
 yuv610.Position = UDim2.new(0.409009069, 0, 0.419865429, 0)
-yuv610.Size = UDim2.new(0, 100, 0, 78)
+yuv610.Size = UDim2.new(0, 100, 0, 36)
 yuv610.Font = Enum.Font.DenkOne
 yuv610.Text = "Yukii Hub V6 [ 1.0 ]"
 yuv610.TextColor3 = Color3.fromRGB(255, 255, 255)
-yuv610.TextScaled = true
-yuv610.TextSize = 60.000
+yuv610.TextSize = 14.000
 yuv610.TextWrapped = true
 yuv610.MouseButton1Down:connect(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/ImNotYukiiSoDontAsk/YH6/main/yhv61.0", true))()
@@ -731,6 +731,7 @@ X2.MouseButton1Down:connect(function()
 	X.Visible = true
 	X2.Visible = false
 	spamvoid.Visible = true
+	iintent.Visible = true
 end)
 
 aboutframe.Name = "aboutframe"
@@ -1088,4 +1089,22 @@ spamvoid.TextSize = 60.000
 spamvoid.TextWrapped = true
 spamvoid.MouseButton1Down:connect(function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/ImNotYukiiSoDontAsk/YH6/main/Spam%20Void", true))()
+end)
+
+iintent.Name = "iintent"
+iintent.Parent = menuframe
+iintent.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+iintent.BorderColor3 = Color3.fromRGB(55, 55, 55)
+iintent.BorderSizePixel = 5
+iintent.Position = UDim2.new(0.409009039, 0, 0.491783231, 0)
+iintent.Size = UDim2.new(0, 100, 0, 30)
+iintent.Font = Enum.Font.DenkOne
+iintent.Text = "Invis Intent"
+iintent.TextColor3 = Color3.fromRGB(255, 255, 255)
+iintent.TextScaled = true
+iintent.TextSize = 60.000
+iintent.TextWrapped = true
+iintent.MouseButton1Down:connect(function()
+    local Part = game.workspace[game.Players.LocalPlayer.Name].KillingIntentPart.Effect:Destroy()
+    local Part = game.workspace[game.Players.LocalPlayer.Name].Head.KillingIntentAuraSound:Destroy()
 end)
