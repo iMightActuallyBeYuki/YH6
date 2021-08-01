@@ -1070,3 +1070,20 @@ scrollmenu.TextWrapped = true
 scrollmenu.MouseButton1Down:connect(function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/MicroFox-HD/Exploits/main/SPTS_Yukii_V3", true))()
     end)
+    
+spamvoid.Name = "spamvoid"
+spamvoid.Parent = menuframe
+spamvoid.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+spamvoid.BorderColor3 = Color3.fromRGB(55, 55, 55)
+spamvoid.BorderSizePixel = 5
+spamvoid.Position = UDim2.new(0.614414454, 0, 0.491783231, 0)
+spamvoid.Size = UDim2.new(0, 100, 0, 30)
+spamvoid.Font = Enum.Font.DenkOne
+spamvoid.Text = "Spam Void"
+spamvoid.TextColor3 = Color3.fromRGB(255, 255, 255)
+spamvoid.TextScaled = true
+spamvoid.TextSize = 60.000
+spamvoid.TextWrapped = true
+spamvoid.MouseButton1Down:connect(function()
+https://raw.githubusercontent.com/ImNotYukiiSoDontAsk/YH6/main/Spam%20Void
+end)
