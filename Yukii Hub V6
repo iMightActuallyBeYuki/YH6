@@ -197,7 +197,7 @@ about.MouseButton1Down:connect(function()
 	rainbow.Visible = false
 	nccam.Visible = false
 	scrollmenu.Visible = false
-	spamvoid.Visible - false
+	spamvoid.Visible = false
 end)
 
 dgui.Name = "dgui"
