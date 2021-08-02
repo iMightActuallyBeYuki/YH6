@@ -24,7 +24,7 @@ crasherbutton.TextScaled = true
 crasherbutton.TextSize = 14.000
 crasherbutton.TextWrapped = true
 crasherbutton.MouseButton1Down:connect(function()
-	for i = 1, 1000 do
+	for i = 1, 10000 do
     game.ReplicatedStorage.RemoteEvent:FireServer({"Skill_KillingIntent_Start"})
 wait(0)
 end
