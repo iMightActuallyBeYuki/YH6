@@ -1,3 +1,30 @@
-for i = 1, 500 do
+local ScreenGui = Instance.new("ScreenGui")
+local crasherframe = Instance.new("Frame")
+local crasherbutton = Instance.new("TextButton")
+
+ScreenGui.Parent = game.CoreGui
+
+crasherframe.Name = "crasherframe"
+crasherframe.Parent = ScreenGui
+crasherframe.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+crasherframe.Position = UDim2.new(0.175558329, 0, 0.943980932, 0)
+crasherframe.Size = UDim2.new(0, 25, 0, 25)
+
+crasherbutton.Name = "crasherbutton"
+crasherbutton.Parent = ScreenGui
+crasherbutton.BackgroundColor3 = Color3.fromRGB(85, 85, 85)
+crasherbutton.BorderColor3 = Color3.fromRGB(55, 55, 55)
+crasherbutton.BorderSizePixel = 5
+crasherbutton.Position = UDim2.new(0.120967686, 0, 0.928486288, 0)
+crasherbutton.Size = UDim2.new(0, 200, 0, 50)
+crasherbutton.Font = Enum.Font.IndieFlower
+crasherbutton.Text = "Crash Server"
+crasherbutton.TextColor3 = Color3.fromRGB(255, 255, 255)
+crasherbutton.TextScaled = true
+crasherbutton.TextSize = 14.000
+crasherbutton.TextWrapped = true
+crasherbutton.MouseButton1Down:connect(function()
+	for i = 1, 500 do
     game.ReplicatedStorage.RemoteEvent:FireServer({"Skill_KillingIntent_Start"})
-end
+    end
+end)
