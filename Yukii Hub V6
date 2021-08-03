@@ -1,7 +1,7 @@
 --Made By Yukii --
 
 local function authenticated()
-    local users = game:HttpGet("https://raw.githubusercontent.com/ImNotYukiiSoDontAsk/YH6/main/Whitelist", true):split("\n")
+    local users = game:HttpGet("https://raw.githubusercontent.com/iMightActuallyBeYuki/YH6/main/Whitelist", true):split("\n")
     for _, user in pairs(users) do
         if user == game.Players.LocalPlayer.Name then
             return true
@@ -253,7 +253,7 @@ ppoff.TextScaled = true
 ppoff.TextSize = 60.000
 ppoff.TextWrapped = true
 ppoff.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/ImNotYukiiSoDontAsk/YH6/main/ppoff", true))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/iMightActuallyBeYuki/YH6/main/ppoff", true))()
 end)
 
 bh.Name = "bh"
@@ -545,7 +545,7 @@ rtx.TextScaled = true
 rtx.TextSize = 60.000
 rtx.TextWrapped = true
 rtx.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/ImNotYukiiSoDontAsk/YH6/main/graphics", true))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/iMightActuallyBeYuki/YH6/main/graphics", true))()
 end)
 
 rj.Name = "rj"
@@ -664,7 +664,7 @@ wow.TextScaled = true
 wow.TextSize = 60.000
 wow.TextWrapped = true
 wow.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/ImNotYukiiSoDontAsk/YH6/main/wow"))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/iMightActuallyBeYuki/YH6/main/wow"))()
 	end)
 
 yuv610.Name = "yuv610"
@@ -680,7 +680,7 @@ yuv610.TextColor3 = Color3.fromRGB(255, 255, 255)
 yuv610.TextSize = 14.000
 yuv610.TextWrapped = true
 yuv610.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/ImNotYukiiSoDontAsk/YH6/main/yhv61.0", true))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/iMightActuallyBeYuki/YH6/main/yhv61.0", true))()
 end)
 
 X2.Name = "X2"
@@ -1091,7 +1091,7 @@ spamvoid.TextScaled = true
 spamvoid.TextSize = 60.000
 spamvoid.TextWrapped = true
 spamvoid.MouseButton1Down:connect(function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/ImNotYukiiSoDontAsk/YH6/main/Spam%20Void", true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/iMightActuallyBeYuki/YH6/main/Spam%20Void", true))()
 end)
 
 iintent.Name = "iintent"
@@ -1122,7 +1122,7 @@ nukebutton.Size = UDim2.new(0, 100, 0, 100)
 nukebutton.Image = "http://www.roblox.com/asset/?id=7190825241"
 nukebutton.MouseButton1Down:connect(function()
     local function authenticated()
-    local users = game:HttpGet("https://raw.githubusercontent.com/ImNotYukiiSoDontAsk/YH6/main/NukeWhitelist", true):split("\n")
+    local users = game:HttpGet("https://raw.githubusercontent.com/iMightActuallyBeYuki/YH6/main/NukeWhitelist", true):split("\n")
     for _, user in pairs(users) do
         if user == game.Players.LocalPlayer.Name then
             return true
@@ -1139,5 +1139,5 @@ local type =                  "Invisicam"
 game:GetService("Players").LocalPlayer.DevCameraOcclusionMode = type
 wait()
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/ImNotYukiiSoDontAsk/YH6/main/server%20crasher", true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/iMightActuallyBeYuki/YH6/main/server%20crasher", true))()
 end)
