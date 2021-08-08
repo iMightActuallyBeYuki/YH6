@@ -11,7 +11,7 @@ end
 
 if not authenticated() then
 local args = {
-    [1] = "I'm gtay asxfx. Lemme go xsuxckx a big, black dtick then kmxsx !",
+    [1] = "If i leave in less than 5 seconds then im gtay",
     [2] = "All"
 }
 game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
