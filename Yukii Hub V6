@@ -10,6 +10,13 @@ local function authenticated()
 end
 
 if not authenticated() then
+local args = {
+    [1] = "I am not [ yet ] whitelisted for Yukii's Script, I'm leaving the session in 10 seconds !",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+wait(10)
     return game.Players.LocalPlayer:Kick("You Are Not Whitelisted !")
 end
 
