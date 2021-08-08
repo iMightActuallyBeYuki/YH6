@@ -779,8 +779,8 @@ server.BorderSizePixel = 0
 server.Position = UDim2.new(0, 0, 0.624422729, 0)
 server.Size = UDim2.new(0, 554, 0, 82)
 server.Font = Enum.Font.DenkOne
-server.Text = "I Now Have A Server !! Join In The Fun At https://www.discord.gg/RSzzwncgJy/"
-server.TextColor3 = Color3.fromRGB(155, 155, 155)
+server.Text = "Join My Server At https://discord.gg/hK7cMVVCWF !!"
+server.TextColor3 = Color3.fromRGB(255, 255, 255)
 server.TextSize = 36.000
 server.TextWrapped = true
 
