@@ -16,7 +16,7 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
-wait(10)
+wait(5)
     return game.Players.LocalPlayer:Kick("You Are Not Whitelisted !")
 end
 
