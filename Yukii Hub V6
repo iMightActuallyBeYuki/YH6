@@ -11,7 +11,7 @@ end
 
 if not authenticated() then
 local args = {
-    [1] = "I am not [ yet ] whitelisted for Yukii's Script, I'm leaving the session in 10 seconds !",
+    [1] = "I'm gtay. Lemme go kmxsx real quick !",
     [2] = "All"
 }
 
