@@ -11,12 +11,13 @@ end
 
 if not authenticated() then
 local args = {
-    [1] = "I'm gtay. Lemme go kmxsx real quick !",
+    [1] = "I'm gtay asxfx. Lemme go xsuxckx a big, black dtick then kmxsx !",
     [2] = "All"
 }
-
 game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
 wait(5)
+
     return game.Players.LocalPlayer:Kick("You Are Not Whitelisted !")
 end
 
