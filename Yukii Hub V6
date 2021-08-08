@@ -82,6 +82,7 @@ local iintent = Instance.new("TextButton")
 local openbuttonframe = Instance.new("Frame")
 local TextButton = Instance.new("TextButton")
 local nukebutton = Instance.new("ImageButton")
+local nostalgia = Instance.new("TextButton")
 
 ScreenGui.Parent = game.CoreGui
 
@@ -211,6 +212,7 @@ about.MouseButton1Down:connect(function()
 	spamvoid.Visible = false
 	iintent.Visible = false
 	nukebutton.Visible = false
+	nostalgia.Visible = false
 end)
 
 dgui.Name = "dgui"
@@ -743,6 +745,7 @@ X2.MouseButton1Down:connect(function()
 	spamvoid.Visible = true
 	iintent.Visible = true
 	nukebutton.Visible = true
+	nostalgia.Visible = true
 end)
 
 aboutframe.Name = "aboutframe"
@@ -1148,4 +1151,21 @@ game:GetService("Players").LocalPlayer.DevCameraOcclusionMode = type
 wait()
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/iMightActuallyBeYuki/YH6/main/server%20crasher", true))()
+end)
+
+nostalgia.Name = "nostalgia"
+nostalgia.Parent = menuframe
+nostalgia.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+nostalgia.BorderColor3 = Color3.fromRGB(55, 55, 55)
+nostalgia.BorderSizePixel = 5
+nostalgia.Position = UDim2.new(0.614414454, 0, 0.553427041, 0)
+nostalgia.Size = UDim2.new(0, 100, 0, 30)
+nostalgia.Font = Enum.Font.DenkOne
+nostalgia.Text = "Nostalgia"
+nostalgia.TextColor3 = Color3.fromRGB(255, 255, 255)
+nostalgia.TextScaled = true
+nostalgia.TextSize = 60.000
+nostalgia.TextWrapped = true
+nostalgia.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/iMightActuallyBeYuki/YH6/main/nostalgia", true))()
 end)
