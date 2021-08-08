@@ -780,7 +780,7 @@ server.Position = UDim2.new(0, 0, 0.624422729, 0)
 server.Size = UDim2.new(0, 554, 0, 82)
 server.Font = Enum.Font.DenkOne
 server.Text = "Join My Server At https://discord.gg/hK7cMVVCWF !!"
-server.TextColor3 = Color3.fromRGB(255, 255, 255)
+server.TextColor3 = Color3.fromRGB(85, 85, 85)
 server.TextSize = 36.000
 server.TextWrapped = true
 
