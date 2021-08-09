@@ -1,4 +1,0 @@
-for i = 1, 500 do
-    game.ReplicatedStorage.RemoteEvent:FireServer({"Skill_KillingIntent_Start"})
-wait()
-end
