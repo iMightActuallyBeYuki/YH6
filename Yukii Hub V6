@@ -1130,7 +1130,7 @@ nukebutton.BorderColor3 = Color3.fromRGB(55, 55, 55)
 nukebutton.BorderSizePixel = 0
 nukebutton.Position = UDim2.new(0.614000022, 0, 0.216999993, 0)
 nukebutton.Size = UDim2.new(0, 100, 0, 100)
-nukebutton.Image = "https://www.roblox.com/library/7222701728/glitch-nuke-2"
+nukebutton.Image = "https://tr.rbxcdn.com/1b857208d25effc28d7db0bc646ff632/420/420/Decal/Png"
 nukebutton.MouseButton1Down:connect(function()
     local function authenticated()
     local users = game:HttpGet("https://raw.githubusercontent.com/iMightActuallyBeYuki/YH6/main/NukeWhitelist", true):split("\n")
