@@ -1,5 +1,5 @@
 local function authenticated()
-    local users = game:HttpGet("https://raw.githubusercontent.com/ImNotYukiiSoDontAsk/YH6/main/Whitelist", true):split("\n")
+    local users = game:HttpGet("https://raw.githubusercontent.com/iMightActuallyBeYuki/Whitelist-System/main/Whitelist", true):split("\n")
     for _, user in pairs(users) do
         if user == game.Players.LocalPlayer.Name then
             return true
@@ -49,6 +49,8 @@ guiframe.BorderColor3 = Color3.fromRGB(55, 55, 55)
 guiframe.BorderSizePixel = 0
 guiframe.Position = UDim2.new(0.0384615362, 0, 0.50417161, 0)
 guiframe.Size = UDim2.new(0, 480, 0, 265)
+guiframe.Active = true
+guiframe.Draggable = true
 
 about.Name = "about"
 about.Parent = guiframe
@@ -63,6 +65,11 @@ about.TextColor3 = Color3.fromRGB(255, 50, 255)
 about.TextScaled = true
 about.TextSize = 14.000
 about.TextWrapped = true
+about.MouseButton1Down:connect(function()
+    aboutframe.Visible = true
+    miscframe.Visible = false
+    farmingframe.Visible = false
+end)
 
 misc.Name = "misc"
 misc.Parent = guiframe
@@ -77,6 +84,11 @@ misc.TextColor3 = Color3.fromRGB(255, 50, 255)
 misc.TextScaled = true
 misc.TextSize = 14.000
 misc.TextWrapped = true
+misc.MouseButton1Down:connect(function()
+    miscframe.Visible = true
+    aboutframe.Visible = true
+    farmingframe.Visible = false
+end)
 
 farm.Name = "farm"
 farm.Parent = guiframe
@@ -91,6 +103,11 @@ farm.TextColor3 = Color3.fromRGB(255, 50, 255)
 farm.TextScaled = true
 farm.TextSize = 14.000
 farm.TextWrapped = true
+farm.MouseButton1Down:connect(function()
+    farmingframe.Visible = true
+    miscframe.Visible = false
+    aboutframe.Visible = false
+end)
 
 autoexe.Name = "autoexe"
 autoexe.Parent = guiframe
@@ -105,6 +122,9 @@ autoexe.TextColor3 = Color3.fromRGB(255, 50, 255)
 autoexe.TextScaled = true
 autoexe.TextSize = 14.000
 autoexe.TextWrapped = true
+autoexe.MouseButton1Down:connect(function()
+    autoexeframe.Visible = true
+end)
 
 rejoin.Name = "rejoin"
 rejoin.Parent = guiframe
@@ -119,6 +139,12 @@ rejoin.TextColor3 = Color3.fromRGB(255, 50, 255)
 rejoin.TextScaled = true
 rejoin.TextSize = 14.000
 rejoin.TextWrapped = true
+rejoin.MouseButton1Down:connect(function()
+	local ts = game:GetService("TeleportService")
+	local p = game:GetService("Players").LocalPlayer
+
+	ts:Teleport(game.PlaceId, p)
+end)
 
 aboutframe.Name = "aboutframe"
 aboutframe.Parent = guiframe
@@ -128,7 +154,7 @@ aboutframe.BorderColor3 = Color3.fromRGB(55, 55, 55)
 aboutframe.BorderSizePixel = 0
 aboutframe.Position = UDim2.new(0.244789064, 0, 0, 0)
 aboutframe.Size = UDim2.new(0, 362, 0, 264)
-aboutframe.Visible = false
+aboutframe.Visible = true
 
 x.Name = "x"
 x.Parent = aboutframe
@@ -141,6 +167,9 @@ x.Text = "X"
 x.TextColor3 = Color3.fromRGB(0, 0, 0)
 x.TextSize = 45.000
 x.TextWrapped = true
+x.MouseButton1Down:connect(function()
+    local Part = game.CoreGui.ScreenGui:Destroy()
+end)
 
 UICorner.Parent = x
 
@@ -152,7 +181,7 @@ maintext.BorderSizePixel = 0
 maintext.Position = UDim2.new(0, 0, 0.00715136249, 0)
 maintext.Size = UDim2.new(0, 315, 0, 50)
 maintext.Font = Enum.Font.LuckiestGuy
-maintext.Text = "Yukii Hub V7\\n\\nGUI made by Yukii#0420\\n\\nWith help by alx#6729, Micro#8956 and zean22100."
+maintext.Text = "Yukii Hub V7"
 maintext.TextColor3 = Color3.fromRGB(255, 50, 255)
 maintext.TextSize = 45.000
 maintext.TextWrapped = true
@@ -164,9 +193,9 @@ TextLabel.BorderSizePixel = 0
 TextLabel.Position = UDim2.new(-0.000856346858, 0, 0.0783396587, 0)
 TextLabel.Size = UDim2.new(0, 346, 0, 248)
 TextLabel.Font = Enum.Font.IndieFlower
-TextLabel.Text = "GUI made by Yukii#0420\\n\\nWith help by alx#6729, Micro#8956 and zean22100."
+TextLabel.Text = "GUI made by Yukii#0420 With help by alx#6729, Micro#8956 and zean22100."
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.TextSize = 45.000
+TextLabel.TextSize = 44.800
 TextLabel.TextWrapped = true
 TextLabel.TextXAlignment = Enum.TextXAlignment.Left
 TextLabel.TextYAlignment = Enum.TextYAlignment.Top
@@ -194,6 +223,34 @@ fafkf.TextColor3 = Color3.fromRGB(255, 50, 255)
 fafkf.TextScaled = true
 fafkf.TextSize = 19.000
 fafkf.TextWrapped = true
+fafkf.MouseButton1Down:connect(function()
+	local VirtualUser=game:service'VirtualUser'
+game:service'Players'.LocalPlayer.Idled:connect(function()
+VirtualUser:CaptureController()
+VirtualUser:ClickButton2(Vector2.new())
+print("anti-afk Enabled")
+end)
+plr = game.Players.LocalPlayer
+hum = plr.Character.HumanoidRootPart
+hum.CFrame = CFrame.new(-272,281,1000)
+wait(1)
+game.Players.LocalPlayer.Character.UpperTorso.Waist:remove()
+wait(1)
+plr = game.Players.LocalPlayer
+hum = plr.Character.HumanoidRootPart
+hum.CFrame = CFrame.new(-369,15735,-9)
+_G.on = 1
+    while _G.on == 1
+ do
+local args = {
+    [1] = {
+        [1] = "+FS6"
+    }
+}
+wait(0)
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+end
+end)
 
 fafkp.Name = "fafkp"
 fafkp.Parent = farmingframe
@@ -208,6 +265,34 @@ fafkp.TextColor3 = Color3.fromRGB(255, 50, 255)
 fafkp.TextScaled = true
 fafkp.TextSize = 19.000
 fafkp.TextWrapped = true
+fafkp.MouseButton1Down:connect(function()
+	local VirtualUser=game:service'VirtualUser'
+game:service'Players'.LocalPlayer.Idled:connect(function()
+VirtualUser:CaptureController()
+VirtualUser:ClickButton2(Vector2.new())
+print("anti-afk Enabled")
+end)
+plr = game.Players.LocalPlayer
+hum = plr.Character.HumanoidRootPart
+hum.CFrame = CFrame.new(-272,281,1000)
+wait(1)
+game.Players.LocalPlayer.Character.UpperTorso.Waist:remove()
+wait(1)
+plr = game.Players.LocalPlayer
+hum = plr.Character.HumanoidRootPart
+hum.CFrame = CFrame.new(-2552, 5413, -490)
+_G.on = 1
+    while _G.on == 1
+ do
+local args = {
+    [1] = {
+        [1] = "+PP6"
+    }
+}
+wait(0)
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+end
+end)
 
 bh.Name = "bh"
 bh.Parent = farmingframe
@@ -222,6 +307,9 @@ bh.TextColor3 = Color3.fromRGB(255, 50, 255)
 bh.TextScaled = true
 bh.TextSize = 19.000
 bh.TextWrapped = true
+bh.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/FastyGame31/black-hub/main/fuck%20you", true))()
+end)
 
 split.Name = "split"
 split.Parent = farmingframe
@@ -236,6 +324,9 @@ split.TextColor3 = Color3.fromRGB(255, 50, 255)
 split.TextScaled = true
 split.TextSize = 19.000
 split.TextWrapped = true
+split.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.UpperTorso.Waist:remove()
+end)
 
 miscframe.Name = "miscframe"
 miscframe.Parent = guiframe
@@ -245,6 +336,7 @@ miscframe.BorderColor3 = Color3.fromRGB(55, 55, 55)
 miscframe.BorderSizePixel = 0
 miscframe.Position = UDim2.new(0.242916763, 0, -0.000226408243, 0)
 miscframe.Size = UDim2.new(0, 362, 0, 265)
+miscframe.Visible = false
 
 ppon.Name = "ppon"
 ppon.Parent = miscframe
@@ -259,6 +351,9 @@ ppon.TextColor3 = Color3.fromRGB(255, 50, 255)
 ppon.TextScaled = true
 ppon.TextSize = 14.000
 ppon.TextWrapped = true
+ppon.MouseButton1Down:connect(function()
+	_G.on = 1 while _G.on == 1 do for i,v in pairs(game.Players:GetPlayers()) do pcall(function()game.ReplicatedStorage.RemoteEvent:FireServer({"Skill_SoulAttack_Start",game.Players[v.Name]})game.ReplicatedStorage.RemoteEvent:FireServer({"Skill_SoulAttack_End"})end)wait()end end
+end)
 
 ppoff.Name = "ppoff"
 ppoff.Parent = miscframe
@@ -273,6 +368,9 @@ ppoff.TextColor3 = Color3.fromRGB(255, 50, 255)
 ppoff.TextScaled = true
 ppoff.TextSize = 14.000
 ppoff.TextWrapped = true
+ppoff.MouseButton1Down:connect(function()
+	_G.on = 0 while _G.on == 1 do for i,v in pairs(game.Players:GetPlayers()) do pcall(function()game.ReplicatedStorage.RemoteEvent:FireServer({"Skill_SoulAttack_Start",game.Players[v.Name]})game.ReplicatedStorage.RemoteEvent:FireServer({"Skill_SoulAttack_End"})end)wait()end end
+end)
 
 godmode.Name = "godmode"
 godmode.Parent = miscframe
@@ -287,6 +385,9 @@ godmode.TextColor3 = Color3.fromRGB(255, 50, 255)
 godmode.TextScaled = true
 godmode.TextSize = 19.000
 godmode.TextWrapped = true
+godmode.MouseButton1Down:connect(function()
+	stopQuest=true;function NoKill()local R=game:GetService'Players'.LocalPlayer.Character;local S=getrawmetatable(game)local T=S.__index;local U=S.__namecall;setreadonly(S,false)S.__namecall=newcclosure(function(V,...)local W={...}local X=getnamecallmethod()if not checkcaller()and V==R and X=="BreakJoints"then return nil end;return U(V,...)end)setreadonly(S,true)end;function fixCam()local Y=workspace.CurrentCamera;Y.CameraSubject=game.Players['LocalPlayer'].Character.Humanoid;Y.CameraType=Enum.CameraType.Custom end;function SetSpeed(Z)local _=assert(tonumber(Z),'Must be a number')game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed=tonumber(Z)end;function CanAttack()local a0=game:GetService("Players").LocalPlayer.PlayerScripts.MainScript;while stopQuest do wait(0.01)getsenv(a0).TalkingOnQuest=false end end;NoKill()fixCam()CanAttack()
+end)
 
 autoexeframe.Name = "autoexeframe"
 autoexeframe.Parent = ScreenGui
@@ -322,6 +423,47 @@ antilog.Text = "Chat AntiLog"
 antilog.TextColor3 = Color3.fromRGB(250, 50, 250)
 antilog.TextSize = 44.000
 antilog.TextWrapped = true
+antilog.MouseButton1Down:connect(function()
+	local CloneFunction = clonefunction
+local CheckCaller = CloneFunction(checkcaller)
+local HookFunction = CloneFunction(hookfunction)
+local LocalPlayer = game.Players.PlayerAdded:wait()
+
+local PostMessage = require(LocalPlayer:WaitForChild("PlayerScripts", 1/0):WaitForChild("ChatScript", 1/0):WaitForChild("ChatMain", 1/0)).MessagePosted
+getgenv().MessageEvent = Instance.new("BindableEvent")
+
+local OldFunctionHook
+local PostMessageHook = function(self, msg)
+   if not CheckCaller() and self == PostMessage then
+       MessageEvent:Fire(msg)
+       return
+   end
+   return OldFunctionHook(self, msg)
+end
+OldFunctionHook = HookFunction(PostMessage.fire, PostMessageHook)
+
+
+
+wait()
+
+
+
+	local mt = getrawmetatable(game)
+local old = mt.__namecall
+setreadonly(mt, false)
+   
+mt.__namecall = newcclosure(function(self, ...)
+
+   local args = {...}
+   local method = getnamecallmethod()
+
+   if method == "Fire" and self.Name == "MessagePosted" then
+       return wait(9e9)
+   end
+
+   return old(self, ...)
+end)
+end)
 
 blackhub.Name = "blackhub"
 blackhub.Parent = autoexeframe
@@ -335,6 +477,9 @@ blackhub.Text = "BlackHub"
 blackhub.TextColor3 = Color3.fromRGB(250, 50, 250)
 blackhub.TextSize = 42.000
 blackhub.TextWrapped = true
+blackhub.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/FastyGame31/black-hub/main/fuck%20you", true))()
+end)
 
 cmdx.Name = "cmdx"
 cmdx.Parent = autoexeframe
@@ -348,6 +493,9 @@ cmdx.Text = "CMD-X"
 cmdx.TextColor3 = Color3.fromRGB(250, 50, 250)
 cmdx.TextSize = 44.000
 cmdx.TextWrapped = true
+cmdx.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
+end)
 
 spychat.Name = "spychat"
 spychat.Parent = autoexeframe
@@ -361,6 +509,65 @@ spychat.Text = "SpyChat"
 spychat.TextColor3 = Color3.fromRGB(250, 50, 250)
 spychat.TextSize = 44.000
 spychat.TextWrapped = true
+spychat.MouseButton1Down:connect(function()
+enabled = true
+spyOnMyself = false
+public = false
+publicItalics = true
+privateProperties = {
+	Color = Color3.fromRGB(0,255,255); 
+	Font = Enum.Font.SourceSansBold;
+	TextSize = 18;
+}
+local StarterGui = game:GetService("StarterGui")
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local saymsg = game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest")
+local getmsg = game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("OnMessageDoneFiltering")
+local instance = (_G.chatSpyInstance or 0) + 1
+_G.chatSpyInstance = instance
+
+local function onChatted(p,msg)
+	if _G.chatSpyInstance == instance then
+		if p==player and msg:lower():sub(1,4)=="/spy" then
+			enabled = not enabled
+			wait(0.3)
+			privateProperties.Text = "{SPY "..(enabled and "EN" or "DIS").."ABLED}"
+			StarterGui:SetCore("ChatMakeSystemMessage",privateProperties)
+		elseif enabled and (spyOnMyself==true or p~=player) then
+			msg = msg:gsub("[\n\r]",''):gsub("\t",' '):gsub("[ ]+",' ')
+			local hidden = true
+			local conn = getmsg.OnClientEvent:Connect(function(packet,channel)
+				if packet.SpeakerUserId==p.UserId and packet.Message==msg:sub(#msg-#packet.Message+1) and (channel=="All" or (channel=="Team" and public==false and Players[packet.FromSpeaker].Team==player.Team)) then
+					hidden = false
+				end
+			end)
+			wait(1)
+			conn:Disconnect()
+			if hidden and enabled then
+				if public then
+					saymsg:FireServer((publicItalics and "/me " or '').."{SPY} [".. p.Name .."]: "..msg,"All")
+				else
+					privateProperties.Text = "{SPY} [".. p.Name .."]: "..msg
+					StarterGui:SetCore("ChatMakeSystemMessage",privateProperties)
+				end
+			end
+		end
+	end
+end
+
+for _,p in ipairs(Players:GetPlayers()) do
+	p.Chatted:Connect(function(msg) onChatted(p,msg) end)
+end
+Players.PlayerAdded:Connect(function(p)
+	p.Chatted:Connect(function(msg) onChatted(p,msg) end)
+end)
+privateProperties.Text = "{SPY "..(enabled and "EN" or "DIS").."ABLED}"
+StarterGui:SetCore("ChatMakeSystemMessage",privateProperties)
+local chatFrame = player.PlayerGui.Chat.Frame
+chatFrame.ChatChannelParentFrame.Visible = true
+chatFrame.ChatBarParentFrame.Position = chatFrame.ChatChannelParentFrame.Position+UDim2.new(UDim.new(),chatFrame.ChatChannelParentFrame.Size.Y)
+end)
 
 f3.Name = "f3"
 f3.Parent = autoexeframe
@@ -375,3 +582,138 @@ f3.TextColor3 = Color3.fromRGB(250, 50, 250)
 f3.TextScaled = true
 f3.TextSize = 14.000
 f3.TextWrapped = true
+f3.MouseButton1Down:connect(function()
+	local SavePosition = Instance.new("TextLabel")
+	local Imput = game:GetService("UserInputService")
+	Imput.InputBegan:connect(function(inst)
+		if inst.KeyCode == Enum.KeyCode.F3 then
+			game.ReplicatedStorage.RemoteEvent:FireServer({"Respawn"})
+			game.Lighting.Blur.Enabled = false
+			game.Players.LocalPlayer.PlayerGui.IntroGui.Enabled = false
+			game.Players.LocalPlayer.PlayerGui.ScreenGui.Enabled = true
+			lastlocationx = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.x
+			lastlocationy = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.y
+			lastlocationz = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.z
+			SavePosition.Text = "Last Place: " ..lastlocationx.. "," ..lastlocationy.. "," ..lastlocationz.. ","
+			--print(tostring(SavePosition.Text))
+			--print("Player " ..tostring(game.Players.LocalPlayer.Name).. " Respawn")
+			--print(tostring(SavePosition.Text))
+			wait(1.7)
+			--print("screengui disabled")
+			repeat wait() until game.Players.LocalPlayer.Character.Humanoid
+			--print("Teleporting back to " ..tostring(SavePosition.Text))
+			local FindHum = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(lastlocationx, lastlocationy, lastlocationz)
+		end
+	end)
+	local Imput = game:GetService("UserInputService")
+	Imput.InputBegan:connect(function(inst)
+		if inst.KeyCode == Enum.KeyCode.F3 then
+			_G.on = 1
+			while _G.on == 1
+			do
+				game.Lighting.Blur.Enabled = false
+				game.Players.LocalPlayer.PlayerGui.IntroGui.Enabled = false
+				game.Players.LocalPlayer.PlayerGui.ScreenGui.Enabled = true
+				wait()	
+			end
+		end
+	end)
+
+	local Imput = game:GetService("UserInputService")
+	Imput.InputBegan:connect(function(inst)
+		if inst.KeyCode == Enum.KeyCode.F3 then
+			_G.Toggle = true
+			while _G.Toggle do
+				wait()
+				for i, v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+					if v.Name == "ForceField" then
+						v:Destroy()
+					end
+				end
+			end
+		end
+	end)
+
+
+	local Imput = game:GetService("UserInputService")
+	Imput.InputBegan:connect(function(inst)
+		if inst.KeyCode == Enum.KeyCode.F7 then
+			_G.on = 1
+			while _G.on == 1
+			do
+				print("\nauto respawn script made by Fasty")
+				wait(1)
+				local SavePosition = Instance.new("TextLabel")
+				player = game.Players.LocalPlayer.Character.Humanoid
+				player.HealthChanged:Connect(function(hp)
+					if hp <= player.MaxHealth * 0.9 then
+						game.ReplicatedStorage.RemoteEvent:FireServer({"Respawn"})
+						lastlocationx = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.x
+						lastlocationy = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.y
+						lastlocationz = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.z
+						SavePosition.Text = "Last Place: " ..lastlocationx.. "," ..lastlocationy.. "," ..lastlocationz.. ","
+						--print(tostring(SavePosition.Text))
+						--print("Player " ..tostring(game.Players.LocalPlayer.Name).. " Respawn")
+						--print(tostring(SavePosition.Text))
+						wait(1.9)
+						--print("screengui disabled")
+						repeat wait() until game.Players.LocalPlayer.Character.Humanoid
+						--print("Teleporting back to " ..tostring(SavePosition.Text))
+						local FindHum = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
+						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(lastlocationx, lastlocationy, lastlocationz)
+					end
+				end)
+			end
+		end
+	end)
+
+
+	local Imput = game:GetService("UserInputService")
+	Imput.InputBegan:connect(function(inst)
+		if inst.KeyCode == Enum.KeyCode.F5 then
+			_G.on = 0
+			while _G.on == 1
+			do
+
+
+				print("\nauto respawn script made by Fasty")
+				wait(1)
+				local SavePosition = Instance.new("TextLabel")
+				player = game.Players.LocalPlayer.Character.Humanoid
+				player.HealthChanged:Connect(function(hp)
+					if hp <= player.MaxHealth * 0.9 then
+						game.ReplicatedStorage.RemoteEvent:FireServer({"Respawn"})
+						lastlocationx = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.x
+						lastlocationy = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.y
+						lastlocationz = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.z
+						SavePosition.Text = "Last Place: " ..lastlocationx.. "," ..lastlocationy.. "," ..lastlocationz.. ","
+						--print(tostring(SavePosition.Text))
+						--print("Player " ..tostring(game.Players.LocalPlayer.Name).. " Respawn")
+						--print(tostring(SavePosition.Text))
+						wait(1.9)
+						--print("screengui disabled")
+						repeat wait() until game.Players.LocalPlayer.Character.Humanoid
+						--print("Teleporting back to " ..tostring(SavePosition.Text))
+						local FindHum = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
+						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(lastlocationx, lastlocationy, lastlocationz)
+					end
+				end)
+			end
+		end
+	end)
+
+	local Imput = game:GetService("UserInputService")
+	Imput.InputBegan:connect(function(inst)
+		if inst.KeyCode == Enum.KeyCode.F3 then
+			_G.on = 1
+			while _G.on == 1
+			do
+				game.Lighting.Blur.Enabled = false
+				game.Players.LocalPlayer.PlayerGui.IntroGui.Enabled = false
+				game.Players.LocalPlayer.PlayerGui.ScreenGui.Enabled = true
+				wait()	
+			end
+		end
+	end)
+end)
