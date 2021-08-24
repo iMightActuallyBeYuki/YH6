@@ -1,0 +1,164 @@
+s = Instance.new("Sound",game.Workspace)
+	s.Name = "Sound"
+	s.SoundId = "http://www.roblox.com/asset?id=137473066"
+	s.Volume = 100
+	s.Looped = false
+	s.archivable = false
+	s:play()
+	
+local Whitelisted = game:HttpGet("https://raw.githubusercontent.com/iMightActuallyBeYuki/Whitelist-System/main/Yukii%20X", true):split("\n")
+game:HttpGet("https://raw.githubusercontent.com/iMightActuallyBeYuki/Whitelist-System/main/Yukii%20X", true):split("\n")
+
+local Key = game:HttpGet("https://pastebin.com/raw/FJw6RmnN")
+
+local YukiiXLoadingScreen = Instance.new("ScreenGui")
+local Frame = Instance.new("ImageLabel")
+local SliderFrame = Instance.new("ImageLabel")
+local SlideFrame = Instance.new("ImageLabel")
+local TextLabel = Instance.new("TextLabel")
+local TextBox = Instance.new("TextBox")
+local TextButton = Instance.new("TextButton")
+local TextButton_Roundify_12px = Instance.new("ImageLabel")
+local TextLabel_2 = Instance.new("TextLabel")
+
+YukiiXLoadingScreen.Name = "YukiiXLoadingScreen"
+YukiiXLoadingScreen.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+Frame.Name = "Frame"
+Frame.Parent = YukiiXLoadingScreen
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.BackgroundTransparency = 1.000
+Frame.Position = UDim2.new(0.389206856, 0, 0.351791531, 0)
+Frame.Size = UDim2.new(0.270314276, 0, 0.197068408, 0)
+Frame.Image = "http://www.roblox.com/asset/?id=7312549600"
+
+SliderFrame.Name = "SliderFrame"
+SliderFrame.Parent = Frame
+SliderFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SliderFrame.BackgroundTransparency = 1.000
+SliderFrame.Position = UDim2.new(0.0142048299, 0, 0.689999998, 0)
+SliderFrame.Size = UDim2.new(0.96237725, 0, 0.230000004, 0)
+SliderFrame.Image = "http://www.roblox.com/asset/?id=7282839614"
+
+SlideFrame.Name = "SlideFrame"
+SlideFrame.Parent = SliderFrame
+SlideFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SlideFrame.BackgroundTransparency = 1.000
+SlideFrame.Size = UDim2.new(0, 0, 1, 0)
+SlideFrame.Image = "http://www.roblox.com/asset/?id=7282839614"
+SlideFrame.ImageColor3 = Color3.fromRGB(76, 255, 0)
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(0.220174864, 0, 0.360000014, 0)
+TextLabel.Size = UDim2.new(0.557539642, 0, 0.270000041, 0)
+TextLabel.Font = Enum.Font.SourceSansBold
+TextLabel.Text = "Checking whitelist."
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+TextBox.Parent = Frame
+TextBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.BackgroundTransparency = 1.000
+TextBox.Position = UDim2.new(0.105783336, 0, 0.359999985, 0)
+TextBox.Size = UDim2.new(0.776752591, 0, 0.264462799, 0)
+TextBox.Visible = false
+TextBox.Font = Enum.Font.SourceSansBold
+TextBox.Text = "Enter Key.."
+TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.TextScaled = true
+TextBox.TextSize = 14.000
+TextBox.TextWrapped = true
+
+TextButton.Parent = Frame
+TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.BackgroundTransparency = 1.000
+TextButton.BorderSizePixel = 0
+TextButton.Position = UDim2.new(0.265969664, 0, 0.702479362, 0)
+TextButton.Size = UDim2.new(0.465447068, 0, 0.223140493, 0)
+TextButton.Visible = false
+TextButton.Font = Enum.Font.SourceSans
+TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.TextSize = 14.000
+
+TextButton_Roundify_12px.Name = "TextButton_Roundify_12px"
+TextButton_Roundify_12px.Parent = TextButton
+TextButton_Roundify_12px.Active = true
+TextButton_Roundify_12px.AnchorPoint = Vector2.new(0.5, 0.5)
+TextButton_Roundify_12px.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_Roundify_12px.BackgroundTransparency = 1.000
+TextButton_Roundify_12px.Position = UDim2.new(0.474025965, 0, 0.5, 0)
+TextButton_Roundify_12px.Selectable = true
+TextButton_Roundify_12px.Size = UDim2.new(0.649350643, 0, 1, 0)
+TextButton_Roundify_12px.Image = "rbxassetid://3570695787"
+TextButton_Roundify_12px.ImageColor3 = Color3.fromRGB(42, 42, 42)
+TextButton_Roundify_12px.ScaleType = Enum.ScaleType.Slice
+TextButton_Roundify_12px.SliceCenter = Rect.new(100, 100, 100, 100)
+TextButton_Roundify_12px.SliceScale = 0.120
+
+TextLabel_2.Parent = TextButton
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.Position = UDim2.new(0.201298699, 0, 0.0199999996, 0)
+TextLabel_2.Size = UDim2.new(0.590909064, 1, 0.962962985, 1)
+TextLabel_2.Font = Enum.Font.SourceSansBold
+TextLabel_2.Text = "Login"
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.TextScaled = true
+TextLabel_2.TextSize = 14.000
+TextLabel_2.TextWrapped = true
+
+SlideFrame:TweenSize(UDim2.new(0.400, 1,1, 1), Enum.EasingDirection.In, Enum.EasingStyle.Linear, 1, false, nil)
+wait(0.5)
+TextLabel.Text = "Checking Whitelist.."
+wait(0.5)
+TextLabel.Text = "Checking Whitelist..."
+wait(0.5)
+TextLabel.Visible = false
+SliderFrame.Visible = false
+TextButton.Visible = true
+TextBox.Visible = true
+TextButton.MouseButton1Click:Connect(function()
+if TextBox.Text == Key then
+	TextBox.Visible = false
+	TextButton.Visible = false
+	TextLabel.Visible = true
+	SliderFrame.Visible = true
+if not table.find(Whitelisted,game.Players.LocalPlayer.Name) then
+	game.Players.LocalPlayer:Kick("Nice Try Dumbfuck.")
+end
+if table.find(Whitelisted,game.Players.LocalPlayer.Name) then
+	TextLabel.Text = "Welcome "..game.Players.LocalPlayer.Name.." ["..game.Players.LocalPlayer.DisplayName.."]"
+	TextLabel.TextColor3 = Color3.fromRGB(255,255,0)
+end
+	if not table.find(Whitelisted,game.Players.LocalPlayer.Name) then
+	TextLabel.TextColor3 = Color3.fromRGB(255,0,0)
+	TextLabel.Text = "You Are Not Whitelsited !"
+	wait(1.5)
+	YukiiXLoadingScreen:Destroy()
+	return
+end
+wait(1)
+TextLabel.TextColor3 = Color3.fromRGB(255,255,255)
+SlideFrame:TweenSize(UDim2.new(0.798, 1,1, 1), Enum.EasingDirection.In, Enum.EasingStyle.Linear, 1, false, nil)
+TextLabel.Text = "Loading."
+wait(0.8)
+TextLabel.Text = "Loading.."
+wait(0.8)
+TextLabel.Text = "Checking Character"
+wait(1)
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+if not game.Players.LocalPlayer.Character then
+	TextLabel.Text = "Spawn Your Character First!"
+	TextLabel.TextColor3 = Color3.fromRGB(255,0,0)
+	game.Players.LocalPlayer.CharacterAdded:Wait()
+	game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
+end
+SlideFrame:TweenSize(UDim2.new(0.998, 1,1, 1), Enum.EasingDirection.In, Enum.EasingStyle.Linear, 1, false, nil)
+wait(0.5)
+	YukiiXLoadingScreen:Destroy()
+	end
+	end)
