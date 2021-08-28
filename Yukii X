@@ -1,15 +1,55 @@
-s = Instance.new("Sound",game.Workspace)
-	s.Name = "Sound"
-	s.SoundId = "http://www.roblox.com/asset?id=137473066"
-	s.Volume = 100
-	s.Looped = false
-	s.archivable = false
-	s:play()
-	
 local Whitelisted = game:HttpGet("https://raw.githubusercontent.com/iMightActuallyBeYuki/Whitelist-System/main/Yukii%20X", true):split("\n")
 game:HttpGet("https://raw.githubusercontent.com/iMightActuallyBeYuki/Whitelist-System/main/Yukii%20X", true):split("\n")
 
 local Key = game:HttpGet("https://pastebin.com/raw/FJw6RmnN")
+
+rgvjiniujokbh = Instance.new("Sound",game.Workspace)
+    rgvjiniujokbh.Name = "Sound"
+    rgvjiniujokbh.SoundId = "http://www.roblox.com/asset?id=137473066"
+    rgvjiniujokbh.Volume = 100
+    rgvjiniujokbh.Looped = false
+    rgvjiniujokbh.archivable = false
+    rgvjiniujokbh:play()
+
+_G.YUKIIXDRAG = {}
+
+function createDrag(object)
+    _G.YUKIIXDRAG[object] = {}
+    object.MouseEnter:Connect(function()
+        _G.YUKIIXDRAG[object].checkMouse = true
+        _G.YUKIIXDRAG[object].mdwn = object.InputBegan:Connect(function(input)
+            if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                _G.YUKIIXDRAG[object].startpos = object.Position
+                _G.YUKIIXDRAG[object].startdrag = input.Position
+                _G.YUKIIXDRAG[object].mouseDown = true
+                _G.YUKIIXDRAG[object].mou = input
+                _G.YUKIIXDRAG[object].mloo = game:GetService("RunService").RenderStepped:Connect(function()
+                    if _G.YUKIIXDRAG[object].mouseDown then
+                        _G.YUKIIXDRAG[object].delta = _G.YUKIIXDRAG[object].mou.Position - _G.YUKIIXDRAG[object].startdrag
+                        object.Position = UDim2.new(_G.YUKIIXDRAG[object].startpos.X.Scale, _G.YUKIIXDRAG[object].startpos.X.Offset + _G.YUKIIXDRAG[object].delta.X, _G.YUKIIXDRAG[object].startpos.Y.Scale, _G.YUKIIXDRAG[object].startpos.Y.Offset + _G.YUKIIXDRAG[object].delta.Y)
+                    end
+                end)
+            end
+        end) 
+        _G.YUKIIXDRAG[object].mmoved = object.InputChanged:Connect(function(input)
+            if input.UserInputType == Enum.UserInputType.MouseMovement then
+                _G.YUKIIXDRAG[object].mou = input
+            end
+        end) 
+        object.InputEnded:Connect(function(input)
+            if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                _G.YUKIIXDRAG[object].mouseDown = false
+                _G.YUKIIXDRAG[object].mmoved:Disconnect()
+                if _G.YUKIIXDRAG[object].mloo then _G.YUKIIXDRAG[object].mloo:Disconnect() end
+            end    
+        end)
+    end)
+    object.MouseLeave:Connect(function()
+        if _G.YUKIIXDRAG[object].mdwn then
+            _G.YUKIIXDRAG[object].mdwn:Disconnect()
+        end
+    end)
+end
 
 local YukiiXLoadingScreen = Instance.new("ScreenGui")
 local Frame = Instance.new("ImageLabel")
@@ -21,8 +61,10 @@ local TextButton = Instance.new("TextButton")
 local TextButton_Roundify_12px = Instance.new("ImageLabel")
 local TextLabel_2 = Instance.new("TextLabel")
 
-YukiiXLoadingScreen.Name = "YukiiXLoadingScreen"
+YukiiXLoadingScreen.Name = math.random(1,100000)
 YukiiXLoadingScreen.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+YukiiXLoadingScreen.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+YukiiXLoadingScreen.DisplayOrder = 2147483645
 
 Frame.Name = "Frame"
 Frame.Parent = YukiiXLoadingScreen
@@ -31,6 +73,7 @@ Frame.BackgroundTransparency = 1.000
 Frame.Position = UDim2.new(0.389206856, 0, 0.351791531, 0)
 Frame.Size = UDim2.new(0.270314276, 0, 0.197068408, 0)
 Frame.Image = "http://www.roblox.com/asset/?id=7312549600"
+createDrag(Frame)
 
 SliderFrame.Name = "SliderFrame"
 SliderFrame.Parent = Frame
@@ -67,7 +110,7 @@ TextBox.Position = UDim2.new(0.105783336, 0, 0.359999985, 0)
 TextBox.Size = UDim2.new(0.776752591, 0, 0.264462799, 0)
 TextBox.Visible = false
 TextBox.Font = Enum.Font.SourceSansBold
-TextBox.Text = "Enter Key.."
+TextBox.Text = "Enter Key..."
 TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextBox.TextScaled = true
 TextBox.TextSize = 14.000
@@ -113,52 +156,936 @@ TextLabel_2.TextWrapped = true
 
 SlideFrame:TweenSize(UDim2.new(0.400, 1,1, 1), Enum.EasingDirection.In, Enum.EasingStyle.Linear, 1, false, nil)
 wait(0.5)
-TextLabel.Text = "Checking Whitelist.."
+TextLabel.Text = "Checking whitelist.."
 wait(0.5)
-TextLabel.Text = "Checking Whitelist..."
+TextLabel.Text = "Checking whitelist..."
 wait(0.5)
 TextLabel.Visible = false
 SliderFrame.Visible = false
 TextButton.Visible = true
 TextBox.Visible = true
 TextButton.MouseButton1Click:Connect(function()
-if TextBox.Text == Key then
-	TextBox.Visible = false
-	TextButton.Visible = false
-	TextLabel.Visible = true
-	SliderFrame.Visible = true
-if not table.find(Whitelisted,game.Players.LocalPlayer.Name) then
-	game.Players.LocalPlayer:Kick("Nice Try Dumbfuck.")
-end
-if table.find(Whitelisted,game.Players.LocalPlayer.Name) then
-	TextLabel.Text = "Welcome "..game.Players.LocalPlayer.Name.." ["..game.Players.LocalPlayer.DisplayName.."]"
-	TextLabel.TextColor3 = Color3.fromRGB(255,255,0)
-end
-	if not table.find(Whitelisted,game.Players.LocalPlayer.Name) then
-	TextLabel.TextColor3 = Color3.fromRGB(255,0,0)
-	TextLabel.Text = "You Are Not Whitelsited !"
-	wait(1.5)
-	YukiiXLoadingScreen:Destroy()
-	return
-end
-wait(1)
-TextLabel.TextColor3 = Color3.fromRGB(255,255,255)
-SlideFrame:TweenSize(UDim2.new(0.798, 1,1, 1), Enum.EasingDirection.In, Enum.EasingStyle.Linear, 1, false, nil)
-TextLabel.Text = "Loading."
-wait(0.8)
-TextLabel.Text = "Loading.."
-wait(0.8)
-TextLabel.Text = "Checking Character"
-wait(1)
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-if not game.Players.LocalPlayer.Character then
-	TextLabel.Text = "Spawn Your Character First!"
-	TextLabel.TextColor3 = Color3.fromRGB(255,0,0)
-	game.Players.LocalPlayer.CharacterAdded:Wait()
-	game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-end
-SlideFrame:TweenSize(UDim2.new(0.998, 1,1, 1), Enum.EasingDirection.In, Enum.EasingStyle.Linear, 1, false, nil)
-wait(0.5)
-	YukiiXLoadingScreen:Destroy()
+	if TextBox.Text == Key then
+		TextBox.Visible = false
+		TextButton.Visible = false
+		TextLabel.Visible = true
+		SliderFrame.Visible = true
+		if not table.find(Whitelisted,game.Players.LocalPlayer.Name) then
+			game.Players.LocalPlayer:Kick("Nice try dumbfuck")
+		end
+		if table.find(Whitelisted,game.Players.LocalPlayer.Name) then
+			TextLabel.Text = "Welcome " ..game.Players.LocalPlayer.DisplayName
+			TextLabel.TextColor3 = Color3.fromRGB(255,255,0)
+		end
+		if not table.find(Whitelisted,game.Players.LocalPlayer.Name) then
+			TextLabel.TextColor3 = Color3.fromRGB(255,0,0)
+			TextLabel.Text = "You are not whitelsited"
+			wait(1.5)
+			YukiiXLoadingScreen:Destroy()
+			return
+		end
+		wait(0.8)
+		TextLabel.TextColor3 = Color3.fromRGB(255,255,255)
+		SlideFrame:TweenSize(UDim2.new(0.798, 1,1, 1), Enum.EasingDirection.In, Enum.EasingStyle.Linear, 1, false, nil)
+		TextLabel.Text = "Loading."
+		wait(0.5)
+		TextLabel.Text = "Loading.."
+		wait(0.5)
+		TextLabel.Text = "Loading..."
+		wait(0.5)
+		TextLabel.Text = "Checking character"
+		wait(1)
+		TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+		if not game.Players.LocalPlayer.Character then
+			TextLabel.Text = "Spawn your character first!"
+			TextLabel.TextColor3 = Color3.fromRGB(255,0,0)
+			game.Players.LocalPlayer.CharacterAdded:Wait()
+			game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
+		end
+		SlideFrame:TweenSize(UDim2.new(0.998, 1,1, 1), Enum.EasingDirection.In, Enum.EasingStyle.Linear, 1, false, nil)
+		wait(0.5)
+		YukiiXLoadingScreen:Destroy()
 	end
+	wait(0.5)
+
+for i,v in pairs(game:GetService("CoreGui").RobloxGui:GetChildren()) do
+	if v.Name == "YukiiX" then
+		v:Destroy()
+	end
+end
+
+	if table.find(Whitelisted,game.Players.LocalPlayer.Name) then
+
+		loadstring(game:HttpGetAsync("https://pastebin.com/raw/Ts8TSAZN", 0, true))()
+		notify("Yukii X")
+
+local Enabled = true
+local SelectedTab = 5
+local Location = {X = 0.319444448, Y = 0.268729627}
+function LoadDefaults()
+Enabled = true
+SelectedTab = 5
+Location = {X = 0.319444448, Y = 0.268729627}
+end
+
+function UpdateSaves()
+local Update = {
+Enabled = Enabled;
+SelectedTab = SelectedTab;
+Location = Location;
+}
+writefile("X.lua",
+game:GetService("HttpService"):JSONEncode(Update))
+end
+
+function LoadSaves()
+local success, errorsend = pcall(function()
+saves = game:GetService("HttpService"):JSONDecode(readfile("X.lua"))
+end)
+    if not success then
+        LoadDefaults()
+        UpdateSaves()
+        return
+    end
+Enabled = saves.Enabled
+SelectedTab = saves.SelectedTab
+end
+if writefile and readfile then
+    LoadSaves()
+else
+    LoadDefaults()
+end
+
+		local YukiiX = Instance.new("ScreenGui")
+		local Frame = Instance.new("Frame")
+		local Background = Instance.new("ImageLabel")
+		local Main = Instance.new("ImageLabel")
+		local MainText = Instance.new("TextButton")
+		local Selected = Instance.new("TextLabel")
+		local Back = Instance.new("TextButton")
+		local Forward = Instance.new("TextButton")
+		local _1 = Instance.new("Frame")
+		local Player = Instance.new("ImageLabel")
+		local PlayerText = Instance.new("TextButton")
+		local Misc = Instance.new("ImageLabel")
+		local MiscText = Instance.new("TextButton")
+		local Scripts = Instance.new("ImageLabel")
+		local ScriptsText = Instance.new("TextButton")
+		local About = Instance.new("ImageLabel")
+		local AboutText = Instance.new("TextButton")
+		local Close = Instance.new("ImageLabel")
+		local CloseButton = Instance.new("TextButton")
+		local MainBackground = Instance.new("ImageLabel")
+		local Selected_2 = Instance.new("TextLabel")
+		local Back_2 = Instance.new("TextButton")
+		local Forward_2 = Instance.new("TextButton")
+		local ScriptsBackground = Instance.new("ImageLabel")
+		local Forward_3 = Instance.new("TextButton")
+		local Selected_3 = Instance.new("TextLabel")
+		local Back_3 = Instance.new("TextButton")
+		local PlayerBackground = Instance.new("ImageLabel")
+		local Forward_4 = Instance.new("TextButton")
+		local Selected_4 = Instance.new("TextLabel")
+		local Back_4 = Instance.new("TextButton")
+		local MiscBackground = Instance.new("ImageLabel")
+		local Forward_5 = Instance.new("TextButton")
+		local Selected_5 = Instance.new("TextLabel")
+		local Back_5 = Instance.new("TextButton")
+		local AboutBackground = Instance.new("ImageLabel")
+		local ToggleUi = Instance.new("TextLabel")
+		local MadeBy = Instance.new("TextLabel")
+		local YukiiX_2 = Instance.new("TextLabel")
+		local Logo = Instance.new("ImageLabel")
+
+		YukiiX.Name = "YukiiX"
+		YukiiX.Parent = game:GetService("CoreGui").RobloxGui
+		YukiiX.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+		YukiiX.DisplayOrder = 2147483645
+
+		Frame.Parent = YukiiX
+        Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        Frame.BackgroundTransparency = 1.000
+        Frame.Position = UDim2.new(Location.X, 0, Location.Y, 0)
+        Frame.Size = UDim2.new(0.33905229, 0, 0.530944645, 0)
+        Frame.Draggable = true
+        createDrag(Frame)
+
+       Frame.Changed:Connect(function()
+                Location = {X = Frame.Position.X, Y = Frame.Position.Y}
+                UpdateSaves()
+            end)
+
+		Background.Name = "Background"
+		Background.Parent = Frame
+		Background.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Background.BackgroundTransparency = 1.000
+		Background.Position = UDim2.new(0.0230590086, 0, 0.107542381, 0)
+		Background.Size = UDim2.new(0.955919802, 0, 0.866044998, 0)
+		Background.Image = "rbxassetid://3570695787"
+		Background.ImageColor3 = Color3.fromRGB(68, 68, 68)
+		Background.ScaleType = Enum.ScaleType.Slice
+		Background.SliceCenter = Rect.new(100, 100, 100, 100)
+		Background.SliceScale = 0.120
+		
+		Selected.Name = "Selected"
+		Selected.Parent = Background
+		Selected.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Selected.BackgroundTransparency = 1.000
+		Selected.Position = UDim2.new(0.77325207, 0, 0.237310335, 0)
+		Selected.Size = UDim2.new(0.0912691057, 0, 0.120426171, 0)
+		Selected.Font = Enum.Font.SourceSans
+		Selected.Text = "1"
+		Selected.TextColor3 = Color3.fromRGB(255, 255, 255)
+		Selected.TextScaled = true
+		Selected.TextSize = 14.000
+		Selected.TextWrapped = true
+
+		Back.Name = "Back"
+		Back.Parent = Background
+		Back.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Back.BackgroundTransparency = 1.000
+		Back.Position = UDim2.new(0.707335532, 0, 0.24793613, 0)
+		Back.Rotation = 90.000
+		Back.Size = UDim2.new(0.0655394793, 0, 0.0991745442, 0)
+		Back.Font = Enum.Font.SourceSans
+		Back.Text = "V"
+		Back.TextColor3 = Color3.fromRGB(0, 0, 0)
+		Back.TextScaled = true
+		Back.TextSize = 14.000
+		Back.TextWrapped = true
+	Back.MouseButton1Click:Connect(function()
+		Back.TextColor3 = Color3.fromRGB(255,255,255)
+		wait(0.5)
+		Back.TextColor3 = Color3.fromRGB(0,0,0)
 	end)
+
+		Forward.Name = "Forward"
+		Forward.Parent = Background
+		Forward.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Forward.BackgroundTransparency = 1.000
+		Forward.Position = UDim2.new(0.864521205, 0, 0.24793613, 0)
+		Forward.Rotation = -90.000
+		Forward.Size = UDim2.new(0.0655394793, 0, 0.0991745442, 0)
+		Forward.Font = Enum.Font.SourceSans
+		Forward.Text = "V"
+		Forward.TextColor3 = Color3.fromRGB(0, 0, 0)
+		Forward.TextScaled = true
+		Forward.TextSize = 14.000
+	Forward.TextWrapped = true
+	Forward.MouseButton1Click:Connect(function()
+		Forward.TextColor3 = Color3.fromRGB(255,255,255)
+		wait(0.5)
+		Forward.TextColor3 = Color3.fromRGB(0,0,0)
+	end)
+
+
+		_1.Name = "1"
+		_1.Parent = Background
+		_1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		_1.BackgroundTransparency = 1.000
+		_1.Position = UDim2.new(0, 0, 0.00354194618, 0)
+		_1.Size = UDim2.new(1, 0, 0.383740395, 0)
+
+	Main.Name = "Main"
+	Main.Parent = _1
+	Main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Main.BackgroundTransparency = 1.000
+	Main.ClipsDescendants = true
+	Main.Position = UDim2.new(0.0302489437, 0, 0.0900502503, 0)
+	Main.Size = UDim2.new(0.301896244, 0, 0.373044342, 0)
+	Main.Image = "rbxassetid://3570695787"
+	Main.ImageColor3 = Color3.fromRGB(95, 95, 95)
+	Main.ScaleType = Enum.ScaleType.Slice
+	Main.SliceCenter = Rect.new(100, 100, 100, 100)
+	Main.SliceScale = 0.120
+
+		MainText.Name = "MainText"
+		MainText.Parent = Main
+		MainText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		MainText.BackgroundTransparency = 1.000
+		MainText.Size = UDim2.new(1.00000012, 0, 0.999999881, 0)
+		MainText.Font = Enum.Font.SourceSansBold
+		MainText.Text = "Main"
+		MainText.TextColor3 = Color3.fromRGB(57, 57, 57)
+		MainText.TextScaled = true
+		MainText.TextSize = 14.000
+		MainText.TextWrapped = true
+
+	Player.Name = "Player"
+	Player.Parent = _1
+	Player.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Player.BackgroundTransparency = 1.000
+	Player.ClipsDescendants = true
+	Player.Position = UDim2.new(0.350000054, 0, 0.0900502503, 0)
+	Player.Size = UDim2.new(0.301896244, 0, 0.373044342, 0)
+	Player.Image = "rbxassetid://3570695787"
+	Player.ImageColor3 = Color3.fromRGB(95, 95, 95)
+	Player.ScaleType = Enum.ScaleType.Slice
+	Player.SliceCenter = Rect.new(100, 100, 100, 100)
+	Player.SliceScale = 0.120
+
+		PlayerText.Name = "PlayerText"
+		PlayerText.Parent = Player
+		PlayerText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		PlayerText.BackgroundTransparency = 1.000
+		PlayerText.Size = UDim2.new(1.00000012, 0, 0.999999881, 0)
+		PlayerText.Font = Enum.Font.SourceSansBold
+		PlayerText.Text = "Player"
+		PlayerText.TextColor3 = Color3.fromRGB(57, 57, 57)
+		PlayerText.TextScaled = true
+		PlayerText.TextSize = 14.000
+		PlayerText.TextWrapped = true
+
+	Misc.Name = "Misc"
+	Misc.Parent = _1
+	Misc.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Misc.BackgroundTransparency = 1.000
+	Misc.ClipsDescendants = true
+	Misc.Position = UDim2.new(0.669999957, 0, 0.0900502503, 0)
+	Misc.Size = UDim2.new(0.301896244, 0, 0.373044342, 0)
+	Misc.Image = "rbxassetid://3570695787"
+	Misc.ImageColor3 = Color3.fromRGB(95, 95, 95)
+	Misc.ScaleType = Enum.ScaleType.Slice
+	Misc.SliceCenter = Rect.new(100, 100, 100, 100)
+	Misc.SliceScale = 0.120
+
+		MiscText.Name = "MiscText"
+		MiscText.Parent = Misc
+		MiscText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		MiscText.BackgroundTransparency = 1.000
+		MiscText.Size = UDim2.new(1.00000012, 0, 0.999999881, 0)
+		MiscText.Font = Enum.Font.SourceSansBold
+		MiscText.Text = "Misc"
+		MiscText.TextColor3 = Color3.fromRGB(57, 57, 57)
+		MiscText.TextScaled = true
+		MiscText.TextSize = 14.000
+		MiscText.TextWrapped = true
+
+	Scripts.Name = "Scripts"
+	Scripts.Parent = _1
+	Scripts.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Scripts.BackgroundTransparency = 1.000
+	Scripts.ClipsDescendants = true
+	Scripts.Position = UDim2.new(0.0302489437, 0, 0.522271097, 0)
+	Scripts.Size = UDim2.new(0.301896244, 0, 0.373044342, 0)
+	Scripts.Image = "rbxassetid://3570695787"
+	Scripts.ImageColor3 = Color3.fromRGB(95, 95, 95)
+	Scripts.ScaleType = Enum.ScaleType.Slice
+	Scripts.SliceCenter = Rect.new(100, 100, 100, 100)
+	Scripts.SliceScale = 0.120
+
+		ScriptsText.Name = "ScriptsText"
+		ScriptsText.Parent = Scripts
+		ScriptsText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		ScriptsText.BackgroundTransparency = 1.000
+		ScriptsText.Size = UDim2.new(1.00000012, 0, 0.999999881, 0)
+		ScriptsText.Font = Enum.Font.SourceSansBold
+		ScriptsText.Text = "Scripts"
+		ScriptsText.TextColor3 = Color3.fromRGB(57, 57, 57)
+		ScriptsText.TextScaled = true
+		ScriptsText.TextSize = 14.000
+		ScriptsText.TextWrapped = true
+
+	About.Name = "About"
+	About.Parent = _1
+	About.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	About.BackgroundTransparency = 1.000
+	About.ClipsDescendants = true
+	About.Position = UDim2.new(0.350000054, 0, 0.522271097, 0)
+	About.Size = UDim2.new(0.301896244, 0, 0.373044342, 0)
+	About.Image = "rbxassetid://3570695787"
+	About.ImageColor3 = Color3.fromRGB(95, 95, 95)
+	About.ScaleType = Enum.ScaleType.Slice
+	About.SliceCenter = Rect.new(100, 100, 100, 100)
+	About.SliceScale = 0.120
+
+		AboutText.Name = "AboutText"
+		AboutText.Parent = About
+		AboutText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		AboutText.BackgroundTransparency = 1.000
+		AboutText.Size = UDim2.new(1.00000012, 0, 0.999999881, 0)
+		AboutText.Font = Enum.Font.SourceSansBold
+		AboutText.Text = "About"
+		AboutText.TextColor3 = Color3.fromRGB(255,255,255)
+		AboutText.TextScaled = true
+		AboutText.TextSize = 14.000
+		AboutText.TextWrapped = true
+
+		Close.Name = "Close"
+		Close.Parent = Background
+		Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Close.BackgroundTransparency = 1.000
+		Close.Position = UDim2.new(0.4436526, 0, -0.0672969744, 0)
+		Close.Size = UDim2.new(0.110913157, 0, 0.145219758, 0)
+		Close.ZIndex = 5
+		Close.Image = "rbxassetid://3570695787"
+		Close.ImageColor3 = Color3.fromRGB(153, 153, 153)
+		Close.ScaleType = Enum.ScaleType.Slice
+		Close.SliceCenter = Rect.new(100, 100, 100, 100)
+		Close.SliceScale = 0.120
+
+		CloseButton.Name = "CloseButton"
+		CloseButton.Parent = Close
+		CloseButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		CloseButton.BackgroundTransparency = 1.000
+		CloseButton.Size = UDim2.new(1.00000012, 0, 0.999999881, 0)
+		CloseButton.ZIndex = 6
+		CloseButton.Font = Enum.Font.SourceSansBold
+		CloseButton.Text = "V"
+		CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+		CloseButton.TextScaled = true
+		CloseButton.TextSize = 14.000
+		CloseButton.TextWrapped = true
+
+		MainBackground.Name = "MainBackground"
+		MainBackground.Parent = Frame
+		MainBackground.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		MainBackground.BackgroundTransparency = 1.000
+		MainBackground.ClipsDescendants = true
+		MainBackground.Position = UDim2.new(0.0519746728, 0, 0.442946166, 0)
+		MainBackground.Size = UDim2.new(0.905317426, 0, 0.49647966, 0)
+		MainBackground.Visible = false
+		MainBackground.Image = "rbxassetid://3570695787"
+		MainBackground.ImageColor3 = Color3.fromRGB(95, 95, 95)
+		MainBackground.ScaleType = Enum.ScaleType.Slice
+		MainBackground.SliceCenter = Rect.new(100, 100, 100, 100)
+		MainBackground.SliceScale = 0.120
+		
+		Selected_2.Name = "Selected"
+		Selected_2.Parent = MainBackground
+		Selected_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Selected_2.BackgroundTransparency = 1.000
+		Selected_2.Position = UDim2.new(0.791276574, 0, 0.713052511, 0)
+		Selected_2.Size = UDim2.new(0.105707735, 0, 0.244609907, 0)
+		Selected_2.Font = Enum.Font.SourceSans
+		Selected_2.Text = "1"
+		Selected_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+		Selected_2.TextScaled = true
+		Selected_2.TextSize = 14.000
+		Selected_2.TextWrapped = true
+
+		Back_2.Name = "Back"
+		Back_2.Parent = MainBackground
+		Back_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Back_2.BackgroundTransparency = 1.000
+		Back_2.Position = UDim2.new(0.714932084, 0, 0.734635651, 0)
+		Back_2.Rotation = 90.000
+		Back_2.Size = UDim2.new(0.0759077072, 0, 0.201443583, 0)
+		Back_2.Font = Enum.Font.SourceSans
+		Back_2.Text = "V"
+		Back_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+		Back_2.TextScaled = true
+		Back_2.TextSize = 14.000
+	Back_2.TextWrapped = true
+	Back_2.MouseButton1Click:Connect(function()
+		Back_2.TextColor3 = Color3.fromRGB(255,255,255)
+		wait(0.5)
+		Back_2.TextColor3 = Color3.fromRGB(0,0,0)
+	end)
+
+
+		Forward_2.Name = "Forward"
+		Forward_2.Parent = MainBackground
+		Forward_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Forward_2.BackgroundTransparency = 1.000
+		Forward_2.Position = UDim2.new(0.896984279, 0, 0.734635651, 0)
+		Forward_2.Rotation = -90.000
+		Forward_2.Size = UDim2.new(0.0759077072, 0, 0.201443583, 0)
+		Forward_2.Font = Enum.Font.SourceSans
+		Forward_2.Text = "V"
+		Forward_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+		Forward_2.TextScaled = true
+		Forward_2.TextSize = 14.000
+	Forward_2.TextWrapped = true
+	Forward_2.MouseButton1Click:Connect(function()
+		Forward_2.TextColor3 = Color3.fromRGB(255,255,255)
+		wait(0.5)
+		Forward_2.TextColor3 = Color3.fromRGB(0,0,0)
+	end)
+
+		ScriptsBackground.Name = "ScriptsBackground"
+		ScriptsBackground.Parent = Frame
+		ScriptsBackground.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		ScriptsBackground.BackgroundTransparency = 1.000
+		ScriptsBackground.ClipsDescendants = true
+		ScriptsBackground.Position = UDim2.new(0.0519746728, 0, 0.442946166, 0)
+		ScriptsBackground.Size = UDim2.new(0.905317426, 0, 0.49647966, 0)
+		ScriptsBackground.Visible = false
+		ScriptsBackground.Image = "rbxassetid://3570695787"
+		ScriptsBackground.ImageColor3 = Color3.fromRGB(95, 95, 95)
+		ScriptsBackground.ScaleType = Enum.ScaleType.Slice
+		ScriptsBackground.SliceCenter = Rect.new(100, 100, 100, 100)
+		ScriptsBackground.SliceScale = 0.120
+		
+		Forward_3.Name = "Forward"
+		Forward_3.Parent = ScriptsBackground
+		Forward_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Forward_3.BackgroundTransparency = 1.000
+		Forward_3.Position = UDim2.new(0.896984279, 0, 0.734635651, 0)
+		Forward_3.Rotation = -90.000
+		Forward_3.Size = UDim2.new(0.0759077072, 0, 0.201443583, 0)
+		Forward_3.Font = Enum.Font.SourceSans
+		Forward_3.Text = "V"
+		Forward_3.TextColor3 = Color3.fromRGB(0, 0, 0)
+		Forward_3.TextScaled = true
+		Forward_3.TextSize = 14.000
+	Forward_3.TextWrapped = true
+	Forward_3.MouseButton1Click:Connect(function()
+		Forward_3.TextColor3 = Color3.fromRGB(255,255,255)
+		wait(0.5)
+		Forward_3.TextColor3 = Color3.fromRGB(0,0,0)
+	end)
+
+		Selected_3.Name = "Selected"
+		Selected_3.Parent = ScriptsBackground
+		Selected_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Selected_3.BackgroundTransparency = 1.000
+		Selected_3.Position = UDim2.new(0.791276574, 0, 0.713052511, 0)
+		Selected_3.Size = UDim2.new(0.105707735, 0, 0.244609907, 0)
+		Selected_3.Font = Enum.Font.SourceSans
+		Selected_3.Text = "1"
+		Selected_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+		Selected_3.TextScaled = true
+		Selected_3.TextSize = 14.000
+		Selected_3.TextWrapped = true
+
+		Back_3.Name = "Back"
+		Back_3.Parent = ScriptsBackground
+		Back_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Back_3.BackgroundTransparency = 1.000
+		Back_3.Position = UDim2.new(0.714932084, 0, 0.734635651, 0)
+		Back_3.Rotation = 90.000
+		Back_3.Size = UDim2.new(0.0759077072, 0, 0.201443583, 0)
+		Back_3.Font = Enum.Font.SourceSans
+		Back_3.Text = "V"
+		Back_3.TextColor3 = Color3.fromRGB(0, 0, 0)
+		Back_3.TextScaled = true
+		Back_3.TextSize = 14.000
+	Back_3.TextWrapped = true
+	Back_3.MouseButton1Click:Connect(function()
+		Back_3.TextColor3 = Color3.fromRGB(255,255,255)
+		wait(0.5)
+		Back_3.TextColor3 = Color3.fromRGB(0,0,0)
+	end)
+
+
+		PlayerBackground.Name = "PlayerBackground"
+		PlayerBackground.Parent = Frame
+		PlayerBackground.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		PlayerBackground.BackgroundTransparency = 1.000
+		PlayerBackground.ClipsDescendants = true
+		PlayerBackground.Position = UDim2.new(0.0519746728, 0, 0.442946166, 0)
+		PlayerBackground.Size = UDim2.new(0.905317426, 0, 0.49647966, 0)
+		PlayerBackground.Visible = false
+		PlayerBackground.Image = "rbxassetid://3570695787"
+		PlayerBackground.ImageColor3 = Color3.fromRGB(95, 95, 95)
+		PlayerBackground.ScaleType = Enum.ScaleType.Slice
+		PlayerBackground.SliceCenter = Rect.new(100, 100, 100, 100)
+		PlayerBackground.SliceScale = 0.120
+		
+		Forward_4.Name = "Forward"
+		Forward_4.Parent = PlayerBackground
+		Forward_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Forward_4.BackgroundTransparency = 1.000
+		Forward_4.Position = UDim2.new(0.896984279, 0, 0.734635651, 0)
+		Forward_4.Rotation = -90.000
+		Forward_4.Size = UDim2.new(0.0759077072, 0, 0.201443583, 0)
+		Forward_4.Font = Enum.Font.SourceSans
+		Forward_4.Text = "V"
+		Forward_4.TextColor3 = Color3.fromRGB(0, 0, 0)
+		Forward_4.TextScaled = true
+		Forward_4.TextSize = 14.000
+	Forward_4.TextWrapped = true
+	Forward_4.MouseButton1Click:Connect(function()
+		Forward_4.TextColor3 = Color3.fromRGB(255,255,255)
+		wait(0.5)
+		Forward_4.TextColor3 = Color3.fromRGB(0,0,0)
+	end)
+
+		Selected_4.Name = "Selected"
+		Selected_4.Parent = PlayerBackground
+		Selected_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Selected_4.BackgroundTransparency = 1.000
+		Selected_4.Position = UDim2.new(0.791276574, 0, 0.713052511, 0)
+		Selected_4.Size = UDim2.new(0.105707735, 0, 0.244609907, 0)
+		Selected_4.Font = Enum.Font.SourceSans
+		Selected_4.Text = "1"
+		Selected_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+		Selected_4.TextScaled = true
+		Selected_4.TextSize = 14.000
+		Selected_4.TextWrapped = true
+
+		Back_4.Name = "Back"
+		Back_4.Parent = PlayerBackground
+		Back_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Back_4.BackgroundTransparency = 1.000
+		Back_4.Position = UDim2.new(0.714932084, 0, 0.734635651, 0)
+		Back_4.Rotation = 90.000
+		Back_4.Size = UDim2.new(0.0759077072, 0, 0.201443583, 0)
+		Back_4.Font = Enum.Font.SourceSans
+		Back_4.Text = "V"
+		Back_4.TextColor3 = Color3.fromRGB(0, 0, 0)
+		Back_4.TextScaled = true
+		Back_4.TextSize = 14.000
+	Back_4.TextWrapped = true
+	Back_4.MouseButton1Click:Connect(function()
+		Back_4.TextColor3 = Color3.fromRGB(255,255,255)
+		wait(0.5)
+		Back_4.TextColor3 = Color3.fromRGB(0,0,0)
+	end)
+
+
+		MiscBackground.Name = "MiscBackground"
+		MiscBackground.Parent = Frame
+		MiscBackground.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		MiscBackground.BackgroundTransparency = 1.000
+		MiscBackground.ClipsDescendants = true
+		MiscBackground.Position = UDim2.new(0.0519746728, 0, 0.442946166, 0)
+		MiscBackground.Size = UDim2.new(0.905317426, 0, 0.49647966, 0)
+		MiscBackground.Visible = false
+		MiscBackground.Image = "rbxassetid://3570695787"
+		MiscBackground.ImageColor3 = Color3.fromRGB(95, 95, 95)
+		MiscBackground.ScaleType = Enum.ScaleType.Slice
+		MiscBackground.SliceCenter = Rect.new(100, 100, 100, 100)
+		MiscBackground.SliceScale = 0.120
+		
+		Forward_5.Name = "Forward"
+		Forward_5.Parent = MiscBackground
+		Forward_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Forward_5.BackgroundTransparency = 1.000
+		Forward_5.Position = UDim2.new(0.896984279, 0, 0.734635651, 0)
+		Forward_5.Rotation = -90.000
+		Forward_5.Size = UDim2.new(0.0759077072, 0, 0.201443583, 0)
+		Forward_5.Font = Enum.Font.SourceSans
+		Forward_5.Text = "V"
+		Forward_5.TextColor3 = Color3.fromRGB(0, 0, 0)
+		Forward_5.TextScaled = true
+		Forward_5.TextSize = 14.000
+	Forward_5.TextWrapped = true
+	Forward_5.MouseButton1Click:Connect(function()
+		Forward_5.TextColor3 = Color3.fromRGB(255,255,255)
+		wait(0.5)
+		Forward_5.TextColor3 = Color3.fromRGB(0,0,0)
+	end)
+
+		Selected_5.Name = "Selected"
+		Selected_5.Parent = MiscBackground
+		Selected_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Selected_5.BackgroundTransparency = 1.000
+		Selected_5.Position = UDim2.new(0.791276574, 0, 0.713052511, 0)
+		Selected_5.Size = UDim2.new(0.105707735, 0, 0.244609907, 0)
+		Selected_5.Font = Enum.Font.SourceSans
+		Selected_5.Text = "1"
+		Selected_5.TextColor3 = Color3.fromRGB(255, 255, 255)
+		Selected_5.TextScaled = true
+		Selected_5.TextSize = 14.000
+		Selected_5.TextWrapped = true
+
+		Back_5.Name = "Back"
+		Back_5.Parent = MiscBackground
+		Back_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Back_5.BackgroundTransparency = 1.000
+		Back_5.Position = UDim2.new(0.714932084, 0, 0.734635651, 0)
+		Back_5.Rotation = 90.000
+		Back_5.Size = UDim2.new(0.0759077072, 0, 0.201443583, 0)
+		Back_5.Font = Enum.Font.SourceSans
+		Back_5.Text = "V"
+		Back_5.TextColor3 = Color3.fromRGB(0, 0, 0)
+		Back_5.TextScaled = true
+		Back_5.TextSize = 14.000
+	Back_5.TextWrapped = true
+	Back_5.MouseButton1Click:Connect(function()
+		Back_5.TextColor3 = Color3.fromRGB(255,255,255)
+		wait(0.5)
+		Back_5.TextColor3 = Color3.fromRGB(0,0,0)
+	end)
+
+
+		AboutBackground.Name = "AboutBackground"
+		AboutBackground.Parent = Frame
+		AboutBackground.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		AboutBackground.BackgroundTransparency = 1.000
+		AboutBackground.ClipsDescendants = true
+		AboutBackground.Position = UDim2.new(0.0519746728, 0, 0.442946166, 0)
+		AboutBackground.Size = UDim2.new(0.905317426, 0, 0.49647966, 0)
+		AboutBackground.Image = "rbxassetid://3570695787"
+		AboutBackground.ImageColor3 = Color3.fromRGB(95, 95, 95)
+		AboutBackground.ScaleType = Enum.ScaleType.Slice
+		AboutBackground.SliceCenter = Rect.new(100, 100, 100, 100)
+		AboutBackground.SliceScale = 0.120
+
+		ToggleUi.Name = "ToggleUi"
+		ToggleUi.Parent = AboutBackground
+		ToggleUi.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		ToggleUi.BackgroundTransparency = 1.000
+		ToggleUi.Position = UDim2.new(0.0825110823, 0, 0.580776155, 0)
+		ToggleUi.Size = UDim2.new(0.835758269, 0, 0.376886696, 0)
+		ToggleUi.Font = Enum.Font.SourceSansBold
+		ToggleUi.Text = "Toggle Ui [ L - ALT ]"
+		ToggleUi.TextColor3 = Color3.fromRGB(255, 78, 78)
+		ToggleUi.TextScaled = true
+		ToggleUi.TextSize = 14.000
+		ToggleUi.TextWrapped = true
+
+		MadeBy.Name = "MadeBy"
+		MadeBy.Parent = AboutBackground
+		MadeBy.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		MadeBy.BackgroundTransparency = 1.000
+		MadeBy.Position = UDim2.new(0.247533426, 0, 0.290388077, 0)
+		MadeBy.Size = UDim2.new(0.660089314, 0, 0.247138813, 0)
+		MadeBy.Font = Enum.Font.SourceSansBold
+		MadeBy.Text = "By Yukii & X"
+		MadeBy.TextColor3 = Color3.fromRGB(255, 255, 255)
+		MadeBy.TextScaled = true
+		MadeBy.TextSize = 14.000
+		MadeBy.TextWrapped = true
+
+		YukiiX_2.Name = "YukiiX"
+		YukiiX_2.Parent = AboutBackground
+		YukiiX_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		YukiiX_2.BackgroundTransparency = 1.000
+		YukiiX_2.Position = UDim2.new(0.335367888, 0, -0.0494277589, 0)
+		YukiiX_2.Size = UDim2.new(0.488710165, 0, 0.413957536, 0)
+		YukiiX_2.Font = Enum.Font.SourceSansBold
+		YukiiX_2.Text = "Yukii X"
+		YukiiX_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+		YukiiX_2.TextScaled = true
+		YukiiX_2.TextSize = 14.000
+		YukiiX_2.TextWrapped = true
+
+		Logo.Name = "Logo"
+		Logo.Parent = AboutBackground
+		Logo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Logo.BackgroundTransparency = 1.000
+		Logo.Position = UDim2.new(0.0372631066, 0, 0.0926770419, 0)
+		Logo.Size = UDim2.new(0.279473275, 0, 0.525169969, 0)
+		Logo.Image = "rbxassetid://7319793812"
+
+		if SelectedTab == 1 then
+			PlayerBackground.Visible = false
+			MiscBackground.Visible = false
+			AboutBackground.Visible = false
+			ScriptsBackground.Visible = false
+			MainBackground.Visible = true
+			ScriptsText.TextColor3 = Color3.fromRGB(57,57,57)
+			PlayerText.TextColor3 = Color3.fromRGB(57,57,57)
+			MiscText.TextColor3 = Color3.fromRGB(57,57,57)
+			AboutText.TextColor3 = Color3.fromRGB(57,57,57)
+			MainText.TextColor3 = Color3.fromRGB(255,255,255)
+			end
+
+		function Tab1()
+			if SelectedTab == 1 then
+				PlayerBackground.Visible = false
+				MiscBackground.Visible = false
+				AboutBackground.Visible = false
+				ScriptsBackground.Visible = false
+				MainBackground.Visible = true
+				ScriptsText.TextColor3 = Color3.fromRGB(57,57,57)
+				PlayerText.TextColor3 = Color3.fromRGB(57,57,57)
+				MiscText.TextColor3 = Color3.fromRGB(57,57,57)
+				AboutText.TextColor3 = Color3.fromRGB(57,57,57)
+				MainText.TextColor3 = Color3.fromRGB(255,255,255)
+				end
+				UpdateSaves()
+		end
+
+		MainText.MouseButton1Click:Connect(function()
+			SelectedTab = 1
+			Tab1()
+		end)
+
+		if SelectedTab == 2 then
+			MainBackground.Visible = false
+			ScriptsBackground.Visible = false
+			MiscBackground.Visible = false
+			AboutBackground.Visible = false
+			PlayerBackground.Visible = true
+			MainText.TextColor3 = Color3.fromRGB(57,57,57)
+			ScriptsText.TextColor3 = Color3.fromRGB(57,57,57)
+			MiscText.TextColor3 = Color3.fromRGB(57,57,57)
+			AboutText.TextColor3 = Color3.fromRGB(57,57,57)
+			PlayerText.TextColor3 = Color3.fromRGB(255,255,255)
+			end
+
+		function Tab2()
+			if SelectedTab == 2 then
+				MainBackground.Visible = false
+				ScriptsBackground.Visible = false
+				MiscBackground.Visible = false
+				AboutBackground.Visible = false
+				PlayerBackground.Visible = true
+				MainText.TextColor3 = Color3.fromRGB(57,57,57)
+				ScriptsText.TextColor3 = Color3.fromRGB(57,57,57)
+				MiscText.TextColor3 = Color3.fromRGB(57,57,57)
+				AboutText.TextColor3 = Color3.fromRGB(57,57,57)
+				PlayerText.TextColor3 = Color3.fromRGB(255,255,255)
+				end
+				UpdateSaves()
+		end
+
+		PlayerText.MouseButton1Click:Connect(function()
+			SelectedTab = 2
+			Tab2()
+		end)
+
+		if SelectedTab == 3 then
+		MainBackground.Visible = false
+		PlayerBackground.Visible = false
+		ScriptsBackground.Visible = false
+		AboutBackground.Visible = false
+		MiscBackground.Visible = true
+		MainText.TextColor3 = Color3.fromRGB(57,57,57)
+		PlayerText.TextColor3 = Color3.fromRGB(57,57,57)
+		ScriptsText.TextColor3 = Color3.fromRGB(57,57,57)
+		AboutText.TextColor3 = Color3.fromRGB(57,57,57)
+		MiscText.TextColor3 = Color3.fromRGB(255,255,255)
+		end
+
+		function Tab3()
+			if SelectedTab == 3 then
+				MainBackground.Visible = false
+				PlayerBackground.Visible = false
+				ScriptsBackground.Visible = false
+				AboutBackground.Visible = false
+				MiscBackground.Visible = true
+				MainText.TextColor3 = Color3.fromRGB(57,57,57)
+				PlayerText.TextColor3 = Color3.fromRGB(57,57,57)
+				ScriptsText.TextColor3 = Color3.fromRGB(57,57,57)
+				AboutText.TextColor3 = Color3.fromRGB(57,57,57)
+				MiscText.TextColor3 = Color3.fromRGB(255,255,255)
+				end
+				UpdateSaves()
+		end
+
+		MiscText.MouseButton1Click:Connect(function()
+			SelectedTab = 3
+			Tab3()
+		end)
+
+		if SelectedTab == 5 then
+			MainBackground.Visible = false
+			PlayerBackground.Visible = false
+			MiscBackground.Visible = false
+			ScriptsBackground.Visible = false
+			AboutBackground.Visible = true
+			MainText.TextColor3 = Color3.fromRGB(57,57,57)
+			PlayerText.TextColor3 = Color3.fromRGB(57,57,57)
+			MiscText.TextColor3 = Color3.fromRGB(57,57,57)
+			ScriptsText.TextColor3 = Color3.fromRGB(57,57,57)
+			AboutText.TextColor3 = Color3.fromRGB(255,255,255)
+			end
+
+		function Tab5()
+			if SelectedTab == 5 then
+				MainBackground.Visible = false
+				PlayerBackground.Visible = false
+				MiscBackground.Visible = false
+				ScriptsBackground.Visible = false
+				AboutBackground.Visible = true
+				MainText.TextColor3 = Color3.fromRGB(57,57,57)
+				PlayerText.TextColor3 = Color3.fromRGB(57,57,57)
+				MiscText.TextColor3 = Color3.fromRGB(57,57,57)
+				ScriptsText.TextColor3 = Color3.fromRGB(57,57,57)
+				AboutText.TextColor3 = Color3.fromRGB(255,255,255)
+				end
+				UpdateSaves()
+		end
+
+		AboutText.MouseButton1Click:Connect(function()
+			SelectedTab = 5
+			Tab5()
+		end)
+
+		if SelectedTab == 4 then
+			MainBackground.Visible = false
+			PlayerBackground.Visible = false
+			MiscBackground.Visible = false
+			AboutBackground.Visible = false
+			ScriptsBackground.Visible = true
+			MainText.TextColor3 = Color3.fromRGB(57,57,57)
+			PlayerText.TextColor3 = Color3.fromRGB(57,57,57)
+			MiscText.TextColor3 = Color3.fromRGB(57,57,57)
+			AboutText.TextColor3 = Color3.fromRGB(57,57,57)
+			ScriptsText.TextColor3 = Color3.fromRGB(255,255,255)
+		end
+		
+		function Tab4()
+			if SelectedTab == 4 then
+				MainBackground.Visible = false
+				PlayerBackground.Visible = false
+				MiscBackground.Visible = false
+				AboutBackground.Visible = false
+				ScriptsBackground.Visible = true
+				MainText.TextColor3 = Color3.fromRGB(57,57,57)
+				PlayerText.TextColor3 = Color3.fromRGB(57,57,57)
+				MiscText.TextColor3 = Color3.fromRGB(57,57,57)
+				AboutText.TextColor3 = Color3.fromRGB(57,57,57)
+				ScriptsText.TextColor3 = Color3.fromRGB(255,255,255)
+			end
+			UpdateSaves()
+		end
+
+		ScriptsText.MouseButton1Click:Connect(function()
+			SelectedTab = 4
+			Tab4()
+		end)
+
+		game:GetService("UserInputService").InputBegan:Connect(function(input, isTyping)
+			if input.KeyCode == Enum.KeyCode.LeftAlt and not isTyping then
+				YukiiX.Enabled = not YukiiX.Enabled
+			end
+		end)
+
+		if Enabled == true then
+			Background:TweenSizeAndPosition(UDim2.new(0.955919802, 0, 0.866044998, 0), UDim2.new(0.0230590086, 0, 0.107542381, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Linear, 0.5, false)
+			Main.Visible = true
+			Player.Visible = true
+			Misc.Visible = true
+			About.Visible = true
+			Scripts.Visible = true
+			CloseButton.Rotation = 0
+		elseif Enabled == false then
+			Background:TweenSizeAndPosition(UDim2.new(0.956, 0, 0.555, 0), UDim2.new(0.023, 0, 0.418, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Linear, 0.5, false)
+			CloseButton.Rotation = 180
+			wait(0.5)
+			Main.Visible = false
+			Player.Visible = false
+			Misc.Visible = false
+			About.Visible = false
+			Scripts.Visible = false
+		end
+
+		function Hide()
+			if Enabled == true then
+				Background:TweenSizeAndPosition(UDim2.new(0.955919802, 0, 0.866044998, 0), UDim2.new(0.0230590086, 0, 0.107542381, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Linear, 0.5, false)
+				Main.Visible = true
+				Player.Visible = true
+				Misc.Visible = true
+				About.Visible = true
+				Scripts.Visible = true
+				CloseButton.Rotation = 0
+			elseif Enabled == false then
+				Background:TweenSizeAndPosition(UDim2.new(0.956, 0, 0.555, 0), UDim2.new(0.023, 0, 0.418, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Linear, 0.5, false)
+				CloseButton.Rotation = 180
+				wait(0.5)
+				Main.Visible = false
+				Player.Visible = false
+				Misc.Visible = false
+				About.Visible = false
+				Scripts.Visible = false
+			end
+			UpdateSaves()
+		end
+
+
+		CloseButton.MouseButton1Click:Connect(function()
+			Enabled = not Enabled
+			Hide()
+		end)
+	end
+
+	while wait(1) do
+		YukiiXLoadingScreen.Name = math.random(1,100000)
+	end
+end)
