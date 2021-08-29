@@ -174,7 +174,7 @@ TextButton.MouseButton1Click:Connect(function()
 			game.Players.LocalPlayer:Kick("Nice try dumbfuck")
 		end
 		if table.find(Whitelisted,game.Players.LocalPlayer.Name) then
-			TextLabel.Text = "Welcome " ..game.Players.LocalPlayer.DisplayName
+			TextLabel.Text = "Welcome".." [ "..game.Players.LocalPlayer.DisplayName.." ]"
 			TextLabel.TextColor3 = Color3.fromRGB(255,255,0)
 		end
 		if not table.find(Whitelisted,game.Players.LocalPlayer.Name) then
@@ -219,13 +219,29 @@ end
 		loadstring(game:HttpGetAsync("https://pastebin.com/raw/Ts8TSAZN", 0, true))()
 		notify("Yukii X")
 
+Player = game.Players.LocalPlayer
+Mouse = Player:GetMouse()
+
 local Enabled = true
 local SelectedTab = 5
 local Location = {X = 0.319444448, Y = 0.268729627}
+local P = 1
+local I = 1
+local SP = 1
+local BP = 1
+local R = 1
+local V = 1
+
 function LoadDefaults()
 Enabled = true
 SelectedTab = 5
 Location = {X = 0.319444448, Y = 0.268729627}
+P = 1
+I = 1
+SP = 1
+BP = 1
+R = 1
+V = 1
 end
 
 function UpdateSaves()
@@ -233,6 +249,12 @@ local Update = {
 Enabled = Enabled;
 SelectedTab = SelectedTab;
 Location = Location;
+P = P;
+I = I;
+SP = SP;
+BP = BP;
+R = R;
+V = V;
 }
 writefile("X.lua",
 game:GetService("HttpService"):JSONEncode(Update))
@@ -296,6 +318,63 @@ end
 		local MadeBy = Instance.new("TextLabel")
 		local YukiiX_2 = Instance.new("TextLabel")
 		local Logo = Instance.new("ImageLabel")
+		local TextBox = Instance.new("TextBox")
+		local UICorner = Instance.new("UICorner")
+		local P1 = Instance.new("Frame")
+		local Psychic = Instance.new("TextButton")
+		local UICorner_2 = Instance.new("UICorner")
+		local SpherePunch = Instance.new("TextButton")
+		local UICorner_3 = Instance.new("UICorner")
+		local BulletPunch = Instance.new("TextButton")
+		local UICorner_4 = Instance.new("UICorner")
+		local Void = Instance.new("TextButton")
+		local UICorner_5 = Instance.new("UICorner")
+		local Reap = Instance.new("TextButton")
+		local UICorner_6 = Instance.new("UICorner")
+		local Invisible = Instance.new("TextButton")
+		local UICorner_7 = Instance.new("UICorner")
+		local HellFire = Instance.new("TextButton")
+		local UICorner_8 = Instance.new("UICorner")
+		local BulletPunchInfo = Instance.new("Frame")
+		local UICorner_9 = Instance.new("UICorner")
+		local BulletPunch_2 = Instance.new("TextButton")
+		local UICorner_10 = Instance.new("UICorner")
+		local LoopBulletPunch = Instance.new("TextButton")
+		local UICorner_11 = Instance.new("UICorner")
+		local InvisibleInfo = Instance.new("Frame")
+		local UICorner_12 = Instance.new("UICorner")
+		local Invisible_2 = Instance.new("TextButton")
+		local UICorner_13 = Instance.new("UICorner")
+		local LoopInvisible = Instance.new("TextButton")
+		local UICorner_14 = Instance.new("UICorner")
+		local VoidInfo = Instance.new("Frame")
+		local UICorner_15 = Instance.new("UICorner")
+		local Void_2 = Instance.new("TextButton")
+		local UICorner_16 = Instance.new("UICorner")
+		local LoopVoid = Instance.new("TextButton")
+		local UICorner_17 = Instance.new("UICorner")
+		local ReapInfo = Instance.new("Frame")
+		local UICorner_18 = Instance.new("UICorner")
+		local Reap_2 = Instance.new("TextButton")
+		local UICorner_19 = Instance.new("UICorner")
+		local LoopReap = Instance.new("TextButton")
+		local UICorner_20 = Instance.new("UICorner")
+		local ReapAll = Instance.new("TextButton")
+		local UICorner_21 = Instance.new("UICorner")
+		local PsychicInfo = Instance.new("Frame")
+		local UICorner_22 = Instance.new("UICorner")
+		local Psychic_2 = Instance.new("TextButton")
+		local UICorner_23 = Instance.new("UICorner")
+		local LoopPsychic = Instance.new("TextButton")
+		local UICorner_24 = Instance.new("UICorner")
+		local PsychicAll = Instance.new("TextButton")
+		local UICorner_25 = Instance.new("UICorner")
+		local SpherePunchInfo = Instance.new("Frame")
+		local UICorner_26 = Instance.new("UICorner")
+		local SpherePunch_2 = Instance.new("TextButton")
+		local UICorner_27 = Instance.new("UICorner")
+		local LoopSpherePunch = Instance.new("TextButton")
+		local UICorner_28 = Instance.new("UICorner")
 
 		YukiiX.Name = "YukiiX"
 		YukiiX.Parent = game:GetService("CoreGui").RobloxGui
@@ -303,17 +382,17 @@ end
 		YukiiX.DisplayOrder = 2147483645
 
 		Frame.Parent = YukiiX
-        Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Frame.BackgroundTransparency = 1.000
-        Frame.Position = UDim2.new(Location.X, 0, Location.Y, 0)
-        Frame.Size = UDim2.new(0.33905229, 0, 0.530944645, 0)
-        Frame.Draggable = true
-        createDrag(Frame)
+		Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Frame.BackgroundTransparency = 1.000
+		Frame.Position = UDim2.new(Location.X, 0, Location.Y, 0)
+		Frame.Size = UDim2.new(0.33905229, 0, 0.530944645, 0)
+		Frame.Draggable = true
+		createDrag(Frame)
 
-       Frame.Changed:Connect(function()
-                Location = {X = Frame.Position.X, Y = Frame.Position.Y}
-                UpdateSaves()
-            end)
+		Frame.Changed:Connect(function()
+			Location = {X = Frame.Position.X, Y = Frame.Position.Y}
+			UpdateSaves()
+		end)
 
 		Background.Name = "Background"
 		Background.Parent = Frame
@@ -536,6 +615,9 @@ end
 		CloseButton.TextScaled = true
 		CloseButton.TextSize = 14.000
 		CloseButton.TextWrapped = true
+		CloseButton.MouseButton2Down:connect(function()
+		    game:GetService("CoreGui").RobloxGui.YukiiX:Destroy()
+		end)
 
 		MainBackground.Name = "MainBackground"
 		MainBackground.Parent = Frame
@@ -673,7 +755,6 @@ end
 		PlayerBackground.Parent = Frame
 		PlayerBackground.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 		PlayerBackground.BackgroundTransparency = 1.000
-		PlayerBackground.ClipsDescendants = true
 		PlayerBackground.Position = UDim2.new(0.0519746728, 0, 0.442946166, 0)
 		PlayerBackground.Size = UDim2.new(0.905317426, 0, 0.49647966, 0)
 		PlayerBackground.Visible = false
@@ -733,6 +814,700 @@ end
 		wait(0.5)
 		Back_4.TextColor3 = Color3.fromRGB(0,0,0)
 	end)
+
+	TextBox.Parent = PlayerBackground
+TextBox.BackgroundColor3 = Color3.fromRGB(144, 144, 144)
+TextBox.Position = UDim2.new(0.36942026, 0, 0.40160054, 0)
+TextBox.Size = UDim2.new(0.286761254, 0, 0.222424909, 0)
+TextBox.Font = Enum.Font.SourceSansBold
+TextBox.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.PlaceholderText = "Select A Player"
+TextBox.Text = ""
+TextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.TextScaled = true
+TextBox.TextSize = 14.000
+TextBox.TextWrapped = true
+
+UICorner.CornerRadius = UDim.new(0, 10)
+UICorner.Parent = TextBox
+
+P1.Name = "P1"
+P1.Parent = PlayerBackground
+P1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+P1.BackgroundTransparency = 1.000
+P1.Size = UDim2.new(0.994280279, 0, 0.999999881, 0)
+
+Psychic.Name = "Psychic"
+Psychic.Parent = P1
+Psychic.BackgroundColor3 = Color3.fromRGB(68, 68, 68)
+Psychic.BorderColor3 = Color3.fromRGB(55, 55, 55)
+Psychic.BorderSizePixel = 0
+Psychic.Position = UDim2.new(0.0428313538, 0, 0.0432492904, 0)
+Psychic.Size = UDim2.new(0.257314742, 0, 0.253317267, 0)
+Psychic.Font = Enum.Font.SourceSansSemibold
+Psychic.Text = "Psychic"
+Psychic.TextColor3 = Color3.fromRGB(255, 255, 255)
+Psychic.TextScaled = true
+Psychic.TextSize = 14.000
+Psychic.TextWrapped = true
+
+if P == 1 then
+	Psychic.Text = "Soul Attack"
+end
+
+if P == 2 then
+	Psychic.Text = "Loop Soul Attack"
+end
+
+if P == 3 then
+	Psychic.Text = "Soul Attack All"
+end
+
+Psychic.MouseEnter:connect(function()
+	PsychicInfo.Visible = true
+end)
+
+Psychic.MouseLeave:connect(function()
+	PsychicInfo.MouseEnter:connect(function()
+		PsychicInfo.Visible = true
+	end)
+
+	PsychicInfo.MouseLeave:connect(function()
+		PsychicInfo.Visible = false
+	end)
+end)
+
+UICorner_2.CornerRadius = UDim.new(0, 10)
+UICorner_2.Parent = Psychic
+
+SpherePunch.Name = "Sphere Punch"
+SpherePunch.Parent = P1
+SpherePunch.BackgroundColor3 = Color3.fromRGB(68, 68, 68)
+SpherePunch.BorderColor3 = Color3.fromRGB(55, 55, 55)
+SpherePunch.BorderSizePixel = 0
+SpherePunch.Position = UDim2.new(0.0428313538, 0, 0.358351231, 0)
+SpherePunch.Size = UDim2.new(0.257314742, 0, 0.253317267, 0)
+SpherePunch.Font = Enum.Font.SourceSansSemibold
+SpherePunch.Text = "Sphere Punch"
+SpherePunch.TextColor3 = Color3.fromRGB(255, 255, 255)
+SpherePunch.TextScaled = true
+SpherePunch.TextSize = 14.000
+SpherePunch.TextWrapped = true
+
+if SP == 1 then
+	SpherePunch.Text = "Sphere Punch"
+end
+
+if SP == 2 then
+	SpherePunch.Text = "Loop Sphere Punch"
+end
+
+SpherePunch.MouseEnter:connect(function()
+	SpherePunchInfo.Visible = true
+end)
+
+SpherePunch.MouseLeave:connect(function()
+	SpherePunchInfo.MouseEnter:connect(function()
+		SpherePunchInfo.Visible = true
+	end)
+
+	SpherePunchInfo.MouseLeave:connect(function()
+		SpherePunchInfo.Visible = false
+	end)
+end)
+
+UICorner_3.CornerRadius = UDim.new(0, 10)
+UICorner_3.Parent = SpherePunch
+
+BulletPunch.Name = "Bullet Punch"
+BulletPunch.Parent = P1
+BulletPunch.BackgroundColor3 = Color3.fromRGB(68, 68, 68)
+BulletPunch.BorderColor3 = Color3.fromRGB(55, 55, 55)
+BulletPunch.BorderSizePixel = 0
+BulletPunch.Position = UDim2.new(0.0428313538, 0, 0.67963165, 0)
+BulletPunch.Size = UDim2.new(0.257314742, 0, 0.253317267, 0)
+BulletPunch.Font = Enum.Font.SourceSansSemibold
+BulletPunch.Text = "Bullet Punch"
+BulletPunch.TextColor3 = Color3.fromRGB(255, 255, 255)
+BulletPunch.TextScaled = true
+BulletPunch.TextSize = 14.000
+BulletPunch.TextWrapped = true
+
+if BP == 1 then
+	BulletPunch.Text = "Bullet Punch"
+end
+
+if BP == 2 then
+	BulletPunch.Text = "Loop Bullet Punch"
+end
+
+BulletPunch.MouseEnter:connect(function()
+	BulletPunchInfo.Visible = true
+end)
+
+BulletPunch.MouseLeave:connect(function()
+	BulletPunchInfo.MouseEnter:connect(function()
+		BulletPunchInfo.Visible = true
+	end)
+
+	BulletPunchInfo.MouseLeave:connect(function()
+		BulletPunchInfo.Visible = false
+	end)
+end)
+
+UICorner_4.CornerRadius = UDim.new(0, 10)
+UICorner_4.Parent = BulletPunch
+
+Void.Name = "Void"
+Void.Parent = P1
+Void.BackgroundColor3 = Color3.fromRGB(68, 68, 68)
+Void.BorderColor3 = Color3.fromRGB(55, 55, 55)
+Void.BorderSizePixel = 0
+Void.Position = UDim2.new(0.382897615, 0, 0.685810089, 0)
+Void.Size = UDim2.new(0.257314742, 0, 0.253317267, 0)
+Void.Font = Enum.Font.SourceSansSemibold
+Void.Text = "Void"
+Void.TextColor3 = Color3.fromRGB(255, 255, 255)
+Void.TextScaled = true
+Void.TextSize = 14.000
+Void.TextWrapped = true
+
+if V == 1 then
+	Void.Text = "Void"
+end
+
+if V == 2 then
+	Void.Text = "Loop Void"
+end
+
+Void.MouseEnter:connect(function()
+	VoidInfo.Visible = true
+end)
+
+Void.MouseLeave:connect(function()
+	VoidInfo.MouseEnter:connect(function()
+		VoidInfo.Visible = true
+	end)
+
+	VoidInfo.MouseLeave:connect(function()
+		VoidInfo.Visible = false
+	end)
+end)
+
+UICorner_5.CornerRadius = UDim.new(0, 10)
+UICorner_5.Parent = Void
+
+Reap.Name = "Reap"
+Reap.Parent = P1
+Reap.BackgroundColor3 = Color3.fromRGB(68, 68, 68)
+Reap.BorderColor3 = Color3.fromRGB(55, 55, 55)
+Reap.BorderSizePixel = 0
+Reap.Position = UDim2.new(0.382897615, 0, 0.0494277626, 0)
+Reap.Size = UDim2.new(0.257314742, 0, 0.253317267, 0)
+Reap.Font = Enum.Font.SourceSansSemibold
+Reap.Text = "Reap"
+Reap.TextColor3 = Color3.fromRGB(255, 255, 255)
+Reap.TextScaled = true
+Reap.TextSize = 14.000
+Reap.TextWrapped = true
+
+if R == 1 then
+	Reap.Text = "Reap"
+end
+
+if R == 2 then
+	Reap.Text = "Loop Reap"
+end
+
+if R == 3 then
+	Reap.Text = "Reap All"
+end
+
+Reap.MouseEnter:connect(function()
+	ReapInfo.Visible = true
+end)
+
+Reap.MouseLeave:connect(function()
+	ReapInfo.MouseEnter:connect(function()
+		ReapInfo.Visible = true
+	end)
+
+	ReapInfo.MouseLeave:connect(function()
+		ReapInfo.Visible = false
+	end)
+end)
+
+UICorner_6.CornerRadius = UDim.new(0, 10)
+UICorner_6.Parent = Reap
+
+Invisible.Name = "Invisible"
+Invisible.Parent = P1
+Invisible.BackgroundColor3 = Color3.fromRGB(68, 68, 68)
+Invisible.BorderColor3 = Color3.fromRGB(55, 55, 55)
+Invisible.BorderSizePixel = 0
+Invisible.Position = UDim2.new(0.706902146, 0, 0.037070822, 0)
+Invisible.Size = UDim2.new(0.257314742, 0, 0.253317267, 0)
+Invisible.Font = Enum.Font.SourceSansSemibold
+Invisible.Text = "Invisible"
+Invisible.TextColor3 = Color3.fromRGB(255, 255, 255)
+Invisible.TextScaled = true
+Invisible.TextSize = 14.000
+Invisible.TextWrapped = true
+
+if I == 1 then
+	Invisible.Text = "Invisible"
+end
+
+if I == 2 then
+	Invisible.Text = "Loop Invisible"
+end
+
+Invisible.MouseEnter:connect(function()
+	InvisibleInfo.Visible = true
+end)
+
+Invisible.MouseLeave:connect(function()
+	InvisibleInfo.MouseEnter:connect(function()
+		InvisibleInfo.Visible = true
+	end)
+
+	InvisibleInfo.MouseLeave:connect(function()
+		InvisibleInfo.Visible = false
+	end)
+end)
+
+UICorner_7.CornerRadius = UDim.new(0, 10)
+UICorner_7.Parent = Invisible
+
+HellFire.Name = "HellFire"
+HellFire.Parent = P1
+HellFire.BackgroundColor3 = Color3.fromRGB(68, 68, 68)
+HellFire.BorderColor3 = Color3.fromRGB(55, 55, 55)
+HellFire.BorderSizePixel = 0
+HellFire.Position = UDim2.new(0.706902146, 0, 0.389243543, 0)
+HellFire.Size = UDim2.new(0.257314742, 0, 0.253317267, 0)
+HellFire.Font = Enum.Font.SourceSansSemibold
+HellFire.Text = "HellFire"
+HellFire.TextColor3 = Color3.fromRGB(255, 255, 255)
+HellFire.TextScaled = true
+HellFire.TextSize = 14.000
+HellFire.TextWrapped = true
+
+
+UICorner_8.CornerRadius = UDim.new(0, 10)
+UICorner_8.Parent = HellFire
+
+BulletPunchInfo.Name = "Bullet Punch Info"
+BulletPunchInfo.Parent = P1
+BulletPunchInfo.BackgroundColor3 = Color3.fromRGB(95, 95, 95)
+BulletPunchInfo.Position = UDim2.new(-0.290774822, 0, 0.0334536433, 0)
+BulletPunchInfo.Size = UDim2.new(0.258651316, 0, 0.966546476, 0)
+BulletPunchInfo.Visible = false
+
+UICorner_9.CornerRadius = UDim.new(0, 10)
+UICorner_9.Parent = BulletPunchInfo
+
+BulletPunch_2.Name = "Bullet Punch"
+BulletPunch_2.Parent = BulletPunchInfo
+BulletPunch_2.BackgroundColor3 = Color3.fromRGB(68, 68, 68)
+BulletPunch_2.BorderColor3 = Color3.fromRGB(55, 55, 55)
+BulletPunch_2.BorderSizePixel = 0
+BulletPunch_2.Position = UDim2.new(0.0531404689, 0, 0.0531107672, 0)
+BulletPunch_2.Size = UDim2.new(0.875, 0, 0.254000008, 0)
+BulletPunch_2.Modal = true
+BulletPunch_2.Font = Enum.Font.SourceSansSemibold
+BulletPunch_2.Text = "Bullet Punch"
+BulletPunch_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+BulletPunch_2.TextScaled = true
+BulletPunch_2.TextSize = 14.000
+BulletPunch_2.TextWrapped = true
+BulletPunch_2.MouseButton1Click:Connect(function()
+	BP = 1
+	if BP == 1 then
+		BulletPunch.Text = "Bullet Punch"
+	end
+	UpdateSaves()
+	BulletPunchInfo.Visible = false
+end)
+
+UICorner_10.CornerRadius = UDim.new(0, 10)
+UICorner_10.Parent = BulletPunch_2
+
+LoopBulletPunch.Name = "Loop Bullet Punch"
+LoopBulletPunch.Parent = BulletPunchInfo
+LoopBulletPunch.BackgroundColor3 = Color3.fromRGB(68, 68, 68)
+LoopBulletPunch.BorderColor3 = Color3.fromRGB(55, 55, 55)
+LoopBulletPunch.BorderSizePixel = 0
+LoopBulletPunch.Position = UDim2.new(0.0531404689, 0, 0.350135773, 0)
+LoopBulletPunch.Size = UDim2.new(0.875493944, 0, 0.254484415, 0)
+LoopBulletPunch.Font = Enum.Font.SourceSansSemibold
+LoopBulletPunch.Text = "Loop Bullet Punch"
+LoopBulletPunch.TextColor3 = Color3.fromRGB(255, 255, 255)
+LoopBulletPunch.TextScaled = true
+LoopBulletPunch.TextSize = 14.000
+LoopBulletPunch.TextWrapped = true
+LoopBulletPunch.MouseButton1Click:Connect(function()
+	BP = 2
+	if BP == 2 then
+		BulletPunch.Text = "Loop Bullet Punch"
+	end
+	UpdateSaves()
+	BulletPunchInfo.Visible = false
+end)
+
+UICorner_11.CornerRadius = UDim.new(0, 10)
+UICorner_11.Parent = LoopBulletPunch
+
+InvisibleInfo.Name = "Invisible Info"
+InvisibleInfo.Parent = P1
+InvisibleInfo.BackgroundColor3 = Color3.fromRGB(95, 95, 95)
+InvisibleInfo.Position = UDim2.new(1.02848125, 0, 0.0334536433, 0)
+InvisibleInfo.Size = UDim2.new(0.258651316, 0, 0.966546476, 0)
+InvisibleInfo.Visible = false
+
+UICorner_12.CornerRadius = UDim.new(0, 10)
+UICorner_12.Parent = InvisibleInfo
+
+Invisible_2.Name = "Invisible"
+Invisible_2.Parent = InvisibleInfo
+Invisible_2.BackgroundColor3 = Color3.fromRGB(68, 68, 68)
+Invisible_2.BorderColor3 = Color3.fromRGB(55, 55, 55)
+Invisible_2.BorderSizePixel = 0
+Invisible_2.Position = UDim2.new(0.0531404689, 0, 0.0531107672, 0)
+Invisible_2.Size = UDim2.new(0.875, 0, 0.254000008, 0)
+Invisible_2.Font = Enum.Font.SourceSansSemibold
+Invisible_2.Text = "Invisible"
+Invisible_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Invisible_2.TextScaled = true
+Invisible_2.TextSize = 14.000
+Invisible_2.TextWrapped = true
+Invisible_2.MouseButton1Click:Connect(function()
+	I = 1
+	if I == 1 then
+		Invisible.Text = "Invisible"
+	end
+	UpdateSaves()
+	InvisibleInfo.Visible = false
+end)
+
+UICorner_13.CornerRadius = UDim.new(0, 10)
+UICorner_13.Parent = Invisible_2
+
+LoopInvisible.Name = "Loop Invisible"
+LoopInvisible.Parent = InvisibleInfo
+LoopInvisible.BackgroundColor3 = Color3.fromRGB(68, 68, 68)
+LoopInvisible.BorderColor3 = Color3.fromRGB(55, 55, 55)
+LoopInvisible.BorderSizePixel = 0
+LoopInvisible.Position = UDim2.new(0.0531404689, 0, 0.350135773, 0)
+LoopInvisible.Size = UDim2.new(0.875493944, 0, 0.254484415, 0)
+LoopInvisible.Font = Enum.Font.SourceSansSemibold
+LoopInvisible.Text = "Loop Invisible"
+LoopInvisible.TextColor3 = Color3.fromRGB(255, 255, 255)
+LoopInvisible.TextScaled = true
+LoopInvisible.TextSize = 14.000
+LoopInvisible.TextWrapped = true
+LoopInvisible.MouseButton1Click:Connect(function()
+	I = 2
+	if I == 2 then
+		Invisible.Text = "Loop Invisible"
+	end
+	UpdateSaves()
+	InvisibleInfo.Visible = false
+end)
+
+UICorner_14.CornerRadius = UDim.new(0, 10)
+UICorner_14.Parent = LoopInvisible
+
+VoidInfo.Name = "Void Info"
+VoidInfo.Parent = P1
+VoidInfo.BackgroundColor3 = Color3.fromRGB(95, 95, 95)
+VoidInfo.Position = UDim2.new(1.02848125, 0, 0.0334536433, 0)
+VoidInfo.Size = UDim2.new(0.258651316, 0, 0.966546476, 0)
+VoidInfo.Visible = false
+
+UICorner_15.CornerRadius = UDim.new(0, 10)
+UICorner_15.Parent = VoidInfo
+
+Void_2.Name = "Void"
+Void_2.Parent = VoidInfo
+Void_2.BackgroundColor3 = Color3.fromRGB(68, 68, 68)
+Void_2.BorderColor3 = Color3.fromRGB(55, 55, 55)
+Void_2.BorderSizePixel = 0
+Void_2.Position = UDim2.new(0.0531404689, 0, 0.0531107672, 0)
+Void_2.Size = UDim2.new(0.875, 0, 0.254000008, 0)
+Void_2.Font = Enum.Font.SourceSansSemibold
+Void_2.Text = "Void"
+Void_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Void_2.TextScaled = true
+Void_2.TextSize = 14.000
+Void_2.TextWrapped = true
+Void_2.MouseButton1Click:Connect(function()
+	V = 1
+	if V == 1 then
+		Void.Text = "Void"
+	end
+	UpdateSaves()
+	VoidInfo.Visible = false
+end)
+
+UICorner_16.CornerRadius = UDim.new(0, 10)
+UICorner_16.Parent = Void_2
+
+LoopVoid.Name = "Loop Void"
+LoopVoid.Parent = VoidInfo
+LoopVoid.BackgroundColor3 = Color3.fromRGB(68, 68, 68)
+LoopVoid.BorderColor3 = Color3.fromRGB(55, 55, 55)
+LoopVoid.BorderSizePixel = 0
+LoopVoid.Position = UDim2.new(0.0531404689, 0, 0.350135773, 0)
+LoopVoid.Size = UDim2.new(0.875493944, 0, 0.254484415, 0)
+LoopVoid.Font = Enum.Font.SourceSansSemibold
+LoopVoid.Text = "Loop Void"
+LoopVoid.TextColor3 = Color3.fromRGB(255, 255, 255)
+LoopVoid.TextScaled = true
+LoopVoid.TextSize = 14.000
+LoopVoid.TextWrapped = true
+LoopVoid.MouseButton1Click:Connect(function()
+	V = 2
+	if V == 2 then
+		Void.Text = "Loop Void"
+	end
+	UpdateSaves()
+	VoidInfo.Visible = false
+end)
+
+UICorner_17.CornerRadius = UDim.new(0, 10)
+UICorner_17.Parent = LoopVoid
+
+ReapInfo.Name = "Reap Info"
+ReapInfo.Parent = P1
+ReapInfo.BackgroundColor3 = Color3.fromRGB(95, 95, 95)
+ReapInfo.Position = UDim2.new(1.02848125, 0, 0.0334536433, 0)
+ReapInfo.Size = UDim2.new(0.258651316, 0, 0.966546476, 0)
+ReapInfo.Visible = false
+
+UICorner_18.CornerRadius = UDim.new(0, 10)
+UICorner_18.Parent = ReapInfo
+
+Reap_2.Name = "Reap"
+Reap_2.Parent = ReapInfo
+Reap_2.BackgroundColor3 = Color3.fromRGB(68, 68, 68)
+Reap_2.BorderColor3 = Color3.fromRGB(55, 55, 55)
+Reap_2.BorderSizePixel = 0
+Reap_2.Position = UDim2.new(0.0531404689, 0, 0.0531107672, 0)
+Reap_2.Size = UDim2.new(0.875, 0, 0.254000008, 0)
+Reap_2.Font = Enum.Font.SourceSansSemibold
+Reap_2.Text = "Reap"
+Reap_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Reap_2.TextScaled = true
+Reap_2.TextSize = 14.000
+Reap_2.TextWrapped = true
+Reap_2.MouseButton1Click:Connect(function()
+	R = 1
+	if R == 1 then
+		Reap.Text = "Reap"
+	end
+	UpdateSaves()
+	ReapInfo.Visible = false
+end)
+
+UICorner_19.CornerRadius = UDim.new(0, 10)
+UICorner_19.Parent = Reap_2
+
+LoopReap.Name = "Loop Reap"
+LoopReap.Parent = ReapInfo
+LoopReap.BackgroundColor3 = Color3.fromRGB(68, 68, 68)
+LoopReap.BorderColor3 = Color3.fromRGB(55, 55, 55)
+LoopReap.BorderSizePixel = 0
+LoopReap.Position = UDim2.new(0.0531404689, 0, 0.350135773, 0)
+LoopReap.Size = UDim2.new(0.875493944, 0, 0.254484415, 0)
+LoopReap.Font = Enum.Font.SourceSansSemibold
+LoopReap.Text = "Loop Reap"
+LoopReap.TextColor3 = Color3.fromRGB(255, 255, 255)
+LoopReap.TextScaled = true
+LoopReap.TextSize = 14.000
+LoopReap.TextWrapped = true
+LoopReap.MouseButton1Click:Connect(function()
+	R = 2
+	if R == 2 then
+		Reap.Text = "Loop Reap"
+	end
+	UpdateSaves()
+	ReapInfo.Visible = false
+end)
+
+UICorner_20.CornerRadius = UDim.new(0, 10)
+UICorner_20.Parent = LoopReap
+
+ReapAll.Name = "Reap All"
+ReapAll.Parent = ReapInfo
+ReapAll.BackgroundColor3 = Color3.fromRGB(68, 68, 68)
+ReapAll.BorderColor3 = Color3.fromRGB(55, 55, 55)
+ReapAll.BorderSizePixel = 0
+ReapAll.Position = UDim2.new(0.0531404689, 0, 0.680704772, 0)
+ReapAll.Size = UDim2.new(0.875, 0, 0.254000008, 0)
+ReapAll.Font = Enum.Font.SourceSansSemibold
+ReapAll.Text = "Reap All"
+ReapAll.TextColor3 = Color3.fromRGB(255, 255, 255)
+ReapAll.TextScaled = true
+ReapAll.TextSize = 14.000
+ReapAll.TextWrapped = true
+ReapAll.MouseButton1Click:Connect(function()
+	R = 3
+	if R == 3 then
+		Reap.Text = "Reap All"
+	end
+	UpdateSaves()
+	ReapInfo.Visible = false
+end)
+
+UICorner_21.CornerRadius = UDim.new(0, 10)
+UICorner_21.Parent = ReapAll
+
+PsychicInfo.Name = "Psychic Info"
+PsychicInfo.Parent = P1
+PsychicInfo.BackgroundColor3 = Color3.fromRGB(95, 95, 95)
+PsychicInfo.Position = UDim2.new(-0.290774822, 0, 0.0334536433, 0)
+PsychicInfo.Size = UDim2.new(0.258651316, 0, 0.966546476, 0)
+PsychicInfo.Visible = false
+
+UICorner_22.CornerRadius = UDim.new(0, 10)
+UICorner_22.Parent = PsychicInfo
+
+Psychic_2.Name = "Psychic"
+Psychic_2.Parent = PsychicInfo
+Psychic_2.BackgroundColor3 = Color3.fromRGB(68, 68, 68)
+Psychic_2.BorderColor3 = Color3.fromRGB(55, 55, 55)
+Psychic_2.BorderSizePixel = 0
+Psychic_2.Position = UDim2.new(0.0531404689, 0, 0.0531107672, 0)
+Psychic_2.Size = UDim2.new(0.875, 0, 0.254000008, 0)
+Psychic_2.Font = Enum.Font.SourceSansSemibold
+Psychic_2.Text = "Psychic"
+Psychic_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Psychic_2.TextScaled = true
+Psychic_2.TextSize = 14.000
+Psychic_2.TextWrapped = true
+Psychic_2.MouseButton1Click:Connect(function()
+	P = 1
+	if P == 1 then
+		Psychic.Text = "Soul Attack"
+	end
+	UpdateSaves()
+	PsychicInfo.Visible = false
+end)
+
+UICorner_23.CornerRadius = UDim.new(0, 10)
+UICorner_23.Parent = Psychic_2
+
+LoopPsychic.Name = "Loop Psychic"
+LoopPsychic.Parent = PsychicInfo
+LoopPsychic.BackgroundColor3 = Color3.fromRGB(68, 68, 68)
+LoopPsychic.BorderColor3 = Color3.fromRGB(55, 55, 55)
+LoopPsychic.BorderSizePixel = 0
+LoopPsychic.Position = UDim2.new(0.0531404689, 0, 0.350135773, 0)
+LoopPsychic.Size = UDim2.new(0.875493944, 0, 0.254484415, 0)
+LoopPsychic.Font = Enum.Font.SourceSansSemibold
+LoopPsychic.Text = "Loop Psychic "
+LoopPsychic.TextColor3 = Color3.fromRGB(255, 255, 255)
+LoopPsychic.TextScaled = true
+LoopPsychic.TextSize = 14.000
+LoopPsychic.TextWrapped = true
+LoopPsychic.MouseButton1Click:Connect(function()
+	P = 2
+	if P == 2 then
+		Psychic.Text = "Loop Soul Attack"
+	end
+	UpdateSaves()
+	PsychicInfo.Visible = false
+end)
+
+UICorner_24.CornerRadius = UDim.new(0, 10)
+UICorner_24.Parent = LoopPsychic
+
+PsychicAll.Name = "Psychic All"
+PsychicAll.Parent = PsychicInfo
+PsychicAll.BackgroundColor3 = Color3.fromRGB(68, 68, 68)
+PsychicAll.BorderColor3 = Color3.fromRGB(55, 55, 55)
+PsychicAll.BorderSizePixel = 0
+PsychicAll.Position = UDim2.new(0.0531404689, 0, 0.680704772, 0)
+PsychicAll.Size = UDim2.new(0.875, 0, 0.254000008, 0)
+PsychicAll.Font = Enum.Font.SourceSansSemibold
+PsychicAll.Text = "Psychic All"
+PsychicAll.TextColor3 = Color3.fromRGB(255, 255, 255)
+PsychicAll.TextScaled = true
+PsychicAll.TextSize = 14.000
+PsychicAll.TextWrapped = true
+PsychicAll.MouseButton1Click:Connect(function()
+	P = 3
+	if P == 3 then
+		Psychic.Text = "Soul Attack All"
+	end
+	UpdateSaves()
+	PsychicInfo.Visible = false
+end)
+
+UICorner_25.CornerRadius = UDim.new(0, 10)
+UICorner_25.Parent = PsychicAll
+
+SpherePunchInfo.Name = "Sphere Punch Info"
+SpherePunchInfo.Parent = P1
+SpherePunchInfo.BackgroundColor3 = Color3.fromRGB(95, 95, 95)
+SpherePunchInfo.Position = UDim2.new(-0.290774822, 0, 0.0334536433, 0)
+SpherePunchInfo.Size = UDim2.new(0.258651316, 0, 0.966546476, 0)
+SpherePunchInfo.Visible = false
+
+UICorner_26.CornerRadius = UDim.new(0, 10)
+UICorner_26.Parent = SpherePunchInfo
+
+SpherePunch_2.Name = "Sphere Punch"
+SpherePunch_2.Parent = SpherePunchInfo
+SpherePunch_2.BackgroundColor3 = Color3.fromRGB(68, 68, 68)
+SpherePunch_2.BorderColor3 = Color3.fromRGB(55, 55, 55)
+SpherePunch_2.BorderSizePixel = 0
+SpherePunch_2.Position = UDim2.new(0.0531404689, 0, 0.0531107672, 0)
+SpherePunch_2.Size = UDim2.new(0.875, 0, 0.254000008, 0)
+SpherePunch_2.Modal = true
+SpherePunch_2.Font = Enum.Font.SourceSansSemibold
+SpherePunch_2.Text = "Sphere Punch"
+SpherePunch_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+SpherePunch_2.TextScaled = true
+SpherePunch_2.TextSize = 14.000
+SpherePunch_2.TextWrapped = true
+SpherePunch_2.MouseButton1Click:Connect(function()
+	SP = 1
+	if SP == 1 then
+		SpherePunch.Text = "Sphere Punch"
+	end
+	UpdateSaves()
+	SpherePunchInfo.Visible = false
+end)
+
+UICorner_27.CornerRadius = UDim.new(0, 10)
+UICorner_27.Parent = SpherePunch_2
+
+LoopSpherePunch.Name = "Loop Sphere Punch"
+LoopSpherePunch.Parent = SpherePunchInfo
+LoopSpherePunch.BackgroundColor3 = Color3.fromRGB(68, 68, 68)
+LoopSpherePunch.BorderColor3 = Color3.fromRGB(55, 55, 55)
+LoopSpherePunch.BorderSizePixel = 0
+LoopSpherePunch.Position = UDim2.new(0.0531404689, 0, 0.350135773, 0)
+LoopSpherePunch.Size = UDim2.new(0.875493944, 0, 0.254484415, 0)
+LoopSpherePunch.Font = Enum.Font.SourceSansSemibold
+LoopSpherePunch.Text = "Loop Sphere Punch"
+LoopSpherePunch.TextColor3 = Color3.fromRGB(255, 255, 255)
+LoopSpherePunch.TextScaled = true
+LoopSpherePunch.TextSize = 14.000
+LoopSpherePunch.TextWrapped = true
+LoopSpherePunch.MouseButton1Click:Connect(function()
+	SP = 2
+	if SP == 2 then
+		SpherePunch.Text = "Loop Sphere Punch"
+	end
+	UpdateSaves()
+	SpherePunchInfo.Visible = false
+end)
+
+UICorner_28.CornerRadius = UDim.new(0, 10)
+UICorner_28.Parent = LoopSpherePunch
 
 
 		MiscBackground.Name = "MiscBackground"
@@ -821,7 +1596,7 @@ end
 		ToggleUi.Position = UDim2.new(0.0825110823, 0, 0.580776155, 0)
 		ToggleUi.Size = UDim2.new(0.835758269, 0, 0.376886696, 0)
 		ToggleUi.Font = Enum.Font.SourceSansBold
-		ToggleUi.Text = "Toggle Ui [ L - ALT ]"
+		ToggleUi.Text = "Toggle Ui (~)"
 		ToggleUi.TextColor3 = Color3.fromRGB(255, 78, 78)
 		ToggleUi.TextScaled = true
 		ToggleUi.TextSize = 14.000
@@ -1032,7 +1807,7 @@ end
 		end)
 
 		game:GetService("UserInputService").InputBegan:Connect(function(input, isTyping)
-			if input.KeyCode == Enum.KeyCode.LeftAlt and not isTyping then
+			if input.KeyCode == Enum.KeyCode.Backquote and not isTyping then
 				YukiiX.Enabled = not YukiiX.Enabled
 			end
 		end)
