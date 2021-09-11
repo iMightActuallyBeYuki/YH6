@@ -330,6 +330,9 @@ end
 			BP = 1
 			R = 1
 			V = 1
+			CMDX = false
+			CBRING = false
+			DMENU = false
 			savedUsers = {}
 		end
 		
@@ -343,6 +346,9 @@ end
 				BP = BP,
 				R = R,
 				V = V,
+				CMDX = CMDX,
+				CBRING = CBRING,
+				DMENU = DMENU,
 				savedUsers = savedUsers
 			}
 			writefile("X.lua", game:GetService("HttpService"):JSONEncode(Update))
@@ -368,6 +374,9 @@ end
 			BP = saves.BP
 			R = saves.R
 			V = saves.V
+			CMDX = saves.CMDX
+			CBRING = saves.CBRING
+			DMENU = saves.DMENU
 			savedUsers = saves.savedUsers
 		end
 		
@@ -477,6 +486,13 @@ end
 		local BlacklistKos = Instance.new("TextButton")
 		local UICorner_29 = Instance.new("UICorner")
 		local RC = Instance.new("TextLabel")
+		local S1 = Instance.new("Frame")
+		local CMDXButton = Instance.new("TextButton")
+		local CMDXUICorner = Instance.new("UICorner")
+		local CBRINGButton = Instance.new("TextButton")
+		local CBRINGUICorner = Instance.new("UICorner")
+		local DMENUButton = Instance.new("TextButton")
+		local DMENUUICORNER = Instance.new("UICorner")
 
 		YukiiX.Name = "YukiiX"
 		YukiiX.Parent = game:GetService("CoreGui").RobloxGui
@@ -754,23 +770,6 @@ end
 		M1.BackgroundTransparency = 1.000
 		M1.Size = UDim2.new(0.994280279, 0, 0.999999881, 0)
 
-		BlacklistKos.Name = "Blacklist Kos"
-		BlacklistKos.Parent = M1
-		BlacklistKos.BackgroundColor3 = Color3.fromRGB(68, 68, 68)
-		BlacklistKos.BorderColor3 = Color3.fromRGB(55, 55, 55)
-		BlacklistKos.BorderSizePixel = 0
-		BlacklistKos.Position = UDim2.new(0.0428313538, 0, 0.0432492904, 0)
-		BlacklistKos.Size = UDim2.new(0.257314742, 0, 0.253317267, 0)
-		BlacklistKos.Font = Enum.Font.SourceSansSemibold
-		BlacklistKos.Text = "Blacklist Kos"
-		BlacklistKos.TextColor3 = Color3.fromRGB(255, 255, 255)
-		BlacklistKos.TextScaled = true
-		BlacklistKos.TextSize = 14.000
-		BlacklistKos.TextWrapped = true
-
-		UICorner_29.CornerRadius = UDim.new(0, 10)
-		UICorner_29.Parent = BlacklistKos
-
 		Selected_2.Name = "Selected"
 		Selected_2.Parent = MainBackground
 		Selected_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -839,6 +838,149 @@ end
 		ScriptsBackground.ScaleType = Enum.ScaleType.Slice
 		ScriptsBackground.SliceCenter = Rect.new(100, 100, 100, 100)
 		ScriptsBackground.SliceScale = 0.120
+
+		S1.Name = "S1"
+		S1.Parent = ScriptsBackground
+		S1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		S1.BackgroundTransparency = 1.000
+		S1.Size = UDim2.new(0.994280279, 0, 0.999999881, 0)
+
+		BlacklistKos.Name = "Blacklist Kos"
+		BlacklistKos.Parent = S1
+		BlacklistKos.BackgroundColor3 = Color3.fromRGB(68, 68, 68)
+		BlacklistKos.BorderColor3 = Color3.fromRGB(55, 55, 55)
+		BlacklistKos.BorderSizePixel = 0
+		BlacklistKos.Position = UDim2.new(0.0428313538, 0, 0.0432492904, 0)
+		BlacklistKos.Size = UDim2.new(0.257314742, 0, 0.253317267, 0)
+		BlacklistKos.Font = Enum.Font.SourceSansSemibold
+		BlacklistKos.Text = "Blacklist Kos Menu"
+		BlacklistKos.TextColor3 = Color3.fromRGB(255, 255, 255)
+		BlacklistKos.TextScaled = true
+		BlacklistKos.TextSize = 14.000
+		BlacklistKos.TextWrapped = true
+
+		UICorner_29.CornerRadius = UDim.new(0, 10)
+		UICorner_29.Parent = BlacklistKos
+
+		CMDXButton.Name = "CMDXButton"
+		CMDXButton.Parent = S1
+		CMDXButton.BackgroundColor3 = Color3.fromRGB(68, 68, 68)
+		CMDXButton.BorderColor3 = Color3.fromRGB(55, 55, 55)
+		CMDXButton.BorderSizePixel = 0
+		CMDXButton.Position = UDim2.new(0.382897615, 0, 0.0494277626, 0)
+		CMDXButton.Size = UDim2.new(0.257314742, 0, 0.253317267, 0)
+		CMDXButton.Font = Enum.Font.SourceSansSemibold
+		CMDXButton.Text = "CMD-X"
+		CMDXButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+		CMDXButton.TextScaled = true
+		CMDXButton.TextSize = 14.000
+		CMDXButton.TextWrapped = true
+
+		CMDXLoaded = false
+
+		CMDXButton.MouseButton1Click:Connect(function()
+			CMDX = not CMDX
+			if CMDX == true then
+				CMDXButton.BackgroundColor3 = Color3.fromRGB(0,255,0)
+				if CMDXLoaded == false then
+				loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
+				CMDXLoaded = true
+				end
+			end
+			if CMDX == false then
+				CMDXButton.BackgroundColor3 = Color3.fromRGB(68,68,68)
+			end
+			UpdateSaves()
+		end)
+
+		if CMDX == true then
+			CMDXLoaded = true
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
+			CMDXButton.BackgroundColor3 = Color3.fromRGB(0,255,0)
+		end
+
+		CMDXUICorner.CornerRadius = UDim.new(0, 10)
+		CMDXUICorner.Parent = CMDXButton
+
+		CBRINGButton.Name = "CBRINGButton"
+		CBRINGButton.Parent = S1
+		CBRINGButton.BackgroundColor3 = Color3.fromRGB(68, 68, 68)
+		CBRINGButton.BorderColor3 = Color3.fromRGB(55, 55, 55)
+		CBRINGButton.BorderSizePixel = 0
+		CBRINGButton.Position = UDim2.new(0.706902146, 0, 0.037070822, 0)
+		CBRINGButton.Size = UDim2.new(0.257314742, 0, 0.253317267, 0)
+		CBRINGButton.Font = Enum.Font.SourceSansSemibold
+		CBRINGButton.Text = "C-Bring Menu"
+		CBRINGButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+		CBRINGButton.TextScaled = true
+		CBRINGButton.TextSize = 14.000
+		CBRINGButton.TextWrapped = true
+
+		CBRINGLoaded = false
+
+		CBRINGButton.MouseButton1Click:Connect(function()
+			CBRING = not CBRING
+			if CBRING == true then
+				CBRINGButton.BackgroundColor3 = Color3.fromRGB(0,255,0)
+				if CBRINGLoaded == false then
+					loadstring(game:HttpGet("https://raw.githubusercontent.com/1ArcX/SPTS-Custom/main/C-Bring", true))()
+					CBRINGLoaded = true
+				end
+			end
+				if CBRING == false then
+					CBRINGButton.BackgroundColor3 = Color3.fromRGB(68,68,68)
+				end
+				UpdateSaves()
+		end)
+
+		if CBRING == true then
+			CBRINGLoaded = true
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/1ArcX/SPTS-Custom/main/C-Bring", true))()
+			CBRINGButton.BackgroundColor3 = Color3.fromRGB(0,255,0)
+		end
+
+		CBRINGUICorner.CornerRadius = UDim.new(0, 10)
+		CBRINGUICorner.Parent = CBRINGButton
+
+		DMENUButton.Name = "DMENU"
+		DMENUButton.Parent = S1
+		DMENUButton.BackgroundColor3 = Color3.fromRGB(68, 68, 68)
+		DMENUButton.BorderColor3 = Color3.fromRGB(55, 55, 55)
+		DMENUButton.BorderSizePixel = 0
+		DMENUButton.Position = UDim2.new(0.0428313538, 0, 0.358351231, 0)
+		DMENUButton.Size = UDim2.new(0.257314742, 0, 0.253317267, 0)
+		DMENUButton.Font = Enum.Font.SourceSansSemibold
+		DMENUButton.Text = "Dark Menu"
+		DMENUButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+		DMENUButton.TextScaled = true
+		DMENUButton.TextSize = 14.000
+		DMENUButton.TextWrapped = true
+
+		DMENULoaded = false
+
+		DMENUButton.MouseButton1Click:Connect(function()
+			DMENU = not DMENU
+			if DMENU == true then
+				DMENUButton.BackgroundColor3 = Color3.fromRGB(0,255,0)
+				if DMENULoaded == false then
+					loadstring(game:HttpGet("https://raw.githubusercontent.com/1ArcX/SPTS-Custom/main/Dark%20Menu", true))()
+					DMENULoaded = true
+				end
+			end
+			if DMENU == false then
+				DMENUButton.BackgroundColor3 = Color3.fromRGB(68,68,68)
+			end
+			UpdateSaves()
+		end)
+
+		if DMENU == true then
+			DMENUButton.BackgroundColor3 = Color3.fromRGB(0,255,0)
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/1ArcX/SPTS-Custom/main/Dark%20Menu", true))()
+			DMENULoaded = true
+		end
+
+		DMENUUICORNER.CornerRadius = UDim.new(0, 10)
+		DMENUUICORNER.Parent = DMENUButton
 
 		Forward_3.Name = "Forward"
 		Forward_3.Parent = ScriptsBackground
@@ -2112,7 +2254,7 @@ end
 		MadeBy.Position = UDim2.new(0.247533426, 0, 0.290388077, 0)
 		MadeBy.Size = UDim2.new(0.660089314, 0, 0.247138813, 0)
 		MadeBy.Font = Enum.Font.SourceSansBold
-		MadeBy.Text = "By Yukii & X"
+		MadeBy.Text = "By Yukii & X & Micro"
 		MadeBy.TextColor3 = Color3.fromRGB(255, 255, 255)
 		MadeBy.TextScaled = true
 		MadeBy.TextSize = 14.000
