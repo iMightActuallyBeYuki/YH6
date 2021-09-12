@@ -29,8 +29,6 @@
 
 
 
-
-
 local Whitelisted = game:HttpGet("https://raw.githubusercontent.com/iMightActuallyBeYuki/Whitelist-System/main/Yukii%20X", true):split(
 "\n"
 )
@@ -331,6 +329,8 @@ end
 			R = 1
 			V = 1
 			OnDeathReturn = false
+			NoVoid = false
+			UJL = true
 			CMDX = false
 			CBRING = false
 			DMENU = false
@@ -348,6 +348,8 @@ end
 				R = R,
 				V = V,
 				OnDeathReturn = OnDeathReturn,
+				NoVoid = NoVoid,
+				UJL = UJL,
 				CMDX = CMDX,
 				CBRING = CBRING,
 				DMENU = DMENU,
@@ -377,6 +379,8 @@ end
 			R = saves.R
 			V = saves.V
 			OnDeathReturn = saves.OnDeathReturn
+			NoVoid = saves.NoVoid
+			UJL = saves.UJL
 			CMDX = saves.CMDX
 			CBRING = saves.CBRING
 			DMENU = saves.DMENU
@@ -498,6 +502,10 @@ end
 		local DMENUUICORNER = Instance.new("UICorner")
 		local ODRButton = Instance.new("TextButton")
 		local ODRUICorner = Instance.new("UICorner")
+		local NVButton = Instance.new("TextButton")
+		local NVUICorner = Instance.new("UICorner")
+		local UJLButton = Instance.new("TextButton")
+		local UJLUICorner = Instance.new("UICorner")
 
 		YukiiX.Name = "YukiiX"
 		YukiiX.Parent = game:GetService("CoreGui").RobloxGui
@@ -790,45 +798,225 @@ end
 		ODRButton.TextWrapped = true
 
 		local player  = game.Players.LocalPlayer
+		local Respawned = true
 
-		function OnDeathReturn1()
-			spawn(function()
-				ODRButton.BackgroundColor3 = Color3.fromRGB(0,255,0)
-				ODRButton.Text = "On Death Return (ON)"
-				wait(0.5)
-				player.Character.Humanoid.Died:Connect(function()
-					game.ReplicatedStorage.RemoteEvent:FireServer({"Respawn"})
-					local PosX = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X
-					local PosY = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y
-					local PosZ = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Z
-					game.Workspace.Camera.CameraType = "Custom"
-					wait(1.5)
-					player.Character:MoveTo(Vector3.new(PosX,PosY,PosZ))
-					wait(1.5)
-				player.PlayerGui.IntroGui.Enabled = false
-				player.PlayerGui.ScreenGui.Enabled = true
-				game:GetService("Lighting").Blur.Enabled = false
-				wait()
-				end)
-				wait()
+		local ODR = coroutine.create(function()
+			while wait(0.5) do
+			player.Character.Humanoid.Died:Connect(function()
+				if not Respawned then coroutine.yield() end
+				game.ReplicatedStorage.RemoteEvent:FireServer({"Respawn"})
+				local PosX = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X
+				local PosY = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y
+				local PosZ = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Z
+				game.Workspace.Camera.CameraType = "Custom"
+				wait(1.5)
+				player.Character:MoveTo(Vector3.new(PosX,PosY,PosZ))
+				wait(1.5)
+			player.PlayerGui.IntroGui.Enabled = false
+			player.PlayerGui.ScreenGui.Enabled = true
+			game:GetService("Lighting").Blur.Enabled = false
+			wait()
 			end)
-			end
+			wait()
+	end
+		end)
 
 		ODRButton.MouseButton1Click:Connect(function()
 			OnDeathReturn = not OnDeathReturn
-			while OnDeathReturn == true do
-				OnDeathReturn1()
-				wait()
+			UpdateSaves()
+			if OnDeathReturn == true then
+				ODRButton.BackgroundColor3 = Color3.fromRGB(0,255,0)
+				ODRButton.Text = "On Death Return (ON)"
+			    coroutine.resume(ODR)
+				Respawned = true
+
 			end
 			if OnDeathReturn == false then
 				ODRButton.BackgroundColor3 = Color3.fromRGB(68, 68, 68)
 				ODRButton.Text = "On Death Return (OFF)"
+				Respawned = false
+			end
+		end)
+
+		if OnDeathReturn == true then
+			game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage", {
+				Text = "On Death Return ON";
+				Color = Color3.fromRGB(255,255,0);
+				Font = Enum.Font.SourceSansBold;TextSize = 25
+			})
+				ODRButton.BackgroundColor3 = Color3.fromRGB(0,255,0)
+				ODRButton.Text = "On Death Return (ON)"
+				coroutine.resume(ODR)
+				Respawned = true
+		end
+
+		ODRUICorner.CornerRadius = UDim.new(0, 10)
+		ODRUICorner.Parent = ODRButton
+
+		NVButton.Name = "NVButton"
+		NVButton.Parent = M1
+		NVButton.BackgroundColor3 = Color3.fromRGB(68, 68, 68)
+		NVButton.BorderColor3 = Color3.fromRGB(55, 55, 55)
+		NVButton.BorderSizePixel = 0
+		NVButton.Position = UDim2.new(0.382897615, 0, 0.0494277626, 0)
+		NVButton.Size = UDim2.new(0.257314742, 0, 0.253317267, 0)
+		NVButton.Font = Enum.Font.SourceSansSemibold
+		NVButton.Text = "No Void (OFF)"
+		NVButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+		NVButton.TextScaled = true
+		NVButton.TextSize = 14.000
+		NVButton.TextWrapped = true
+
+		local NV = coroutine.create(function()
+		while wait(0.5) do
+			-- game.Players.LocalPlayer.Character.ChildAdded:Connect(function(e)
+				-- if e.Name == "RightHand" then
+				-- 	wait(0.5)
+				for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+				if v.Name == "RightHand" then
+					if not NoVoid then coroutine.yield() end
+					game.Players.LocalPlayer.Character.RightHand:Destroy()
+				end
+			end
+			-- 	end
+			-- end)
+			wait()
+		end
+		end)
+
+		NVButton.MouseButton1Click:Connect(function()
+			NoVoid = not NoVoid
+			if NoVoid == true then
+				NVButton.BackgroundColor3 = Color3.fromRGB(0,255,0)
+				NVButton.Text = "No Void (ON)"
+				coroutine.resume(NV)
+			end
+			if NoVoid == false then
+				NVButton.BackgroundColor3 = Color3.fromRGB(68, 68, 68)
+				NVButton.Text = "No Void (OFF)"
 			end
 			UpdateSaves()
 		end)
 
-		ODRUICorner.CornerRadius = UDim.new(0, 10)
-		ODRUICorner.Parent = ODRButton
+		if NoVoid == true then
+			game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage", {
+				Text = "No Void ON";
+				Color = Color3.fromRGB(255,255,0);
+				Font = Enum.Font.SourceSansBold;TextSize = 25
+			})
+			NVButton.BackgroundColor3 = Color3.fromRGB(0,255,0)
+			NVButton.Text = "No Void (ON)"
+			coroutine.resume(NV)
+		end
+
+		NVUICorner.CornerRadius = UDim.new(0, 10)
+		NVUICorner.Parent = NVButton
+
+		UJLButton.Name = "UJLButton"
+		UJLButton.Parent = M1
+		UJLButton.BackgroundColor3 = Color3.fromRGB(0,255,0)
+		UJLButton.BorderColor3 = Color3.fromRGB(55, 55, 55)
+		UJLButton.BorderSizePixel = 0
+		UJLButton.Position = UDim2.new(0.706902146, 0, 0.037070822, 0)
+		UJLButton.Size = UDim2.new(0.257314742, 0, 0.253317267, 0)
+		UJLButton.Font = Enum.Font.SourceSansSemibold
+		UJLButton.Text = "User Join/Leave Notifications (OFF)"
+		UJLButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+		UJLButton.TextScaled = true
+		UJLButton.TextSize = 14.000
+		UJLButton.TextWrapped = true
+
+		local UJLLoaded = false
+
+		local UserJL = coroutine.create(function()
+			if not UJL then coroutine.yield() end
+				for i,v in pairs(game.Players:GetPlayers()) do
+					if v ~= game.Players.LocalPlayer then
+						if table.find(Whitelisted, v.Name) then
+							game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage", {
+								Text = "Theres a whitelisted user in the server: "..v.Name;
+								Color = Color3.fromRGB(255,255,0);
+								Font = Enum.Font.SourceSansBold;TextSize = 20
+							})
+					end
+					end
+				end
+			
+				game.Players.PlayerAdded:Connect(function(player)
+					local name = player.Name
+					if not UJL then coroutine.yield() end
+					if table.find(Whitelisted, name) then
+						game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage", {
+							Text = "Whitelisted user "..name.." joined the game";
+							Color = Color3.fromRGB(255,255,0);
+							Font = Enum.Font.SourceSansBold;TextSize = 20
+						})
+						else
+						game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage", {
+							Text = player.Name.." joined the game";
+							Color = Color3.fromRGB(0,255,0);
+							Font = Enum.Font.SourceSansBold;TextSize = 20
+						})
+				end
+				end)
+			
+				game.Players.PlayerRemoving:Connect(function(player)
+					local name = player.Name
+					if not UJL then coroutine.yield() end
+					if table.find(Whitelisted, name) then
+						game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage", {
+							Text = "Whitelisted user "..name.." left the game";
+							Color = Color3.fromRGB(255,255,0);
+							Font = Enum.Font.SourceSansBold;TextSize = 20
+						})
+						else
+						game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage", {
+							Text = player.Name.." left the game";
+							Color = Color3.fromRGB(255,0,0);
+							Font = Enum.Font.SourceSansBold;TextSize = 20
+						})
+					end
+				end)
+		end)
+
+		UJLButton.MouseButton1Click:Connect(function()
+			UJL = not UJL
+			UpdateSaves()
+			if UJL == true then
+				UJLButton.BackgroundColor3 = Color3.fromRGB(0,255,0)
+				UJLButton.Text = "User Join/Leave Notifications (ON)"
+				coroutine.resume(UserJL)
+			end
+
+			if UJL == false then
+				UJLButton.BackgroundColor3 = Color3.fromRGB(68,68,68)
+				UJLButton.Text = "User Join/Leave Notifications (OFF)"
+			end
+		end)
+
+		if UJL == false then
+			game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage", {
+				Text = "User Join/Leave Notifications disabled";
+				Color = Color3.fromRGB(255,255,0);
+				Font = Enum.Font.SourceSansBold;TextSize = 25
+			})
+			UJLButton.BackgroundColor3 = Color3.fromRGB(68,68,68)
+			UJLButton.Text = "User Join/Leave Notifications (OFF)"
+		end
+
+		if UJL == true then
+			game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage", {
+				Text = "User Join/Leave Notifications enabled";
+				Color = Color3.fromRGB(255,255,0);
+				Font = Enum.Font.SourceSansBold;TextSize = 25
+			})
+			UJLButton.BackgroundColor3 = Color3.fromRGB(0,255,0)
+			UJLButton.Text = "User Join/Leave Notifications (ON)"
+			coroutine.resume(UserJL)
+		end
+
+		UJLUICorner.CornerRadius = UDim.new(0, 10)
+		UJLUICorner.Parent = UJLButton
 
 		Selected_2.Name = "Selected"
 		Selected_2.Parent = MainBackground
@@ -957,6 +1145,11 @@ end
 			CMDXLoaded = true
 			loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
 			CMDXButton.BackgroundColor3 = Color3.fromRGB(0,255,0)
+			game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage", {
+				Text = "CMD-X Loaded";
+				Color = Color3.fromRGB(255,255,0);
+				Font = Enum.Font.SourceSansBold;TextSize = 25
+			})
 		end
 
 		CMDXUICorner.CornerRadius = UDim.new(0, 10)
@@ -983,7 +1176,7 @@ end
 			if CBRING == true then
 				CBRINGButton.BackgroundColor3 = Color3.fromRGB(0,255,0)
 				if CBRINGLoaded == false then
-					loadstring(game:HttpGet("https://raw.githubusercontent.com/1ArcX/SPTS-Custom/main/C-Bring", true))()
+					loadstring(game:HttpGet("https://raw.githubusercontent.com/1ArcX/Scripts/main/C-Bring", true))()
 					CBRINGLoaded = true
 				end
 			end
@@ -995,8 +1188,13 @@ end
 
 		if CBRING == true then
 			CBRINGLoaded = true
-			loadstring(game:HttpGet("https://raw.githubusercontent.com/1ArcX/SPTS-Custom/main/C-Bring", true))()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/1ArcX/Scripts/main/C-Bring", true))()
 			CBRINGButton.BackgroundColor3 = Color3.fromRGB(0,255,0)
+			game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage", {
+				Text = "C-BRING Loaded";
+				Color = Color3.fromRGB(255,255,0);
+				Font = Enum.Font.SourceSansBold;TextSize = 25
+			})
 		end
 
 		CBRINGUICorner.CornerRadius = UDim.new(0, 10)
@@ -1023,7 +1221,7 @@ end
 			if DMENU == true then
 				DMENUButton.BackgroundColor3 = Color3.fromRGB(0,255,0)
 				if DMENULoaded == false then
-					loadstring(game:HttpGet("https://raw.githubusercontent.com/1ArcX/SPTS-Custom/main/Dark%20Menu", true))()
+					loadstring(game:HttpGet("https://raw.githubusercontent.com/1ArcX/Scripts/main/Dark%20Menu", true))()
 					DMENULoaded = true
 				end
 			end
@@ -1035,8 +1233,13 @@ end
 
 		if DMENU == true then
 			DMENUButton.BackgroundColor3 = Color3.fromRGB(0,255,0)
-			loadstring(game:HttpGet("https://raw.githubusercontent.com/1ArcX/SPTS-Custom/main/Dark%20Menu", true))()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/1ArcX/Scripts/main/Dark%20Menu", true))()
 			DMENULoaded = true
+			game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage", {
+				Text = "Dark Menu Loaded";
+				Color = Color3.fromRGB(255,255,0);
+				Font = Enum.Font.SourceSansBold;TextSize = 25
+			})
 		end
 
 		DMENUUICORNER.CornerRadius = UDim.new(0, 10)
@@ -2617,13 +2820,23 @@ end
 				Hide()
 			end
 		)
+
+		-- if NoVoid == true then
+		-- 	NVButton.BackgroundColor3 = Color3.fromRGB(0,255,0)
+		-- 	game.Players.LocalPlayer.Character.RightHand:Destroy()
+		-- 	while NoVoid == true do
+		-- 		game.Players.LocalPlayer.Character.ChildAdded:Connect(function(e)
+		-- 			if e.Name == "RightHand" then
+		-- 				wait(1)
+		-- 				game.Players.LocalPlayer.Character.RightHand:Destroy()
+		-- 			end
+		-- 		end)
+		-- 		wait()
+		-- 	end
+		-- end
 		
-		
-		
-		while OnDeathReturn == true do
-			OnDeathReturn1()
-			wait()
-		end
+
+
 
 
 
@@ -2640,6 +2853,50 @@ end
 
 
 	end
+
+-- 	if table.find(Whitelisted, game.Players.LocalPlayer.Name) and table.find(Whitelisted,NameT) then
+-- 		game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage", {
+-- 			Text = "No Chat Logs Activated!";
+-- 			Color = Color3.fromRGB(255,255,0);
+-- 			Font = Enum.Font.SourceSansBold;TextSize = 25
+-- 		})
+-- 	local CloneFunction = clonefunction
+-- 	local CheckCaller = CloneFunction(checkcaller)
+-- 	local HookFunction = CloneFunction(hookfunction)
+-- 	local LocalPlayer = game.Players.PlayerAdded:wait()
+
+-- 	local PostMessage = require(LocalPlayer:WaitForChild("PlayerScripts", 1/0):WaitForChild("ChatScript", 1/0):WaitForChild("ChatMain", 1/0)).MessagePosted
+-- 	getgenv().MessageEvent = Instance.new("BindableEvent")
+
+-- 	local OldFunctionHook
+-- 	local PostMessageHook = function(self, msg)
+-- 	if not CheckCaller() and self == PostMessage then
+-- 		MessageEvent:Fire(msg)
+-- 		return
+-- 	end
+-- 	return OldFunctionHook(self, msg)
+-- 	end
+-- 	OldFunctionHook = HookFunction(PostMessage.fire, PostMessageHook)
+
+-- 	wait()
+
+-- 	local mt = getrawmetatable(game)
+-- 	local old = mt.__namecall
+-- 	setreadonly(mt, false)
+	
+-- 	mt.__namecall = newcclosure(function(self, ...)
+
+-- 	local args = {...}
+-- 	local method = getnamecallmethod()
+
+-- 	if method == "Fire" and self.Name == "MessagePosted" then
+-- 		return wait(9e9)
+-- 	end
+
+-- 	return old(self, ...)
+
+-- 	end)
+-- end
 
 	while wait(1) do
 		YukiiXLoadingScreen.Name = math.random(1, 100000)
