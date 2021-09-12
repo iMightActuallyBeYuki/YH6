@@ -330,6 +330,7 @@ end
 			BP = 1
 			R = 1
 			V = 1
+			OnDeathReturn = false
 			CMDX = false
 			CBRING = false
 			DMENU = false
@@ -346,6 +347,7 @@ end
 				BP = BP,
 				R = R,
 				V = V,
+				OnDeathReturn = OnDeathReturn,
 				CMDX = CMDX,
 				CBRING = CBRING,
 				DMENU = DMENU,
@@ -374,6 +376,7 @@ end
 			BP = saves.BP
 			R = saves.R
 			V = saves.V
+			OnDeathReturn = saves.OnDeathReturn
 			CMDX = saves.CMDX
 			CBRING = saves.CBRING
 			DMENU = saves.DMENU
@@ -493,6 +496,8 @@ end
 		local CBRINGUICorner = Instance.new("UICorner")
 		local DMENUButton = Instance.new("TextButton")
 		local DMENUUICORNER = Instance.new("UICorner")
+		local ODRButton = Instance.new("TextButton")
+		local ODRUICorner = Instance.new("UICorner")
 
 		YukiiX.Name = "YukiiX"
 		YukiiX.Parent = game:GetService("CoreGui").RobloxGui
@@ -769,6 +774,61 @@ end
 		M1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 		M1.BackgroundTransparency = 1.000
 		M1.Size = UDim2.new(0.994280279, 0, 0.999999881, 0)
+
+		ODRButton.Name = "ODRButton"
+		ODRButton.Parent = M1
+		ODRButton.BackgroundColor3 = Color3.fromRGB(68, 68, 68)
+		ODRButton.BorderColor3 = Color3.fromRGB(55, 55, 55)
+		ODRButton.BorderSizePixel = 0
+		ODRButton.Position = UDim2.new(0.0428313538, 0, 0.0432492904, 0)
+		ODRButton.Size = UDim2.new(0.257314742, 0, 0.253317267, 0)
+		ODRButton.Font = Enum.Font.SourceSansSemibold
+		ODRButton.Text = "On Death Return (OFF)"
+		ODRButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+		ODRButton.TextScaled = true
+		ODRButton.TextSize = 14.000
+		ODRButton.TextWrapped = true
+
+		local player  = game.Players.LocalPlayer
+
+		function OnDeathReturn1()
+			spawn(function()
+				ODRButton.BackgroundColor3 = Color3.fromRGB(0,255,0)
+				ODRButton.Text = "On Death Return (ON)"
+				wait(0.5)
+				player.Character.Humanoid.Died:Connect(function()
+					game.ReplicatedStorage.RemoteEvent:FireServer({"Respawn"})
+					local PosX = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X
+					local PosY = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y
+					local PosZ = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Z
+					game.Workspace.Camera.CameraType = "Custom"
+					wait(1.5)
+					player.Character:MoveTo(Vector3.new(PosX,PosY,PosZ))
+					wait(1.5)
+				player.PlayerGui.IntroGui.Enabled = false
+				player.PlayerGui.ScreenGui.Enabled = true
+				game:GetService("Lighting").Blur.Enabled = false
+				wait()
+				end)
+				wait()
+			end)
+			end
+
+		ODRButton.MouseButton1Click:Connect(function()
+			OnDeathReturn = not OnDeathReturn
+			while OnDeathReturn == true do
+				OnDeathReturn1()
+				wait()
+			end
+			if OnDeathReturn == false then
+				ODRButton.BackgroundColor3 = Color3.fromRGB(68, 68, 68)
+				ODRButton.Text = "On Death Return (OFF)"
+			end
+			UpdateSaves()
+		end)
+
+		ODRUICorner.CornerRadius = UDim.new(0, 10)
+		ODRUICorner.Parent = ODRButton
 
 		Selected_2.Name = "Selected"
 		Selected_2.Parent = MainBackground
@@ -1677,13 +1737,20 @@ end
 		HellFire.Position = UDim2.new(0.706902146, 0, 0.389243543, 0)
 		HellFire.Size = UDim2.new(0.257314742, 0, 0.253317267, 0)
 		HellFire.Font = Enum.Font.SourceSansSemibold
-		HellFire.Text = "HellFire"
+		HellFire.Text = "HellFire (OFF)"
 		HellFire.TextColor3 = Color3.fromRGB(255, 255, 255)
 		HellFire.TextScaled = true
 		HellFire.TextSize = 14.000
 		HellFire.TextWrapped = true
+
+		local HF = false
+
 		HellFire.MouseButton1Click:Connect(function()
 			if PlayerChosen then
+				HF = not HF
+				while HF == true do
+					HellFire.BackgroundColor3 = Color3.fromRGB(0,255,0)
+					HellFire.Text = "HellFire (ON)"
 			local A_1 = 
 				{
 					[1] = "Skill_DevilFlame", 
@@ -1691,7 +1758,13 @@ end
 				}
 				local Event = game:GetService("ReplicatedStorage").RemoteEvent
 				Event:FireServer(A_1)
+				wait()
 			end
+			if HF == false then
+				HellFire.Text = "HellFire (OFF)"
+				HellFire.BackgroundColor3 = Color3.fromRGB(68,68,68)
+			end
+		end
 		end)
 
 		UICorner_8.CornerRadius = UDim.new(0, 10)
@@ -2544,6 +2617,28 @@ end
 				Hide()
 			end
 		)
+		
+		
+		
+		while OnDeathReturn == true do
+			OnDeathReturn1()
+			wait()
+		end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	end
 
 	while wait(1) do
