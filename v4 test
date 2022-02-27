@@ -8012,7 +8012,7 @@ local function makeSlider(slider, min, max, axis, default, resetButton, label, t
 	end
 	if not filling.Visible then filling.Visible = true end
 end
-WhatIsCurrentlyLoading = "Ceating Movement Speed"
+WhatIsCurrentlyLoading = "Creating Movement Speed"
 local lph = yx.PlayerHud
 local gameSettings = pGui.ScreenGui.MenuFrame.SettingFrame
 lph.ActionFrame.ActionSlideFrame.SpeedSliderFrame.SpeedSlider.Filling.Size = UDim2.new(gameSettings.SettingTxt15.TextBox.Text / 1000, 0, 1, 0)
@@ -8034,7 +8034,7 @@ makeSlider(lph.ActionFrame.ActionSlideFrame.SpeedSliderFrame.SpeedSlider, 0, 100
 
 	game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
 end)
-WhatIsCurrentlyLoading = "Ceating Jump Power"
+WhatIsCurrentlyLoading = "Creating Jump Power"
 lph.ActionFrame.ActionSlideFrame.JumpSliderFrame.JumpSlider.Filling.Size = UDim2.new(gameSettings.SettingTxt15.TextBox.Text / 1000, 0, 1, 0)
 lph.ActionFrame.ActionSlideFrame.JumpSliderFrame.JumpSlider.JumpLabel.Text = gameSettings.SettingTxt16.TextBox.Text.." Jump Power"
 makeSlider(lph.ActionFrame.ActionSlideFrame.JumpSliderFrame.JumpSlider, 0, 500, "X", 0, lph.ActionFrame.ActionSlideFrame.JumpSliderFrame.JumpReset, lph.ActionFrame.ActionSlideFrame.JumpSliderFrame.JumpSlider.JumpLabel, "Jump Power", function(result)
@@ -8054,7 +8054,7 @@ makeSlider(lph.ActionFrame.ActionSlideFrame.JumpSliderFrame.JumpSlider, 0, 500, 
 	
 	game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
 end)
-WhatIsCurrentlyLoading = "Ceating Flight Speed"
+WhatIsCurrentlyLoading = "Creating Flight Speed"
 lph.ActionFrame.ActionSlideFrame.FlightSliderFrame.FlightSlider.Filling.Size = UDim2.new(gameSettings.SettingTxt17.TextBox.Text / 1000, 0, 1, 0)
 lph.ActionFrame.ActionSlideFrame.FlightSliderFrame.FlightSlider.FlightLabel.Text = gameSettings.SettingTxt17.TextBox.Text.." Flight Speed"
 makeSlider(lph.ActionFrame.ActionSlideFrame.FlightSliderFrame.FlightSlider, 0, 1000, "X", 0, lph.ActionFrame.ActionSlideFrame.FlightSliderFrame.FlightReset, lph.ActionFrame.ActionSlideFrame.FlightSliderFrame.FlightSlider.FlightLabel, "Flight Speed", function(result)
@@ -8070,7 +8070,7 @@ makeSlider(lph.ActionFrame.ActionSlideFrame.FlightSliderFrame.FlightSlider, 0, 1
 	game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
 end)
 
-WhatIsCurrentlyLoading = "Ceating Friends List"
+WhatIsCurrentlyLoading = "Creating Friends List"
 local friendPlace = {}
 local function createFriendInfo()
 	table.clear(friendPlace)
@@ -8399,7 +8399,7 @@ home.Music.Playlist.ScrollingFrame.Input.ButtonFrame.Button.MouseButton1Click:Co
 end)
 
 if UserJoinLeave == true then
-	WhatIsCurrentlyLoading = "Ceating User Join/Leave Notifications"
+	WhatIsCurrentlyLoading = "Creating User Join/Leave Notifications"
 end
 
 Players.PlayerAdded:Connect(function(plr)
@@ -8432,7 +8432,7 @@ local function tweenColor(object, color, tweenTime)
 	tweenServ:Create(object, TweenInfo.new(tweenTime, Enum.EasingStyle.Linear, Enum.EasingDirection.In, 0, false, 0), {BackgroundColor3 = color}):Play()
 end
 
-WhatIsCurrentlyLoading = "Ceating Hovers"
+WhatIsCurrentlyLoading = "Creating Hovers"
 local columns = yx.PlayerHud.ActionFrame.ActionButtonFrame
 hoverInfo(columns.Column_1.NoclipFrame, "No Clip")
 hoverInfo(columns.Column_1.NovoidFrame, "No Void")
@@ -8457,7 +8457,7 @@ end
 local HoldPos = false
 
 -- spawn(function() while wait() do print(HoldPos, oldposition) end end)
-WhatIsCurrentlyLoading = "Ceating Respawn"
+WhatIsCurrentlyLoading = "Creating Respawn"
 local function respawnChar()
 	HoldPos = true
 	local args = {[1] = {[1] = "Respawn"}}
@@ -8493,7 +8493,7 @@ local function respawnChar()
 	end
 end
 
-WhatIsCurrentlyLoading = "Ceating Noclip"
+WhatIsCurrentlyLoading = "Creating Noclip"
 local function noclip()
 	Noclip = true
 	local function NoclipLoop()
@@ -8532,7 +8532,7 @@ columns.Column_1.NoclipFrame.Button.MouseButton1Down:Connect(function()
 	end
 end)
 
-WhatIsCurrentlyLoading = "Ceating No Void"
+WhatIsCurrentlyLoading = "Creating No Void"
 spawn(function()
 	while wait(0.1) do
 		if NoVoid == true and game.CoreGui:FindFirstChild("Yukii X" .. KeepRandomNumber) then
@@ -8559,7 +8559,7 @@ columns.Column_1.NovoidFrame.Button.MouseButton1Down:Connect(function()
 	end
 end)
 
-WhatIsCurrentlyLoading = "Ceating F1 Respawn"
+WhatIsCurrentlyLoading = "Creating F1 Respawn"
 uis.InputBegan:Connect(function(input, isTyping)
 	if isTyping then return end
 	if input.KeyCode == Enum.KeyCode.F1 and game.CoreGui:FindFirstChild("Yukii X" .. KeepRandomNumber) then
@@ -8571,13 +8571,13 @@ columns.Column_1.RefreshFrame.Button.MouseButton1Down:Connect(function()
 	respawnChar()
 end)
 
-WhatIsCurrentlyLoading = "Ceating Split"
+WhatIsCurrentlyLoading = "Creating Split"
 columns.Column_1.SplitFrame.Button.MouseButton1Down:Connect(function()
 	local char = player.Character or player.CharacterAdded:Wait()
 	char:WaitForChild("UpperTorso"):WaitForChild("Waist"):Destroy()
 end)
 
-WhatIsCurrentlyLoading = "Ceating God Mode"
+WhatIsCurrentlyLoading = "Creating God Mode"
 columns.Column_2.GodFrame.Button.MouseButton1Down:Connect(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/1ArcX/Scripts/main/God%20Mode", true))()
 end)
@@ -8595,7 +8595,7 @@ columns.Column_2.JoinLeaveFrame.Button.MouseButton1Down:Connect(function()
 	end
 end)
 
-WhatIsCurrentlyLoading = "Ceating Rejoin"
+WhatIsCurrentlyLoading = "Creating Rejoin"
 columns.Column_2.RejoinFrame.Button.MouseButton1Down:Connect(function()
 	local char = player.Character or player.CharacterAdded:Wait()
 	local hrp = char:WaitForChild("HumanoidRootPart")
@@ -8604,7 +8604,7 @@ columns.Column_2.RejoinFrame.Button.MouseButton1Down:Connect(function()
 	tpService:Teleport(game.PlaceId, player)
 end)
 
-WhatIsCurrentlyLoading = "Ceating On Death Return"
+WhatIsCurrentlyLoading = "Creating On Death Return"
 local env = getsenv(game.Players.LocalPlayer.PlayerScripts.MainScript)
 _G.loopCamera = true
 
@@ -8696,7 +8696,7 @@ columns.Column_2.ReturnFrame.Button.MouseButton1Down:Connect(function()
 	end
 end)
 
-WhatIsCurrentlyLoading = "Ceating Super Aura"
+WhatIsCurrentlyLoading = "Creating Super Aura"
 if SuperAura == true then
 	tweenColor(columns.Column_3.AuraFrame, Color3.fromRGB(140, 255, 140), 0.1)
 end
@@ -8710,7 +8710,7 @@ columns.Column_3.AuraFrame.Button.MouseButton1Down:Connect(function()
 	end
 end)
 
-WhatIsCurrentlyLoading = "Ceating Rainbow Rank"
+WhatIsCurrentlyLoading = "Creating Rainbow Rank"
 spawn(function()
 	while wait() do
 		if game.CoreGui:FindFirstChild("Yukii X" .. KeepRandomNumber) and RainbowRank == true then
@@ -8736,7 +8736,7 @@ columns.Column_3.RanksFrame.Button.MouseButton1Down:Connect(function()
 	end
 end)
 
-WhatIsCurrentlyLoading = "Ceating No Rep Take"
+WhatIsCurrentlyLoading = "Creating No Rep Take"
 spawn(function()
 	while wait() do
 		if game.CoreGui:FindFirstChild("Yukii X" .. KeepRandomNumber) then
@@ -8773,7 +8773,7 @@ columns.Column_3.RepFrame.Button.MouseButton1Down:Connect(function()
 	end
 end)
 
-WhatIsCurrentlyLoading = "Ceating Rainbow Weights"
+WhatIsCurrentlyLoading = "Creating Rainbow Weights"
 spawn(function()
 	while wait() do
 		if game.CoreGui:FindFirstChild("Yukii X" .. KeepRandomNumber) and RainbowWeights == true then
@@ -8799,7 +8799,7 @@ columns.Column_3.WeightsFrame.Button.MouseButton1Down:Connect(function()
 	end
 end)
 
-WhatIsCurrentlyLoading = "Ceating Player List"
+WhatIsCurrentlyLoading = "Creating Player List"
 _G.playerAttackActions = {}
 local prevSelectedUser = nil
 local curSelectedUser = nil
@@ -9151,7 +9151,7 @@ spawn(function()
 end)
 
 
-WhatIsCurrentlyLoading = "Ceating Search Bar"
+WhatIsCurrentlyLoading = "Creating Search Bar"
 --//		Random Chat			\\--
 --[[
 
