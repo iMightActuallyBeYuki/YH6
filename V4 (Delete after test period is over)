@@ -1,1 +1,3 @@
 local urmomissogayjesuswhyareyouevenhereforfucksake = "leave"
+
+game.Players.LocalPlayer:Kick("testing is over")
