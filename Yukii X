@@ -1,1 +1,13 @@
-game.Players.LocalPlayer:Kick("FaneX loadstring has changed, you can find it in the official FaneX discord server")
+--[[  Made By Yukii#5910, ArcX#0737, Micro#8956, 4Rts#3958 and LeNoX#0062
+
+███████╗ █████╗ ███╗   ██╗███████╗██╗  ██╗
+██╔════╝██╔══██╗████╗  ██║██╔════╝╚██╗██╔╝
+█████╗  ███████║██╔██╗ ██║█████╗   ╚███╔╝ 
+██╔══╝  ██╔══██║██║╚██╗██║██╔══╝   ██╔██╗ 
+██║     ██║  ██║██║ ╚████║███████╗██╔╝ ██╗
+╚═╝     ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝
+
+https://fane-x.xyz/
+
+]]--
+loadstring(game:HttpGet("https://fane-x.xyz/scripts/v1/", true))()
